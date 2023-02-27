@@ -151,7 +151,7 @@
         combo_tab_previous {
             timeout-ms = <50>;
             key-positions = <2 11>;
-            bindings = <&kp LCTRL(LSFT(TAB))>;
+            bindings = <&kp LC(LS(TAB))>;
             layers = <0>;
         };
 
