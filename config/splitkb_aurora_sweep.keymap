@@ -299,7 +299,7 @@
                 = <&macro_tap &sl 1>
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(355,100,50)>
                 ;
-            )
+            );
 
         ZMK_MACRO(layer2,
             wait-ms = <0>;
@@ -308,7 +308,7 @@
                 = <&macro_tap &sl 2>
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(120,100,50)>
                 ;
-            )
+            );
 
         ZMK_MACRO(layer3,
             wait-ms = <0>;
@@ -317,7 +317,7 @@
                 = <&macro_tap &to 3>
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(215,100,50)>
                 ;
-            )
+            );
 
         ZMK_MACRO(layer0,
             wait-ms = <0>;
@@ -326,7 +326,7 @@
                 = <&macro_tap &to 0>
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,50)>
                 ;
-            )
+            );
 
     };
 
