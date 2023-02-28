@@ -282,9 +282,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LCMD(LSFT)>
+                = <&macro_press &kp LG(LSFT)>
                 , <&macro_tap &kp N>
-                , <&macro_release &kp LCMD(LSFT)>
+                , <&macro_release &kp LG(LSFT)>
                 , <&macro_press &kp LCMD>
                 , <&macro_tap &kp V>
                 , <&macro_release &kp LCMD>
