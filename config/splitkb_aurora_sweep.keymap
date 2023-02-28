@@ -130,21 +130,21 @@
         combo_focus_left {
             timeout-ms = <50>;
             key-positions = <17 26>;
-            bindings = <&kp LCTRL(H)>;
+            bindings = <&kp LC(H)>;
             layers = <0>;
         };
 
         combo_focus_right {
             timeout-ms = <50>;
             key-positions = <17 28>;
-            bindings = <&kp LCTRL(L)>;
+            bindings = <&kp LC(L)>;
             layers = <0>;
         };
 
         combo_tab_next {
             timeout-ms = <50>;
             key-positions = <2 13>;
-            bindings = <&kp LCTRL(TAB)>;
+            bindings = <&kp LC(TAB)>;
             layers = <0>;
         };
 
@@ -158,28 +158,28 @@
         combo_tab_swap_left {
             timeout-ms = <50>;
             key-positions = <1 12>;
-            bindings = <&kp LCTRL(LSFT(PAGE_UP))>;
+            bindings = <&kp LC(LS(PAGE_UP))>;
             layers = <0>;
         };
 
         combo_tab_swap_right {
             timeout-ms = <50>;
             key-positions = <3 12>;
-            bindings = <&kp LCTRL(LSFT(PAGE_DOWN))>;
+            bindings = <&kp LC(LS(PAGE_DOWN))>;
             layers = <0>;
         };
         
         combo_panel_down {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&kp LCMD(LCTRL(LALT(J)))>;
+            bindings = <&kp LCMD(LC(LA(J)))>;
             layers = <0>;
         };
         
         combo_file_explorer {
             timeout-ms = <50>;
             key-positions = <1 2>;
-            bindings = <&kp LCMD(LSFT(E))>;
+            bindings = <&kp LCMD(LS(E))>;
             layers = <0>;
         };
         
@@ -221,28 +221,28 @@
         combo_search {
             timeout-ms = <50>;
             key-positions = <11 12>;
-            bindings = <&kp LCMD(LSFT(F))>;
+            bindings = <&kp LCMD(LS(F))>;
             layers = <0>;
         };
         
         combo_inspect {
             timeout-ms = <50>;
             key-positions = <20 21>;
-            bindings = <&kp LCMD(LALT(I))>;
+            bindings = <&kp LCMD(LA(I))>;
             layers = <0>;
         };
         
         combo_select_element {
             timeout-ms = <50>;
             key-positions = <11 20>;
-            bindings = <&kp LCMD(LSFT(C))>;
+            bindings = <&kp LCMD(LS(C))>;
             layers = <0>;
         };
         
         combo_terminal {
             timeout-ms = <50>;
             key-positions = <22 23>;
-            bindings = <&kp LCTRL(GRAVE)>;
+            bindings = <&kp LC(GRAVE)>;
             layers = <0>;
         };
         
@@ -256,21 +256,21 @@
         combo_open_definition {
             timeout-ms = <50>;
             key-positions = <21 23>;
-            bindings = <&kp LCTRL(LSFT(D))>;
+            bindings = <&kp LC(LS(D))>;
             layers = <0>;
         };
         
         combo_live_share {
             timeout-ms = <50>;
             key-positions = <12 21>;
-            bindings = <&kp LCTRL(LALT(LSFT(W)))>;
+            bindings = <&kp LC(LA(LS(W)))>;
             layers = <0>;
         };
         
         combo_git {
             timeout-ms = <50>;
             key-positions = <11 22>;
-            bindings = <&kp LCTRL(LSFT(G))>;
+            bindings = <&kp LC(LS(G))>;
             layers = <0>;
         };
 
@@ -291,7 +291,7 @@
                 , <&macro_tap &kp RETURN>
                 ;
         };
-        
+
         layer0: layer0 {
             label = "layer0";
             compatible = "zmk,behavior-macro";
@@ -365,14 +365,14 @@
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B 						  &kp J &kp L &kp U &kp Y &kp QUOT 
                 &kp A &kp R &kp S &kp T &kp G 			        	  &kp M &kp N &kp E &kp I &kp O
-                &mt LCMD(LALT(LSFT)) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LCMD(LALT(LSFT)) SLASH
+                &mt LCMD(LA(LS)) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LCMD(LA(LS)) SLASH
                                 &layer1 &sk LSFT 	 			          &mt RCTRL SPC &layer2 
             >;
 		};
 
         left_layer {
             bindings = <
-                &kp ESC             &mt LG(LS(4)) LG(LS(5)) &kp LCMD(LCTRL(SPC)) &paste_new_incog_win &trans 	                &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans 
+                &kp ESC             &mt LG(LS(4)) LG(LS(5)) &kp LCMD(LC(SPC)) &paste_new_incog_win &trans 	                &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans 
                 &mt LSFT RET        &layer3                 &kp DEL              &kp BSPC           &td_next_prev	            &kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
                 &kp LCMD(LA((Z)))   &mt LALT C_VOL_DN       &mt LCMD C_VOL_UP    &kp TAB              &mt C_PP K_MUTE           &kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
                                                                                 &layer0              &trans  					&trans   &layer0
@@ -390,9 +390,9 @@
 		
 		tri_layer {
             bindings = <
-                &kp ESC             &kp LCTRL(LSFT(PLUS))   &kp LCTRL(LSFT(LEFT))           &kp LCTRL(LSFT(DOWN))           &trans 			                &bl BL_TOG &trans   &kp UP      &trans      &trans
-                &kp LCTRL(LSFT(RET)) &kp LCTRL(LSFT(MINUS))  &kp LCTRL(LALT(LSFT(LEFT)))    &kp LCTRL(LALT(LSFT(RIGHT)))  &kp C_BRIGHTNESS_INC  			&bl BL_INC &kp LEFT &kp DOWN    &kp RIGHT   &trans 
-                &kp LCTRL(LSFT(BSPC)) &trans                &kp LCTRL(LSFT(UP))                 &kp LCTRL(LSFT(RIGHT))     &kp C_BRIGHTNESS_DEC             &bl BL_DEC &td_lights_toggle   &bt BT_PRV  &bt BT_NXT &bt BT_CLR   
+                &kp ESC             &kp LC(LS(PLUS))   &kp LC(LS(LEFT))           &kp LC(LS(DOWN))           &trans 			                &bl BL_TOG &trans   &kp UP      &trans      &trans
+                &kp LC(LS(RET)) &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))    &kp LC(LA(LS(RIGHT)))  &kp C_BRIGHTNESS_INC  			&bl BL_INC &kp LEFT &kp DOWN    &kp RIGHT   &trans 
+                &kp LC(LS(BSPC)) &trans                &kp LC(LS(UP))                 &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC             &bl BL_DEC &td_lights_toggle   &bt BT_PRV  &bt BT_NXT &bt BT_CLR   
                                                                                                 &layer0  &trans                                             &trans &layer0 
             >;  
 		};	
