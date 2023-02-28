@@ -10,28 +10,6 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
-    &led_strip {
-        chain-length = <23>;
-    };
-
-    &mt {
-        flavor = "tap-preferred";
-        tapping_term_ms = <185>;
-        };
-
-    &sl {
-        release-after-ms = <1000>;
-    };
-
-    &sk {
-        release-after-ms = <2000>;
-        quick-release;
-    };
-
-    &caps_word {
-        continue-list = <UNDERSCORE MINUS>;
-    };
-
 / { 
     combos {
         compatible = "zmk,combos";
@@ -359,6 +337,28 @@
         };
     };
 
+    &led_strip {
+        chain-length = <23>;
+    };
+
+    &mt {
+        flavor = "tap-preferred";
+        tapping_term_ms = <185>;
+    };
+
+    &sl {
+        release-after-ms = <1000>;
+    };
+
+    &sk {
+        release-after-ms = <2000>;
+        quick-release;
+    };
+
+    &caps_word {
+        continue-list = <UNDERSCORE MINUS>;
+    };
+
     keymap {
         compatible = "zmk,keymap";
                 
@@ -366,7 +366,7 @@
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B 						  &kp J &kp L &kp U &kp Y &kp QUOT 
                 &kp A &kp R &kp S &kp T &kp G 			        	  &kp M &kp N &kp E &kp I &kp O
-                &mt LC(LA(LS)()) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LS)()) SLASH
+                &mt LC(LA(LS)) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LS)) SLASH
                                 &layer1 &sk LSFT 	 			          &mt RCTRL SPC &layer2 
             >;
 		};
