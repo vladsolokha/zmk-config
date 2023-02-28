@@ -356,7 +356,7 @@
             tapping_term_ms = <200>;
             bindings = <&rgb_ug RGB_TOG>, <&rgb_ug RGB_EFF>;
         };
-    }
+    };
 
     keymap {
         compatible = "zmk,keymap";
