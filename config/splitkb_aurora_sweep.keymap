@@ -291,44 +291,54 @@
                 , <&macro_tap &kp RETURN>
                 ;
         };
-
-        ZMK_MACRO(layer1,
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings 
-                = <&macro_tap &sl 1>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(355,100,50)>
-                ;
-            );
-
-        ZMK_MACRO(layer2,
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings 
-                = <&macro_tap &sl 2>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(120,100,50)>
-                ;
-            );
-
-        ZMK_MACRO(layer3,
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings 
-                = <&macro_tap &to 3>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(215,100,50)>
-                ;
-            );
-
-        ZMK_MACRO(layer0,
+        
+        layer0: layer0 {
+            label = "layer0";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
             bindings 
                 = <&macro_tap &to 0>
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,50)>
                 ;
-            );
+        };
 
-    };
+        layer1: layer1 {
+            label = "layer1";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings 
+                = <&macro_tap &sl 1>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(355,100,50)>
+                ;
+        };
+
+        layer2: layer2 {
+            label = "layer2";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings 
+                = <&macro_tap &sl 2>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(120,100,50)>
+                ;
+        };
+
+        layer3: layer3 {
+            label = "layer3";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings 
+                = <&macro_tap &to 3>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(215,100,50)>
+                ;
+        };
 
     behaviors {
         td_next_prev: tap_dance_next_previous {
