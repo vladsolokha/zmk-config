@@ -275,9 +275,7 @@
             layers = <0>;
         };
     };
-};
 
-/ {
     macros {
         paste_new_incog_win: paste_new_incog_win {
             label = "paste_new_incog_win";
@@ -362,9 +360,7 @@
             bindings = <&rgb_ug RGB_TOG>, <&rgb_ug RGB_EFF>;
         };
     };
-};
 
-/ {
     keymap {
         compatible = "zmk,keymap";
                 
