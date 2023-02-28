@@ -10,6 +10,29 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+&led_strip {
+    chain-length = <23>;
+};
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <185>;
+};
+
+&sl {
+    release-after-ms = <1000>;
+};
+
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
+
 / { 
     combos {
         compatible = "zmk,combos";
@@ -251,9 +274,10 @@
             bindings = <&kp LC(LS(G))>;
             layers = <0>;
         };
-
     };
-    
+};
+
+/ {
     macros {
         paste_new_incog_win: paste_new_incog_win {
             label = "paste_new_incog_win";
@@ -317,8 +341,10 @@
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(215,100,50)>
                 ;
         };
+    };
+};
 
-    
+/ {
     behaviors {
         td_next_prev: tap_dance_next_previous {
             compatible = "zmk, behavior-tap-dance";
@@ -336,29 +362,9 @@
             bindings = <&rgb_ug RGB_TOG>, <&rgb_ug RGB_EFF>;
         };
     };
+};
 
-    &led_strip {
-        chain-length = <23>;
-    };
-
-    &mt {
-        flavor = "tap-preferred";
-        tapping_term_ms = <185>;
-    };
-
-    &sl {
-        release-after-ms = <1000>;
-    };
-
-    &sk {
-        release-after-ms = <2000>;
-        quick-release;
-    };
-
-    &caps_word {
-        continue-list = <UNDERSCORE MINUS>;
-    };
-
+/ {
     keymap {
         compatible = "zmk,keymap";
                 
