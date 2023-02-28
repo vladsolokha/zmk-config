@@ -340,6 +340,7 @@
                 ;
         };
 
+    
     behaviors {
         td_next_prev: tap_dance_next_previous {
             compatible = "zmk, behavior-tap-dance";
@@ -365,16 +366,16 @@
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B 						  &kp J &kp L &kp U &kp Y &kp QUOT 
                 &kp A &kp R &kp S &kp T &kp G 			        	  &kp M &kp N &kp E &kp I &kp O
-                &mt LCMD(LA(LS)) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LCMD(LA(LS)) SLASH
+                &mt LC(LA(LS)) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LS)) SLASH
                                 &layer1 &sk LSFT 	 			          &mt RCTRL SPC &layer2 
             >;
 		};
 
         left_layer {
             bindings = <
-                &kp ESC             &mt LG(LS(4)) LG(LS(5)) &kp LCMD(LC(SPC)) &paste_new_incog_win &trans 	                &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans 
+                &kp ESC             &mt LG(LS(4)) LG(LS(5)) &kp LG(LC(SPC)) &paste_new_incog_win &trans 	                &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans 
                 &mt LSFT RET        &layer3                 &kp DEL              &kp BSPC           &td_next_prev	            &kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
-                &kp LCMD(LA((Z)))   &mt LALT C_VOL_DN       &mt LCMD C_VOL_UP    &kp TAB              &mt C_PP K_MUTE           &kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
+                &kp LG(LA((Z)))   &mt LALT C_VOL_DN       &mt LCMD C_VOL_UP    &kp TAB              &mt C_PP K_MUTE           &kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
                                                                                 &layer0              &trans  					&trans   &layer0
             >;
 		};
