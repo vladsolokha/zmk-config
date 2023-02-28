@@ -340,11 +340,9 @@
                 ;
         };
     };
-};
 
-/ {
     behaviors {
-        td_next_prev: tap_dance_next_previous {
+        td_next_prev: td_next_prev {
             compatible = "zmk, behavior-tap-dance";
             label = "TAP_DANCE_NEXT_PREVIOUS";
             #binding-cells = <0>;
@@ -352,7 +350,7 @@
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
 
-        td_lights_toggle: tap_dance_lights_toggle {
+        td_lights_toggle: td_lights_toggle {
             compatible = "tap_dance_lights_toggle";
             label = "TAP_DANCE_NEXT_PREVIOUS";
             #binding-cells = <0>;
@@ -395,7 +393,7 @@
             bindings = <
                 &kp ESC             &kp LC(LS(PLUS))   &kp LC(LS(LEFT))           &kp LC(LS(DOWN))           &trans 			                &bl BL_TOG &trans   &kp UP      &trans      &trans
                 &kp LC(LS(RET)) &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))    &kp LC(LA(LS(RIGHT)))  &kp C_BRIGHTNESS_INC  			&bl BL_INC &kp LEFT &kp DOWN    &kp RIGHT   &trans 
-                &kp LC(LS(BSPC)) &trans                &kp LC(LS(UP))                 &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC             &bl BL_DEC &td_lights_toggle   &bt BT_PRV  &bt BT_NXT &bt BT_CLR   
+                &kp LC(LS(BSPC)) &trans                &kp LC(LS(UP))                 &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC             &bl BL_DEC &td_lights_toggle &bt BT_PRV  &bt BT_NXT &bt BT_CLR   
                                                                                                 &layer0  &trans                                             &trans &layer0 
             >;  
 		};	
