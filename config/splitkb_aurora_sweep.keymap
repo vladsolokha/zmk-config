@@ -341,7 +341,16 @@
         };
     };
 
-    // behaviors {
+    behaviors {
+
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp C_NEXT>, <&kp C_PREV>;
+        };
+    
     //     td_next_prev: td_next_prev {
     //         compatible = "zmk, behavior-tap-dance";
     //         label = "TAP_DANCE_NEXT_PREVIOUS";
@@ -357,7 +366,8 @@
     //         tapping_term_ms = <200>;
     //         bindings = <&rgb_ug RGB_TOG>, <&rgb_ug RGB_EFF>;
     //     };
-    // };
+
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -374,7 +384,7 @@
         left_layer {
             bindings = <
                 &kp ESC             &mt LG(LS(4)) LG(LS(5)) &kp LG(LC(SPC)) &paste_new_incog_win &trans 	                &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans 
-                &mt LSFT RET        &layer3                 &kp DEL              &kp BSPC           &kp C_NEXT	            &kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
+                &mt LSFT RET        &layer3                 &kp DEL              &kp BSPC           &td0	            &kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
                 &kp LG(LA((Z)))   &mt LALT C_VOL_DN       &mt LCMD C_VOL_UP    &kp TAB              &mt C_PP K_MUTE           &kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
                                                                                 &layer0              &trans  					&trans   &layer0
             >;
