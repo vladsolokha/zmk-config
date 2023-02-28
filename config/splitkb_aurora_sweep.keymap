@@ -372,7 +372,7 @@
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B 						  &kp J &kp L &kp U &kp Y &kp QUOT 
                 &kp A &kp R &kp S &kp T &kp G 			        	  &kp M &kp N &kp E &kp I &kp O
-                &mt LC(LA(LS)) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LS)) SLASH
+                &mt LC(LA(LSHIFT)) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LSHIFT)) SLASH
                                 &layer1 &sk LSFT 	 			          &mt RCTRL SPC &layer2 
             >;
 		};
