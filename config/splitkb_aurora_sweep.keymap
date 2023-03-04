@@ -290,55 +290,7 @@
                 , <&macro_release &kp LCMD>
                 , <&macro_tap &kp RETURN>
                 ;
-        };
-
-        layer0: layer0 {
-            label = "layer0";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings 
-                = <&macro_tap &to 0>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,50)>
-                ;
-        };
-
-        layer1: layer1 {
-            label = "layer1";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings 
-                = <&macro_tap &sl 1>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(355,100,50)>
-                ;
-        };
-
-        layer2: layer2 {
-            label = "layer2";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings 
-                = <&macro_tap &sl 2>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(120,100,50)>
-                ;
-        };
-
-        layer3: layer3 {
-            label = "layer3";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings 
-                = <&macro_tap &to 3>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(215,100,50)>
-                ;
-        };
+        };   
     };
 
     behaviors {
@@ -350,23 +302,6 @@
             tapping-term-ms = <150>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
-    
-    //     td_next_prev: td_next_prev {
-    //         compatible = "zmk, behavior-tap-dance";
-    //         label = "TAP_DANCE_NEXT_PREVIOUS";
-    //         #binding-cells = <0>;
-    //         tapping_term_ms = <200>;
-    //         bindings = <&kp C_NEXT>, <&kp C_PREV>;
-    //     };
-
-    //     td_lights_toggle: td_lights_toggle {
-    //         compatible = "tap_dance_lights_toggle";
-    //         label = "TAP_DANCE_NEXT_PREVIOUS";
-    //         #binding-cells = <0>;
-    //         tapping_term_ms = <200>;
-    //         bindings = <&rgb_ug RGB_TOG>, <&rgb_ug RGB_EFF>;
-    //     };
-
     };
 
     keymap {
@@ -377,16 +312,16 @@
                 &kp Q &kp W &kp F &kp P &kp B 						  &kp J &kp L &kp U &kp Y &kp QUOT 
                 &kp A &kp R &kp S &kp T &kp G 			        	  &kp M &kp N &kp E &kp I &kp O
                 &mt LC(LA(LSHIFT)) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LSHIFT)) SLASH
-                                &layer1 &sk LSFT 	 			          &mt RCTRL SPC &layer2 
+                                &lt 1 &sk LSFT 	 			          &mt RCTRL SPC &lt 2
             >;
 		};
 
         left_layer {
             bindings = <
                 &kp ESC             &mt LG(LS(4)) LG(LS(5)) &kp LG(LC(SPC)) &paste_new_incog_win &trans 	                &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans 
-                &mt LSFT RET        &layer3                 &kp DEL              &kp BSPC           &td0	            &kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
-                &kp LG(LA((Z)))   &mt LALT C_VOL_DN       &mt LCMD C_VOL_UP    &kp TAB              &mt C_PP K_MUTE           &kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
-                                                                                &layer0              &trans  					&trans   &layer0
+	                &mt LSFT RET        &layer3                 &kp DEL              &kp BSPC           &td0	            &kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
+                &kp LG(LA((Z)))   &mt LALT C_VOL_DN       &mt LCMD C_VOL_UP    &kp TAB              &mt C_PP K_MUTE     &kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
+	                                                                                &trans              &trans  					&trans   &trans
             >;
 		};
 		
@@ -395,16 +330,16 @@
                 &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH    			        &caps_word  &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
                 &mt LCTRL RET &kp UNDER  &kp LPAR  &kp RPAR  &kp PERCENT 			&kp LEFT &kp UP  &kp DOWN  &kp RIGHT &kp SEMICOLON
                 &kp PLUS  &mt LALT AT &mt LCMD LBKT &kp RBKT   &kp PIPE    			&kp AMPERSAND &kp STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
-                                    &layer0 &trans  				                    &trans &layer0 
+                                    &trans &trans  				                    &trans &trans 
             >;
 		};	
 		
 		tri_layer {
             bindings = <
-                &kp ESC             &kp LC(LS(PLUS))   &kp LC(LS(LEFT))           &kp LC(LS(DOWN))           &trans 			                &bl BL_TOG &trans   &kp UP      &trans      &trans
-                &kp LC(LS(RET)) &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))    &kp LC(LA(LS(RIGHT)))  &kp C_BRIGHTNESS_INC  			&bl BL_INC &kp LEFT &kp DOWN    &kp RIGHT   &trans 
-                &kp LC(LS(BSPC)) &trans                &kp LC(LS(UP))                 &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC             &bl BL_DEC &rgb_ug RGB_EFF &bt BT_PRV  &bt BT_NXT &bt BT_CLR   
-                                                                                                &layer0  &trans                                             &trans &layer0 
+                &kp ESC             &kp LC(LS(PLUS))   &kp LC(LS(LEFT))           &kp LC(LS(DOWN))           &bt BT_PRV 			           &rgb_ug RGB_EFF &none   &kp UP      &none      &trans
+							                &kp LC(LS(RET)) &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))    &kp LC(LA(LS(RIGHT)))  &bt BT_NXT  			&kp C_BRIGHTNESS_INC &kp LEFT &kp DOWN    &kp RIGHT   &trans 
+                &kp LC(LS(BSPC)) &trans                &kp LC(LS(UP))                 &kp LC(LS(RIGHT))     &bt BT_CLR             &kp C_BRIGHTNESS_DEC &rgb_ug RGB_EFF &bt BT_PRV  &bt BT_NXT &bt BT_CLR   
+                                                                                                &to 0  &trans                                             &trans &to 0 
             >;  
 		};	
         
