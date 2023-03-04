@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/backlight.h>
 
 &led_strip {
-    chain-length = <23>;
+    chain-length = <46>;
 };
 
 &mt {
