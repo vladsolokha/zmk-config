@@ -325,7 +325,7 @@
             >;
 		};
 		
-		right_layer {
+					right_layer {
             bindings = <
                 &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH    			        &caps_word  &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
                 &mt LCTRL RET &kp UNDER  &kp LPAR  &kp RPAR  &kp PERCENT 			&kp LEFT &kp UP  &kp DOWN  &kp RIGHT &kp SEMICOLON
@@ -336,10 +336,10 @@
 		
 		tri_layer {
             bindings = <
-                &kp ESC             &kp LC(LS(PLUS))   &kp LC(LS(LEFT))           &kp LC(LS(DOWN))           &bt BT_PRV 			           &rgb_ug RGB_EFF &none   &kp UP      &none      &trans
-							                &kp LC(LS(RET)) &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))    &kp LC(LA(LS(RIGHT)))  &bt BT_NXT  			&kp C_BRIGHTNESS_INC &kp LEFT &kp DOWN    &kp RIGHT   &trans 
-                &kp LC(LS(BSPC)) &trans                &kp LC(LS(UP))                 &kp LC(LS(RIGHT))     &bt BT_CLR             &kp C_BRIGHTNESS_DEC &rgb_ug RGB_EFF &bt BT_PRV  &bt BT_NXT &bt BT_CLR   
-                                                                                                &to 0  &trans                                             &trans &to 0 
+                &kp ESC          &kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))       &bt BT_PRV 			    &rgb_ug RGB_BRD       &rgb_ug RGB_BRI  &kp UP          &rgb_ug RGB_HUD &rgb_ug RGB_HUI
+							  &kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &bt BT_NXT  			    &kp C_BRIGHTNESS_INC  &kp LEFT         &kp DOWN        &kp RIGHT       &rgb_ug RGB_SAI  
+                &kp LC(LS(BSPC)) &trans            &kp LC(LS(UP))        &kp LC(LS(RIGHT))      &bt BT_CLR           &kp C_BRIGHTNESS_DEC  &rgb_ug RGB_TOG &rgb_ug RGB_SPD  &rgb_ug RGB_SPI &rgb_ug RGB_SAD  
+                                                                                                &to 0     &trans     &trans    &to 0 
             >;  
 		};	
         
