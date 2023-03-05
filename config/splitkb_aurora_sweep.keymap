@@ -311,7 +311,7 @@
                 &kp Q &kp W &kp F &kp P &kp B 						  &kp J &kp L &kp U &kp Y &kp QUOT 
                 &kp A &kp R &kp S &kp T &kp G 			        	  &kp M &kp N &kp E &kp I &kp O
                 &mt LC(LA(LSHIFT)) Z &mt LALT X &mt LCMD C &kp D &kp V    &kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LSHIFT)) SLASH
-                                &lt 1 &sk LSFT 	 			          &mt RCTRL SPC &lt 2
+                                &lt 1 1 &sk LSFT 	 			          &mt RCTRL SPC &lt 2 2
             >;
 		};
 
