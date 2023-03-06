@@ -68,7 +68,7 @@
         combo_paste {
             timeout-ms = <50>;
             key-positions = <12 23>;
-            bindings = <&kp LG(P)>;
+            bindings = <&kp LG(V)>;
             layers = <0>;
         };
         
