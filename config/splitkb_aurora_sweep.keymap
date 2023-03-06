@@ -53,49 +53,49 @@
         combo_save {
             timeout-ms = <50>;
             key-positions = <12 13>;
-            bindings = <&kp LCMD(S)>;
+            bindings = <&kp LG(S)>;
             layers = <0>;
         };
         
         combo_copy {
             timeout-ms = <50>;
             key-positions = <13 22>;
-            bindings = <&kp LCMD(C)>;
+            bindings = <&kp LG(C)>;
             layers = <0>;
         };
         
         combo_paste {
             timeout-ms = <50>;
             key-positions = <12 23>;
-            bindings = <&kp LCMD(P)>;
+            bindings = <&kp LG(P)>;
             layers = <0>;
         };
         
         combo_bol {
             timeout-ms = <50>;
             key-positions = <6 7>;
-            bindings = <&kp LCMD(LEFT)>;
+            bindings = <&kp LG(LEFT)>;
             layers = <0>;
         };
         
         combo_eol {
             timeout-ms = <50>;
             key-positions = <7 8>;
-            bindings = <&kp LCMD(RIGHT)>;
+            bindings = <&kp LG(RIGHT)>;
             layers = <0>;
         };
 
         combo_word_back {
             timeout-ms = <50>;
             key-positions = <7 16>;
-            bindings = <&kp LALT(LEFT)>;
+            bindings = <&kp LA(LEFT)>;
             layers = <0>;
         };
 
         combo_word_forward {
             timeout-ms = <50>;
             key-positions = <7 18>;
-            bindings = <&kp LALT(RIGHT)>;
+            bindings = <&kp LA(RIGHT)>;
             layers = <0>;
         };
 
@@ -172,70 +172,70 @@
         combo_panel_down {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&kp LCMD(LC(LA(J)))>;
+            bindings = <&kp LG(LC(LA(J)))>;
             layers = <0>;
         };
         
         combo_file_explorer {
             timeout-ms = <50>;
             key-positions = <1 2>;
-            bindings = <&kp LCMD(LS(E))>;
+            bindings = <&kp LG(LS(E))>;
             layers = <0>;
         };
         
         combo_open_file {
             timeout-ms = <50>;
             key-positions = <2 3>;
-            bindings = <&kp LCMD(P)>;
+            bindings = <&kp LG(P)>;
             layers = <0>;
         };
         
         combo_close_panel {
             timeout-ms = <50>;
             key-positions = <1 10>;
-            bindings = <&kp LCMD(B)>;
+            bindings = <&kp LG(B)>;
             layers = <0>;
         };
         
         combo_www_back {
             timeout-ms = <50>;
             key-positions = <1 13>;
-            bindings = <&kp LCMD(LEFT_BRACKET)>;
+            bindings = <&kp LG(LEFT_BRACKET)>;
             layers = <0>;
         };
         
         combo_www_forward {
             timeout-ms = <50>;
             key-positions = <13 21>;
-            bindings = <&kp LCMD(RIGHT_BRACKET)>;
+            bindings = <&kp LG(RIGHT_BRACKET)>;
             layers = <0>;
         };
         
         combo_switch_win {
             timeout-ms = <50>;
             key-positions = <10 11>;
-            bindings = <&kp LCMD(GRAVE)>;
+            bindings = <&kp LG(GRAVE)>;
             layers = <0>;
         };
         
         combo_search {
             timeout-ms = <50>;
             key-positions = <11 12>;
-            bindings = <&kp LCMD(LS(F))>;
+            bindings = <&kp LG(LS(F))>;
             layers = <0>;
         };
         
         combo_inspect {
             timeout-ms = <50>;
             key-positions = <20 21>;
-            bindings = <&kp LCMD(LA(I))>;
+            bindings = <&kp LG(LA(I))>;
             layers = <0>;
         };
         
         combo_select_element {
             timeout-ms = <50>;
             key-positions = <11 20>;
-            bindings = <&kp LCMD(LS(C))>;
+            bindings = <&kp LG(LS(C))>;
             layers = <0>;
         };
         
@@ -249,7 +249,7 @@
         combo_new_terminal_split {
             timeout-ms = <50>;
             key-positions = <21 22>;
-            bindings = <&kp LCMD(BACKSLASH)>;
+            bindings = <&kp LG(BACKSLASH)>;
             layers = <0>;
         };
         
@@ -327,7 +327,7 @@
 					right_layer {
             bindings = <
                 &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH    			        &caps_word  &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
-                &mt LCTRL RET &kp UNDER  &kp LPAR  &kp RPAR  &kp PERCENT 			&kp LEFT &kp UP  &kp DOWN  &kp RIGHT &kp SEMICOLON
+                &mt LCTRL RET &kp UNDER  &kp LPAR  &kp RPAR  &kp PERCENT 			&kp LEFT &kp DOWN  &kp UP  &kp RIGHT &kp SEMICOLON
                 &kp PLUS  &mt LALT AT &mt LCMD LBKT &kp RBKT   &kp PIPE    			&kp AMPERSAND &kp STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
                                     &trans &trans  				                    &trans &trans 
             >;
