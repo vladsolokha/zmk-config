@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/outputs.h>
 
 &led_strip {
     chain-length = <23>;
@@ -326,28 +327,28 @@
 
         left_layer {
             bindings = <
-                &kp ESC             &mt LG(LS(4)) LG(LS(5)) &kp LG(LC(SPC)) &paste_new_incog_win &trans 	                &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans 
-	                &mt LSFT RET        &to 3                 &kp DEL              &kp BSPC           &td0	            &kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
-                &kp LG(LA((Z)))   &mt LALT C_VOL_DN       &mt LCMD C_VOL_UP    &kp TAB              &mt C_PP K_MUTE     &kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
-	                                                                                &trans              &trans  					&trans   &trans
+                &kp ESC 	 &mt LG(LS(4)) LG(LS(5)) &kp LG(LC(SPC))	&paste_new_incog_win &trans 	     	&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans 
+	        &mt LSFT RET      &to 3                 &kp DEL              &kp BSPC           &td0	            	&kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
+                &kp LG(LA((Z)))   &mt LALT C_VOL_DN     &mt LCMD C_VOL_UP    &kp TAB              &mt C_PP K_MUTE     	&kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
+	                                                               		&trans   &trans  			&trans   &trans
             >;
 		};
 		
-					right_layer {
+	right_layer {
             bindings = <
                 &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH    			        &caps_word  &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
                 &mt LCTRL RET &kp UNDER  &kp LPAR  &kp RPAR  &kp PERCENT 			&kp LEFT &kp DOWN  &kp UP  &kp RIGHT &kp SEMICOLON
                 &kp PLUS  &mt LALT AT &mt LCMD LBKT &kp RBKT   &kp PIPE    			&kp AMPERSAND &kp STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
-                                    &trans &trans  				                    &trans &trans 
+                                    			&trans &trans  				&trans &trans 
             >;
 		};	
 		
-		tri_layer {
+	tri_layer {
             bindings = <
-                &kp ESC          &kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))       &bt BT_PRV 			    &rgb_ug RGB_BRD       &rgb_ug RGB_BRI  &kp UP          &rgb_ug RGB_HUD &rgb_ug RGB_HUI
-							  &kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &bt BT_NXT  			    &kp C_BRIGHTNESS_INC  &kp LEFT         &kp DOWN        &kp RIGHT       &rgb_ug RGB_SAI  
-                &kp LC(LS(BSPC)) &trans            &kp LC(LS(UP))        &kp LC(LS(RIGHT))      &bt BT_CLR           &kp C_BRIGHTNESS_DEC  &rgb_ug RGB_TOG &rgb_ug RGB_SPD  &rgb_ug RGB_SPI &rgb_ug RGB_SAD  
-                                                                                                &to 0     &trans     &trans    &to 0 
+                &kp ESC          &kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))       &bt BT_PRV 			&rgb_ug RGB_BRD       &rgb_ug RGB_BRI  &kp UP          &rgb_ug RGB_SAD &rgb_ug RGB_SAI
+		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &bt BT_NXT  			&kp C_BRIGHTNESS_INC  &kp LEFT         &kp DOWN        &kp RIGHT       &none 
+                &kp LC(LS(BSPC)) &none            &kp LC(LS(UP))        &kp LC(LS(RIGHT))      &bt BT_CLR          		&kp C_BRIGHTNESS_DEC  &rgb_ug RGB_TOG &rgb_ug RGB_HUI  &none		 &out OUT_BLE  
+                                                                                      &to 0     &trans     			&trans    &to 0 
             >;  
 		};	
         
