@@ -299,7 +299,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <250>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
 	
@@ -327,8 +327,8 @@
 
         left_layer {
             bindings = <
-                &kp ESC 	 &mt LG(LS(4)) LG(LS(5)) &kp LG(LC(SPC))	&paste_new_incog_win &trans 	     	&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans 
-	        &mt LSFT RET      &to 3                 &kp DEL              &kp BSPC           &td0	            	&kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
+                &kp ESC 	 &mt LG(LS(4)) LG(LS(5)) &kp LG(LC(SPC))	&paste_new_incog_win &none 	     	&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &none 
+		&mt LSFT RET      &to 3                 &kp DEL              &kp BSPC           &td0	            	&kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
                 &kp LG(LA((Z)))   &mt LALT C_VOL_DN     &mt LCMD C_VOL_UP    &kp TAB              &mt C_PP K_MUTE     	&kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
 	                                                               		&trans   &trans  			&trans   &trans
             >;
@@ -345,9 +345,9 @@
 		
 	tri_layer {
             bindings = <
-                &kp ESC          &kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))       &rgb_ug RGB_TOG 		&rgb_ug RGB_BRD       &rgb_ug RGB_BRI  &kp UP          &rgb_ug RGB_SAD &rgb_ug RGB_SAI
-		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &bt BT_NXT  			&kp C_BRIGHTNESS_INC  &kp LEFT         &kp DOWN        &kp RIGHT       &rgb_ug RGB_HUI 
-                &kp LC(LS(BSPC)) &none            &kp LC(LS(UP))        &kp LC(LS(RIGHT))      &bt BT_CLR          		&kp C_BRIGHTNESS_DEC  &rgb_ug RGB_EFF &rgb_ug RGB_SPD  &rgb_ug RGB_SPI	 &out OUT_BLE  
+                &bt BT_CLR       &kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))       &bt BT_NXT 			&rgb_ug RGB_HUI  &none  	  &kp UP           &none		&rgb_ug RGB_SAI
+		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &kp C_BRIGHTNESS_INC  		&rgb_ug RGB_BRI  &kp LEFT         &kp DOWN         &kp RIGHT       	&rgb_ug RGB_SAD 
+                &kp LC(LS(BSPC)) &rgb_ug RGB_EFF    &kp LC(LS(UP))        &kp LC(LS(RIGHT))       &kp C_BRIGHTNESS_DEC          &rgb_ug RGB_BRD  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD	&out OUT_BLE  
                                                                                       &to 0     &trans     			&trans    &to 0 
             >;  
 		};	
