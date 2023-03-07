@@ -346,8 +346,8 @@
 	tri_layer {
             bindings = <
                 &kp ESC          &kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))       &bt BT_PRV 			&rgb_ug RGB_BRD       &rgb_ug RGB_BRI  &kp UP          &rgb_ug RGB_SAD &rgb_ug RGB_SAI
-		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &bt BT_NXT  			&kp C_BRIGHTNESS_INC  &kp LEFT         &kp DOWN        &kp RIGHT       &none 
-                &kp LC(LS(BSPC)) &none            &kp LC(LS(UP))        &kp LC(LS(RIGHT))      &bt BT_CLR          		&kp C_BRIGHTNESS_DEC  &rgb_ug RGB_TOG &rgb_ug RGB_HUI  &none		 &out OUT_BLE  
+		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &bt BT_NXT  			&kp C_BRIGHTNESS_INC  &kp LEFT         &kp DOWN        &kp RIGHT       &rgb_ug RGB_HUI 
+                &kp LC(LS(BSPC)) &none            &kp LC(LS(UP))        &kp LC(LS(RIGHT))      &bt BT_CLR          		&kp C_BRIGHTNESS_DEC  &rgb_ug RGB_TOG &rgb_ug RGB_EFF  &rgb_ug RGB_SPD	 &out OUT_BLE  
                                                                                       &to 0     &trans     			&trans    &to 0 
             >;  
 		};	
