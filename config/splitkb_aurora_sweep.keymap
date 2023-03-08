@@ -129,7 +129,7 @@
         };
 
         combo_focus_left {
-            timeout-ms = <50>;
+            timeout-ms = <35>;
             key-positions = <17 26>;
             bindings = <&kp LC(H)>;
             layers = <0>;
