@@ -310,6 +310,16 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&sl>;
         };
+	
+	lc_spc: behavior_lc_spc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "lc_spc";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <210>;
+	    quick-tap-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
@@ -320,7 +330,7 @@
                 &kp Q &kp W &kp F &kp P &kp B 					&kp J &kp L &kp U &kp Y &kp QUOT 
                 &kp A &kp R &kp S &kp T &kp G 			        	&kp M &kp N &kp E &kp I &kp O
                 &mt LC(LA(LSHIFT)) Z &mt LALT X &mt LCMD C &kp D &kp V    	&kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LSHIFT)) SLASH
-                                	&mo_sl 1 1 &sk LSFT 	 		&mt RCTRL SPC &mo_sl 2 2
+                                	&mo_sl 1 1 &sk LSFT 	 		&lc_spc RCTRL SPC &mo_sl 2 2
             >;
 		};
 
