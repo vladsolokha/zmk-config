@@ -142,6 +142,20 @@
             bindings = <&kp LC(L)>;
             layers = <0>;
         };
+	
+        combo_split_left {
+            timeout-ms = <37>;
+            key-positions = <16 27>;
+            bindings = <&kp LC(LA((H)))>;
+            layers = <0>;
+        };
+
+        combo_split_right {
+            timeout-ms = <37>;
+            key-positions = <18 27>;
+            bindings = <&kp LC(LA((L)))>;
+            layers = <0>;
+        };
 
         combo_tab_next {
             timeout-ms = <37>;
