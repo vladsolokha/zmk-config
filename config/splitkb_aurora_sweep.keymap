@@ -363,7 +363,7 @@
 			, <&macro_tap &rgb_ug RGB_COLOR_HSB(120,95,10)>
 			, <&macro_pause_for_release>
 			, <&macro_release &mo 2>
-			, <&macro_tap &rgb_ug RGB_OFF>;
+			, <&macro_tap &rgb_ug RGB_OFF>
 			;
 		};	
 		
