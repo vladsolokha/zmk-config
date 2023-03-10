@@ -129,6 +129,20 @@
             bindings = <&kp PAGE_UP>;
             layers = <0>;
         };
+	
+	combo_duplicate_code_down {
+            timeout-ms = <45>;
+            key-positions = <26 27 28>;
+	    bindings = <&kp LA(LS(DOWN))>;
+            layers = <0>;
+        };
+
+        combo_page_up {
+            timeout-ms = <37>;
+            key-positions = <16 17 18>;
+            bindings = <&kp LA(LS(UP))>;
+            layers = <0>;
+        };
 
         combo_focus_left {
             timeout-ms = <33>;
