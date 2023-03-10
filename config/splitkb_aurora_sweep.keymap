@@ -351,8 +351,8 @@
 
         extend_layer {
             bindings = <
-                &kp ESC 	 &mt LG(LS(NUM_5)) LG(LS(NUM_4))  &kp LG(LC(SPC))	&paste_new_incog_win 	&layer_4_macro 	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &key_repeat 
-		&mt LSFT RET      &layer_3_macro                 &kp DEL              		&kp BSPC           	&td0	            	&kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
+                &kp ESC 	 &mt LG(LS(NUM_5)) LG(LS(NUM_4))  &kp LG(LC(SPC))	&paste_new_incog_win 	&to 4 	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &key_repeat 
+		&mt LSFT RET      &to 3                 &kp DEL              		&kp BSPC           	&td0	            	&kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
                 &kp LG(LA((Z)))   &mt LALT C_VOL_DN     &mt LCMD C_VOL_UP    		&kp TAB              	&mt K_MUTE C_PP     	&kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
 	                                                               			&trans   		&trans  		&trans   &trans
             >;
@@ -372,7 +372,7 @@
                 &kp ESC       	&kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))       &none 				&none  	&none  	 	 &kp UP        &none		&none
 		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &kp C_BRIGHTNESS_INC  		&none  	&kp LEFT   	&kp DOWN      &kp RIGHT       &none 
                 &kp LC(LS(BSPC)) &rgb_ug RGB_EFF    &kp LC(LS(UP))        &kp LC(LS(RIGHT))       &kp C_BRIGHTNESS_DEC          &none  	&none  		&none  		&none		&none  
-                                                                                      &layer_0_macro     &trans     			&trans    &layer_0_macro
+                                                                                      &to 0     &trans     			&trans    &to 0
             >;  
 		};
 		
@@ -381,7 +381,7 @@
                 &bt BT_CLR 	&rgb_ug RGB_EFF   	&rgb_ug RGB_EFF     	&rgb_ug RGB_HUI 	&out OUT_BLE 		&none &none &none &none &none
 		&bt BT_NXT  	&rgb_ug RGB_SAI  	&rgb_ug RGB_SPI 	&rgb_ug RGB_HUD 	&rgb_ug RGB_BRI  	&none &none &none &none &none 
                 &bt BT_PRV 	&rgb_ug RGB_SAD    	&rgb_ug RGB_SPD       	&rgb_ug RGB_TOG 	&rgb_ug RGB_BRD         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    
-                                                                        	&layer_0_macro     		&trans     		&trans &layer_0_macro
+                                                                        	&to 0     		&trans     		&trans &to 0
             >;  
 		};	
         
