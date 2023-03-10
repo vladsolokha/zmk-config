@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: esyo-net
-      url-base: https://github.com/esyo-net/zmk.git
+      url-base: https://github.com/esyo-net
   projects:
     - name: zmk
       remote: esyo-net
