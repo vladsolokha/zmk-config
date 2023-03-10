@@ -299,6 +299,7 @@
     };
 
     macros {
+    
         paste_new_incog_win: paste_new_incog_win {
             label = "paste_new_incog_win";
             compatible = "zmk,behavior-macro";
@@ -313,6 +314,28 @@
                 ;
         }; 
 		
+	layer_3_macro: layer_3_macro {
+            label = "layer_3_macro";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+		bindings
+			= <&macro_tap &to 3>
+			, <&macro_tap &rgb_ug RGB_ON>
+			, <&macro_tap &rgb_ug RGB_COLOR_HSB(235,100,10)>
+			;
+	};
+						
+	layer_4_macro: layer_4_macro {
+            label = "layer_4_macro";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+		bindings
+			= <&macro_tap &to 4>				
+			, <&macro_tap &rgb_ug RGB_ON>
+			, <&macro_tap &rgb_ug RGB_COLOR_HSB(10,100,10)>
+			;
+	};
+
 		
     };
 
@@ -351,8 +374,8 @@
 
         extend_layer {
             bindings = <
-                &kp ESC 	 &mt LG(LS(NUM_5)) LG(LS(NUM_4))  &kp LG(LC(SPC))	&paste_new_incog_win 	&to 4 	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &key_repeat 
-		&mt LSFT RET      &to 3                 &kp DEL              		&kp BSPC           	&td0	            	&kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
+                &kp ESC 	 &mt LG(LS(NUM_5)) LG(LS(NUM_4))  &kp LG(LC(SPC))	&paste_new_incog_win 	&layer_4_macro 	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &key_repeat 
+		&mt LSFT RET      &layer_3_macro                 &kp DEL              		&kp BSPC           	&td0	            	&kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
                 &kp LG(LA((Z)))   &mt LALT C_VOL_DN     &mt LCMD C_VOL_UP    		&kp TAB              	&mt K_MUTE C_PP     	&kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
 	                                                               			&trans   		&trans  		&trans   &trans
             >;
