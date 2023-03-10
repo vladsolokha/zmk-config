@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &led_strip {
-    chain-length = <23>;
+    chain-length = <46>;
 };
 
 &mt {
@@ -326,14 +326,14 @@
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
 				
-	mo_sl: momentary_sticky_layer {
-	  	compatible = "zmk,behavior-hold-tap";
-		label = "MOMENTARY_STICKY_LAYER";
-	  	#binding-cells = <2>;
-		flavor = "hold-preferred";
-		tapping-term-ms = <210>;
-	  	bindings = <&mo>, <&sl>;
-		};
+        mo_sl: momentary_sticky_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOMENTARY_STICKY_LAYER";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <210>;
+            bindings = <&mo>, <&sl>;
+        };
 	
     };
 
