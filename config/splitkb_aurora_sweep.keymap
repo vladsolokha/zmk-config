@@ -381,7 +381,7 @@
 		
 		sl_rgb_1: sticky_rgb_layer_1 {
 			  compatible = "zmk,behavior-sticky-key";
-			  label = "STICKY_RGB_LAYER_1"
+			  label = "STICKY_RGB_LAYER_1";
 			  #binding-cells = <1>;
 			  bindings = <&mo_rgb_1>;
 			  release-after-ms = <1000>;
@@ -390,7 +390,7 @@
 		
 		sl_rgb_2: sticky_rgb_layer_2 {
 			  compatible = "zmk,behavior-sticky-key";
-			  label = "STICKY_RGB_LAYER_2"
+			  label = "STICKY_RGB_LAYER_2";
 			  #binding-cells = <1>;
 			  bindings = <&mo_rgb_2>;
 			  release-after-ms = <1000>;
