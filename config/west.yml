@@ -2,9 +2,11 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: esyo-net
+      url-base: https://github.com/esyo-net/zmk.git
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: esyo-net
       revision: main
       import: app/west.yml
   self:
