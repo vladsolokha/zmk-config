@@ -130,16 +130,16 @@
             layers = <0>;
         };
 	
-	combo_duplicate_code_down {
+				combo_duplicate_code_down {
             timeout-ms = <45>;
             key-positions = <26 27 28>;
-	    bindings = <&kp LA(LS(DOWN))>;
+				    bindings = <&kp LA(LS(DOWN))>;
             layers = <0>;
         };
 
-        combo_page_up {
+        combo_duplicate_code_up {
             timeout-ms = <37>;
-            key-positions = <16 17 18>;
+            key-positions = <6 7 8>;
             bindings = <&kp LA(LS(UP))>;
             layers = <0>;
         };
