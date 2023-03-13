@@ -40,91 +40,91 @@
         compatible = "zmk,combos";
 
         combo_esc {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <16 17>;
             bindings = <&kp ESC>;
             layers = <0>;
         };
         
             combo_return {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <17 18>;
             bindings = <&kp RETURN>;
             layers = <0>;
         };
         
         combo_save {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <12 13>;
             bindings = <&kp LG(S)>;
             layers = <0>;
         };
         
         combo_copy {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <13 22>;
             bindings = <&kp LG(C)>;
             layers = <0>;
         };
         
         combo_paste {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <12 23>;
             bindings = <&kp LG(V)>;
             layers = <0>;
         };
         
         combo_bol {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <6 7>;
             bindings = <&kp LG(LEFT)>;
             layers = <0>;
         };
         
         combo_eol {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <7 8>;
             bindings = <&kp LG(RIGHT)>;
             layers = <0>;
         };
 
         combo_word_back {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <7 16>;
             bindings = <&kp LA(LEFT)>;
             layers = <0>;
         };
 
         combo_word_forward {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <7 18>;
             bindings = <&kp LA(RIGHT)>;
             layers = <0>;
         };
 
         combo_home {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <6 17>;
             bindings = <&kp HOME>;
             layers = <0>;
         };
 
         combo_end {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <8 17>;
             bindings = <&kp END>;
             layers = <0>;
         };
 
         combo_page_down {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <26 27>;
             bindings = <&kp PAGE_DOWN>;
             layers = <0>;
         };
 
         combo_page_up {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <27 28>;
             bindings = <&kp PAGE_UP>;
             layers = <0>;
@@ -138,175 +138,175 @@
         };
 
         combo_duplicate_code_up {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <6 7 8>;
             bindings = <&kp LA(LS(UP))>;
             layers = <0>;
         };
 
         combo_focus_left {
-            timeout-ms = <33>;
+            timeout-ms = <35>;
             key-positions = <17 26>;
             bindings = <&kp LC(H)>;
             layers = <0>;
         };
 
         combo_focus_right {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <17 28>;
             bindings = <&kp LC(L)>;
             layers = <0>;
         };
 	
         combo_split_left {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <16 27>;
             bindings = <&kp LC(LA((H)))>;
             layers = <0>;
         };
 
         combo_split_right {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <18 27>;
             bindings = <&kp LC(LA((L)))>;
             layers = <0>;
         };
 
         combo_tab_next {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <2 13>;
             bindings = <&kp LC(TAB)>;
             layers = <0>;
         };
 
         combo_tab_previous {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <2 11>;
             bindings = <&kp LC(LS(TAB))>;
             layers = <0>;
         };
 
         combo_tab_swap_left {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <1 12>;
             bindings = <&kp LC(LS(PAGE_UP))>;
             layers = <0>;
         };
 
         combo_tab_swap_right {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <3 12>;
             bindings = <&kp LC(LS(PAGE_DOWN))>;
             layers = <0>;
         };
         
         combo_panel_down {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <0 1>;
             bindings = <&kp LG(LC(LA(J)))>;
             layers = <0>;
         };
         
         combo_file_explorer {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <1 2>;
             bindings = <&kp LG(LS(E))>;
             layers = <0>;
         };
         
         combo_open_file {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <2 3>;
             bindings = <&kp LG(P)>;
             layers = <0>;
         };
         
         combo_close_panel {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <1 10>;
             bindings = <&kp LG(B)>;
             layers = <0>;
         };
         
         combo_www_back {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <1 13>;
             bindings = <&kp LG(LEFT_BRACKET)>;
             layers = <0>;
         };
         
         combo_www_forward {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <13 21>;
             bindings = <&kp LG(RIGHT_BRACKET)>;
             layers = <0>;
         };
         
         combo_switch_win {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <10 11>;
             bindings = <&kp LG(GRAVE)>;
             layers = <0>;
         };
         
         combo_search {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <11 12>;
             bindings = <&kp LG(LS(F))>;
             layers = <0>;
         };
         
         combo_inspect {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <20 21>;
             bindings = <&kp LG(LA(I))>;
             layers = <0>;
         };
         
         combo_select_element {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <11 20>;
             bindings = <&kp LG(LS(C))>;
             layers = <0>;
         };
         
         combo_terminal {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <22 23>;
             bindings = <&kp LC(GRAVE)>;
             layers = <0>;
         };
         
         combo_new_terminal_split {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <21 22>;
             bindings = <&kp LG(BACKSLASH)>;
             layers = <0>;
         };
         
         combo_open_definition {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <21 23>;
             bindings = <&kp LC(LS(D))>;
             layers = <0>;
         };
         
         combo_live_share {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <12 21>;
             bindings = <&kp LC(LS(W))>;
             layers = <0>;
         };
                 
 	combo_live_share_follow {
-            timeout-ms = <45>;
+            timeout-ms = <40>;
             key-positions = <1 2 3>;
             bindings = <&kp LG(LA(F))>;
             layers = <0>;
         };
         
         combo_git {
-            timeout-ms = <37>;
+            timeout-ms = <40>;
             key-positions = <11 22>;
             bindings = <&kp LC(LS(G))>;
             layers = <0>;
