@@ -4,10 +4,16 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: esyo-net
       url-base: https://github.com/esyo-net
+    - name: Xoffio
+      url-base: https://github.com/Xoffio
   projects:
     - name: zmk
       remote: esyo-net
       revision: main
+      import: app/west.yml
+    - name: zmk
+      remote: Xoffio
+      revision: xo-status-fx
       import: app/west.yml
   self:
     path: config
