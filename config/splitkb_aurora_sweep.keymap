@@ -131,14 +131,14 @@
         };
 	
 				combo_duplicate_code_down {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             key-positions = <26 27 28>;
 				    bindings = <&kp LA(LS(DOWN))>;
             layers = <0>;
         };
 
         combo_duplicate_code_up {
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             key-positions = <6 7 8>;
             bindings = <&kp LA(LS(UP))>;
             layers = <0>;
@@ -152,7 +152,7 @@
         };
 
         combo_focus_right {
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             key-positions = <17 28>;
             bindings = <&kp LC(L)>;
             layers = <0>;
@@ -299,7 +299,7 @@
         };
                 
 	combo_live_share_follow {
-            timeout-ms = <40>;
+            timeout-ms = <50>;
             key-positions = <1 2 3>;
             bindings = <&kp LG(LA(F))>;
             layers = <0>;
