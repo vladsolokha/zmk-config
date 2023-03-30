@@ -357,7 +357,7 @@
                 
         default_layer {
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B 					&kp J &kp L &kp U &kp Y &kp QUOT 
+                &kp Q &kp W &kp F uz   &kp P &kp B 					&kp J &kp L &kp U &kp Y &kp QUOT 
                 &kp A &kp R &kp S &kp T &kp G 			        	&kp M &kp N &kp E &kp I &kp O
                 &mt LC(LA(LSHIFT)) Z &mt LALT X &mt LCMD C &kp D &kp V    	&kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LSHIFT)) SLASH
                                 	&mo_sl 1 1 &sk LSFT 	 		&mt RCTRL SPC &mo_sl 2 2
@@ -366,9 +366,9 @@
 
         extend_layer {
             bindings = <
-                &kp ESC 	 &mt LG(LS(NUM_5)) LG(LS(NUM_4))  &kp LG(LC(SPC))	&paste_new_incog_win 	&to 4	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &key_repeat 
-		&mt LSFT RET      &to 3                 &kp DEL              		&kp BSPC           	&td0	            	&kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
-                &kp LG(LA((Z)))   &mt LALT C_VOL_DN     &mt LCMD C_VOL_UP    		&kp TAB              	&mt K_MUTE C_PP     	&kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
+                &kp C_VOL_UP 	 &mt LG(LS(NUM_5)) LG(LS(NUM_4))  &kp LG(LC(SPC))	&paste_new_incog_win 	&to 4	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &key_repeat 
+		&mt LSFT C_VOL_DN &kp RET       		 &kp DEL             	&kp BSPC      		&to 3               	&kp MINUS &kp NUM_4  &kp NUM_5 &kp NUM_6 &kp RET 
+                &mt K_MUTE C_PP   &mt LALT LG(LA((Z)))   	&mt LCMD ESC    	&kp TAB      		&td0	           	&kp STAR &kp NUM_1 &kp NUM_2 &kp NUM_3  &kp NUM_0 
 	                                                               			&trans   		&trans  		&trans   &trans
             >;
 		};
