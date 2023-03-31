@@ -384,10 +384,10 @@
 		
 	window_layer {
             bindings = <
-                &kp ESC       	&kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))       &none 				&none  	&none  	 	 &kp UP        &none		&none
+                &kp ESC       	&kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))        &none 				&none  	&none  	 	 &kp UP        &none		&none
 		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &kp C_BRIGHTNESS_INC  		&none  	&kp LEFT   	&kp DOWN      &kp RIGHT       &none 
-                &kp LC(LS(BSPC)) &rgb_ug RGB_EFF    &kp LC(LS(UP))        &kp LC(LS(RIGHT))       &kp C_BRIGHTNESS_DEC          &none  	&none  		&none  		&none		&none  
-                                                                                      &to 0     &trans     			&trans    &to 0
+                &kp LC(LS(BSPC)) &rgb_ug RGB_EFF    &kp LC(LS(UP))        &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC            &none  	&none  		&none  		&none		&none  
+                                                                               &trans       	&to 0          			&trans    &to 0
             >;  
 		};
 		
@@ -396,7 +396,7 @@
                 &bt BT_CLR 	&ext_power EP_TOG   	&rgb_ug RGB_EFF     	&rgb_ug RGB_TOG  	&out OUT_BLE 		&none &none &none &none &none
 		&bt BT_NXT  	&rgb_ug RGB_SAI  	&rgb_ug RGB_SPI 	&rgb_ug RGB_HUI 	&rgb_ug RGB_BRI  	&none &none &none &none &none 
                 &bt BT_PRV 	&rgb_ug RGB_SAD    	&rgb_ug RGB_SPD        	&rgb_ug RGB_HUD		&rgb_ug RGB_BRD         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    
-                                                                        	&to 0     		&trans     		&trans &to 0
+                                                                        	&trans 			&to 0     		&trans &to 0
             >;  
 		};	
         
