@@ -2,12 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: Xoffio
-      url-base: https://github.com/Xoffio
   projects:
     - name: zmk
-      remote: Xoffio
-      revision: xo-status-fx
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config
