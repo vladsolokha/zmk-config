@@ -130,10 +130,10 @@
             layers = <0>;
         };
 	
-				combo_duplicate_code_down {
+		combo_duplicate_code_down {
             timeout-ms = <50>;
             key-positions = <26 27 28>;
-				    bindings = <&kp LA(LS(DOWN))>;
+	    	bindings = <&kp LA(LS(DOWN))>;
             layers = <0>;
         };
 
@@ -328,6 +328,28 @@
                 , <&macro_release &kp LCMD>
                 ;
         }; 
+
+		/**
+		* Params: 
+		* 1. Layer to switch to
+		* 2. Color to display while layer is active
+		*
+		* Example:
+		* `&layer NUM_LAYER RGB_COLOR_HSB(hue, sat, bright) *use RGB_TOG to turn off on layer 0
+		**/
+		layer_switch: layer_switch {
+            label = "to layer switch with rgb lights";
+            compatible = "zmk,behavior-macro-two-param";
+    		wait-ms = <0>;
+    		tap-ms = <0>;
+    		#binding-cells = <2>;
+			bindings
+			    = <&macro_param_1to1>
+				, <&macro_press &to MACRO_PLACEHOLDER>
+				, <&macro_param_2to2>
+			    , <&macro_tap &rgb_ug MACRO_PLACEHOLDER>
+			    ;
+		};
 		
     };
 
@@ -341,13 +363,13 @@
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
 				
-	mo_sl: momentary_sticky_layer {
-	  	compatible = "zmk,behavior-hold-tap";
-		label = "MOMENTARY_STICKY_LAYER";
-	  	#binding-cells = <2>;
-		flavor = "hold-preferred";
-		tapping-term-ms = <210>;
-	  	bindings = <&mo>, <&sl>;
+		mo_sl: momentary_sticky_layer {
+		  	compatible = "zmk,behavior-hold-tap";
+			label = "MOMENTARY_STICKY_LAYER";
+		  	#binding-cells = <2>;
+			flavor = "hold-preferred";
+			tapping-term-ms = <210>;
+		  	bindings = <&mo>, <&sl>;
 		};
 	
     };
@@ -366,8 +388,8 @@
 
         extend_layer {
             bindings = <
-                &td0  	 	&mt LG(LS(NUM_5)) LG(LS(NUM_4)) &mt LC(LA(LS(G))) LG(LC(SPC))		&paste_new_incog_win 	&to 4	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
-		&kp C_VOL_UP 	&mt LSFT RET      	 	&kp DEL            	&kp BSPC      		&to 3             	&kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
+                &td0  	 	&mt LG(LS(NUM_5)) LG(LS(NUM_4)) &mt LC(LA(LS(G))) LG(LC(SPC))		&paste_new_incog_win 	&layer_switch 4	RGB_COLOR_HSB(30, 95, 10)     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
+		&kp C_VOL_UP 	&mt LSFT RET      	 	&kp DEL            	&kp BSPC      		&layer_switch 3 RGB_COLOR_HSB(230, 95, 10)             	&kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
                 &kp C_VOL_DN 	&mt LALT C_PP 			&mt LCMD ESC 		&kp TAB      		&kp LG(LS((M)))        	&kp STAR &kp NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3  &trans 
 	                                                               			&trans   		&trans  		&trans   &trans
             >;
@@ -387,7 +409,7 @@
                 &kp ESC       	&kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))        &none 				&none  	&none  	 	 &kp UP        &none		&none
 		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &kp C_BRIGHTNESS_INC  		&none  	&kp LEFT   	&kp DOWN      &kp RIGHT       &none 
                 &kp LC(LS(BSPC)) &rgb_ug RGB_EFF    &kp LC(LS(UP))        &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC            &none  	&none  		&none  		&none		&none  
-                                                                               &trans       	&to 0          			&trans    &to 0
+                                                                               &trans       	&layer_switch 0 RGB_OFF          			&trans    &layer_switch 0 RGB_OFF 
             >;  
 		};
 		
@@ -396,7 +418,7 @@
                 &bt BT_CLR 	&ext_power EP_TOG   	&rgb_ug RGB_EFF     	&rgb_ug RGB_TOG  	&out OUT_BLE 		&none &none &none &none &none
 		&bt BT_NXT  	&rgb_ug RGB_SAI  	&rgb_ug RGB_SPI 	&rgb_ug RGB_HUI 	&rgb_ug RGB_BRI  	&none &none &none &none &none 
                 &bt BT_PRV 	&rgb_ug RGB_SAD    	&rgb_ug RGB_SPD        	&rgb_ug RGB_HUD		&rgb_ug RGB_BRD         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    
-                                                                        	&trans 			&to 0     		&trans &to 0
+                                                                        	&trans 			&layer_switch 0 RGB_OFF      		&trans &layer_switch 0 RGB_OFF 
             >;  
 		};	
         
