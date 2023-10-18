@@ -366,7 +366,7 @@
 
         extend_layer {
             bindings = <
-                &td0  	 	&mt LG(LS(NUM_5)) LG(LS(NUM_4)) &mt LC(LA(LS(G))) LG(LC(SPC))		&paste_new_incog_win 	&to 4	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
+                &td0  	 	&mt LG(LS(NUM_5)) LG(LS(NUM_4)) &mt LC(LA(LS(G))) LG(LC(SPC))		&kp LC(F2) 	&to 4	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
 		&kp C_VOL_UP 	&mt LSFT RET      	 	&kp DEL            	&kp BSPC      		&to 3             	&kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
                 &kp C_VOL_DN 	&mt LALT C_PP 			&mt LCMD ESC 		&kp TAB      		&kp LG(LS((M)))        	&kp STAR &kp NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3  &trans 
 	                                                               			&trans   		&trans  		&trans   &trans
