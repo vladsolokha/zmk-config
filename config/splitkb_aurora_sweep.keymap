@@ -39,7 +39,11 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
+        /* 
+				* Global combos 
+				*/
+
+				combo_esc {
             timeout-ms = <40>;
             key-positions = <16 17>;
             bindings = <&kp ESC>;
@@ -56,7 +60,7 @@
         combo_save {
             timeout-ms = <40>;
             key-positions = <12 13>;
-            bindings = <&kp LG(S)>;
+            bindings = <&kp LC(S)>;
             layers = <0>;
         };
         
@@ -129,7 +133,78 @@
             bindings = <&kp PAGE_UP>;
             layers = <0>;
         };
+
+        /* 
+				* Browser combos (Chrome)
+				*/
+
+        combo_tab_next {
+            timeout-ms = <40>;
+            key-positions = <2 13>;
+            bindings = <&kp LC(TAB)>;
+            layers = <0>;
+        };
+
+        combo_tab_previous {
+            timeout-ms = <40>;
+            key-positions = <2 11>;
+            bindings = <&kp LC(LS(TAB))>;
+            layers = <0>;
+        };
+
+        combo_tab_swap_left {
+            timeout-ms = <40>;
+            key-positions = <1 12>;
+            bindings = <&kp LC(LS(PAGE_UP))>;
+            layers = <0>;
+        };
+
+        combo_tab_swap_right {
+            timeout-ms = <40>;
+            key-positions = <3 12>;
+            bindings = <&kp LC(LS(PAGE_DOWN))>;
+            layers = <0>;
+        };
+ 
+        combo_www_back {
+            timeout-ms = <40>;
+            key-positions = <1 13>;
+            bindings = <&kp LG(LEFT_BRACKET)>;
+            layers = <0>;
+        };
+        
+        combo_www_forward {
+            timeout-ms = <40>;
+            key-positions = <13 21>;
+            bindings = <&kp LG(RIGHT_BRACKET)>;
+            layers = <0>;
+        };
+        
+        combo_switch_win {
+            timeout-ms = <40>;
+            key-positions = <10 11>;
+            bindings = <&kp LG(GRAVE)>;
+            layers = <0>;
+        };
+        
+        combo_inspect {
+            timeout-ms = <40>;
+            key-positions = <20 21>;
+            bindings = <&kp LG(LA(I))>;
+            layers = <0>;
+        };
+        
+        combo_select_element {
+            timeout-ms = <40>;
+            key-positions = <11 20>;
+            bindings = <&kp LG(LS(C))>;
+            layers = <0>;
+        };
 	
+				/* 
+				* Code specific combos 
+				*/
+
 				combo_duplicate_code_down {
             timeout-ms = <50>;
             key-positions = <26 27 28>;
@@ -172,34 +247,6 @@
             layers = <0>;
         };
 
-        combo_tab_next {
-            timeout-ms = <40>;
-            key-positions = <2 13>;
-            bindings = <&kp LC(TAB)>;
-            layers = <0>;
-        };
-
-        combo_tab_previous {
-            timeout-ms = <40>;
-            key-positions = <2 11>;
-            bindings = <&kp LC(LS(TAB))>;
-            layers = <0>;
-        };
-
-        combo_tab_swap_left {
-            timeout-ms = <40>;
-            key-positions = <1 12>;
-            bindings = <&kp LC(LS(PAGE_UP))>;
-            layers = <0>;
-        };
-
-        combo_tab_swap_right {
-            timeout-ms = <40>;
-            key-positions = <3 12>;
-            bindings = <&kp LC(LS(PAGE_DOWN))>;
-            layers = <0>;
-        };
-        
         combo_panel_down {
             timeout-ms = <40>;
             key-positions = <0 1>;
@@ -228,45 +275,10 @@
             layers = <0>;
         };
         
-        combo_www_back {
-            timeout-ms = <40>;
-            key-positions = <1 13>;
-            bindings = <&kp LG(LEFT_BRACKET)>;
-            layers = <0>;
-        };
-        
-        combo_www_forward {
-            timeout-ms = <40>;
-            key-positions = <13 21>;
-            bindings = <&kp LG(RIGHT_BRACKET)>;
-            layers = <0>;
-        };
-        
-        combo_switch_win {
-            timeout-ms = <40>;
-            key-positions = <10 11>;
-            bindings = <&kp LG(GRAVE)>;
-            layers = <0>;
-        };
-        
         combo_search {
             timeout-ms = <40>;
             key-positions = <11 12>;
             bindings = <&kp LG(LS(F))>;
-            layers = <0>;
-        };
-        
-        combo_inspect {
-            timeout-ms = <40>;
-            key-positions = <20 21>;
-            bindings = <&kp LG(LA(I))>;
-            layers = <0>;
-        };
-        
-        combo_select_element {
-            timeout-ms = <40>;
-            key-positions = <11 20>;
-            bindings = <&kp LG(LS(C))>;
             layers = <0>;
         };
         
@@ -298,7 +310,7 @@
             layers = <0>;
         };
                 
-	combo_live_share_follow {
+				combo_live_share_follow {
             timeout-ms = <50>;
             key-positions = <1 2 3>;
             bindings = <&kp LG(LA(F))>;
@@ -366,7 +378,7 @@
 
         extend_layer {
             bindings = <
-                &td0  	 	&mt LG(LS(NUM_5)) LG(LS(NUM_4)) &mt LC(LA(LS(G))) LG(LC(SPC))		&kp LC(F2) 	&to 4	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
+                &td0  	 	&mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LG(LC(SPC))		&kp LC(F2) 	&to 4	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
 		&kp C_VOL_UP 	&mt LSFT RET      	 	&kp DEL            	&kp BSPC      		&to 3             	&kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
                 &kp C_VOL_DN 	&mt LALT C_PP 			&mt LCMD ESC 		&kp TAB      		&kp LG(LS((M)))        	&kp STAR &kp NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3  &trans 
 	                                                               			&trans   		&trans  		&trans   &trans
