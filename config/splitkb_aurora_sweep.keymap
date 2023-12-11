@@ -39,18 +39,18 @@
     combos {
         compatible = "zmk,combos";
 
-        /* 
-				* Global combos 
-				*/
+        /************************************
+	********** Global combos  ***********
+	*************************************/
 
-				combo_esc {
+	combo_esc {
             timeout-ms = <40>;
             key-positions = <16 17>;
             bindings = <&kp ESC>;
             layers = <0>;
         };
         
-            combo_return {
+        combo_return {
             timeout-ms = <50>;
             key-positions = <17 18>;
             bindings = <&kp RETURN>;
@@ -63,6 +63,13 @@
             bindings = <&kp LC(S)>;
             layers = <0>;
         };
+	
+	combo_command_save {
+            timeout-ms = <40>;
+            key-positions = <2 3>;
+            bindings = <&kp LG(S)>;
+            layers = <0>;
+        }; 
         
         combo_copy {
             timeout-ms = <40>;
@@ -77,7 +84,28 @@
             bindings = <&kp LG(V)>;
             layers = <0>;
         };
+
+	combo_control_space {
+            timeout-ms = <40>;
+            key-positions = <1 2>;
+            bindings = <&kp LC(SPACE)>;
+            layers = <0>;
+        };
         
+        combo_switch_win {
+            timeout-ms = <40>;
+            key-positions = <10 11>;
+            bindings = <&kp LG(GRAVE)>;
+            layers = <0>;
+        };
+
+        combo_key_repeat {
+            timeout-ms = <40>;
+            key-positions = <11 12>;
+            bindings = <&key_repeat>;
+            layers = <0>;
+        };
+
         combo_bol {
             timeout-ms = <40>;
             key-positions = <6 7>;
@@ -134,9 +162,9 @@
             layers = <0>;
         };
 
-        /* 
-				* Browser combos (Chrome)
-				*/
+	/*************************************
+	******  Browser combos (Chrome)  *****
+	*************************************/
 
         combo_tab_next {
             timeout-ms = <40>;
@@ -180,13 +208,6 @@
             layers = <0>;
         };
         
-        combo_switch_win {
-            timeout-ms = <40>;
-            key-positions = <10 11>;
-            bindings = <&kp LG(GRAVE)>;
-            layers = <0>;
-        };
-        
         combo_inspect {
             timeout-ms = <40>;
             key-positions = <20 21>;
@@ -196,19 +217,19 @@
         
         combo_select_element {
             timeout-ms = <40>;
-            key-positions = <11 20>;
+            key-positions = <21 22>;
             bindings = <&kp LG(LS(C))>;
             layers = <0>;
         };
 	
-				/* 
-				* Code specific combos 
-				*/
+	/*************************************
+	******  Code specific combos   *******
+	**************************************/ 
 
-				combo_duplicate_code_down {
+	combo_duplicate_code_down {
             timeout-ms = <50>;
             key-positions = <26 27 28>;
-				    bindings = <&kp LA(LS(DOWN))>;
+	    bindings = <&kp LA(LS(DOWN))>;
             layers = <0>;
         };
 
@@ -236,35 +257,14 @@
         combo_split_left {
             timeout-ms = <40>;
             key-positions = <16 27>;
-            bindings = <&kp LC(LA((H)))>;
+            bindings = <&kp LC(LA((LEFT)))>;
             layers = <0>;
         };
 
         combo_split_right {
             timeout-ms = <40>;
             key-positions = <18 27>;
-            bindings = <&kp LC(LA((L)))>;
-            layers = <0>;
-        };
-
-        combo_panel_down {
-            timeout-ms = <40>;
-            key-positions = <0 1>;
-            bindings = <&kp LG(LC(LA(J)))>;
-            layers = <0>;
-        };
-        
-        combo_file_explorer {
-            timeout-ms = <40>;
-            key-positions = <1 2>;
-            bindings = <&kp LG(LS(E))>;
-            layers = <0>;
-        };
-        
-        combo_open_file {
-            timeout-ms = <40>;
-            key-positions = <2 3>;
-            bindings = <&kp LG(P)>;
+            bindings = <&kp LC(LA((RIGHT)))>;
             layers = <0>;
         };
         
@@ -275,24 +275,10 @@
             layers = <0>;
         };
         
-        combo_search {
-            timeout-ms = <40>;
-            key-positions = <11 12>;
-            bindings = <&kp LG(LS(F))>;
-            layers = <0>;
-        };
-        
         combo_terminal {
             timeout-ms = <40>;
             key-positions = <22 23>;
             bindings = <&kp LC(GRAVE)>;
-            layers = <0>;
-        };
-        
-        combo_new_terminal_split {
-            timeout-ms = <40>;
-            key-positions = <21 22>;
-            bindings = <&kp LG(BACKSLASH)>;
             layers = <0>;
         };
         
@@ -302,28 +288,6 @@
             bindings = <&kp LC(LS(D))>;
             layers = <0>;
         };
-        
-        combo_live_share {
-            timeout-ms = <40>;
-            key-positions = <12 21>;
-            bindings = <&kp LC(LS(W))>;
-            layers = <0>;
-        };
-                
-				combo_live_share_follow {
-            timeout-ms = <50>;
-            key-positions = <1 2 3>;
-            bindings = <&kp LG(LA(F))>;
-            layers = <0>;
-        };
-        
-        combo_git {
-            timeout-ms = <40>;
-            key-positions = <11 22>;
-            bindings = <&kp LC(LS(G))>;
-            layers = <0>;
-        };
-    };
 
     macros {
     
@@ -398,7 +362,7 @@
             bindings = <
                 &kp ESC       	&kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))        &none 				&none  	&none  	 	 &kp UP        &none		&none
 		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &kp C_BRIGHTNESS_INC  		&none  	&kp LEFT   	&kp DOWN      &kp RIGHT       &none 
-                &kp LC(LS(BSPC)) &rgb_ug RGB_EFF    &kp LC(LS(UP))        &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC            &none  	&none  		&none  		&none		&none  
+                &kp LC(LS(BSPC)) &kp LC(LS(BSPC))    &kp LC(LS(UP))        &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC            &none  	&none  		&none  		&none		&none  
                                                                                &trans       	&to 0          			&trans    &to 0
             >;  
 		};
