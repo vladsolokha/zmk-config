@@ -91,7 +91,14 @@
             bindings = <&kp LC(SPACE)>;
             layers = <0>;
         };
-        
+
+     	combo_app_switcher {
+            timeout-ms = <40>;
+            key-positions = <22 23>;
+            bindings = <&kp LG(TAB)>;
+            layers = <0>;
+        };
+
         combo_switch_win {
             timeout-ms = <40>;
             key-positions = <10 11>;
@@ -272,20 +279,6 @@
             timeout-ms = <40>;
             key-positions = <1 10>;
             bindings = <&kp LG(B)>;
-            layers = <0>;
-        };
-        
-        combo_terminal {
-            timeout-ms = <40>;
-            key-positions = <22 23>;
-            bindings = <&kp LC(GRAVE)>;
-            layers = <0>;
-        };
-        
-        combo_open_definition {
-            timeout-ms = <40>;
-            key-positions = <21 23>;
-            bindings = <&kp LC(LS(D))>;
             layers = <0>;
         };
 
