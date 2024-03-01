@@ -91,7 +91,14 @@
             bindings = <&kp LC(SPACE)>;
             layers = <0>;
         };
-        
+
+     	combo_app_switcher {
+            timeout-ms = <40>;
+            key-positions = <22 23>;
+            bindings = <&kp LG(TAB)>;
+            layers = <0>;
+        };
+
         combo_switch_win {
             timeout-ms = <40>;
             key-positions = <10 11>;
@@ -274,20 +281,6 @@
             bindings = <&kp LG(B)>;
             layers = <0>;
         };
-        
-        combo_terminal {
-            timeout-ms = <40>;
-            key-positions = <22 23>;
-            bindings = <&kp LC(GRAVE)>;
-            layers = <0>;
-        };
-        
-        combo_open_definition {
-            timeout-ms = <40>;
-            key-positions = <21 23>;
-            bindings = <&kp LC(LS(D))>;
-            layers = <0>;
-        };
 
     };
 
@@ -364,7 +357,7 @@
             bindings = <
                 &kp ESC       	&kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))        &none 				&none  	&none  	 	 &kp UP        &none		&none
 		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &kp C_BRIGHTNESS_INC  		&none  	&kp LEFT   	&kp DOWN      &kp RIGHT       &none 
-                &kp LC(LS(BSPC)) &kp LC(LS(BSPC))    &kp LC(LS(UP))        &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC            &none  	&none  		&none  		&none		&none  
+                &kp LC(LS(BSPC)) &kp LC(LA(LS(UP)))    &kp LC(LS(UP))        &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC            &none  	&none  		&none  		&none		&none  
                                                                                &trans       	&to 0          			&trans    &to 0
             >;  
 		};
