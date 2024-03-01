@@ -364,7 +364,7 @@
             bindings = <
                 &kp ESC       	&kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))        &none 				&none  	&none  	 	 &kp UP        &none		&none
 		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &kp C_BRIGHTNESS_INC  		&none  	&kp LEFT   	&kp DOWN      &kp RIGHT       &none 
-                &kp LC(LS(BSPC)) &kp LC(LS(BSPC))    &kp LC(LS(UP))        &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC            &none  	&none  		&none  		&none		&none  
+                &kp LC(LS(BSPC)) &kp LC(LA(LS(UP)))    &kp LC(LS(UP))        &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC            &none  	&none  		&none  		&none		&none  
                                                                                &trans       	&to 0          			&trans    &to 0
             >;  
 		};
