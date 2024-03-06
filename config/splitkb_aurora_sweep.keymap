@@ -43,6 +43,13 @@
 	********** Global combos  ***********
 	*************************************/
 
+	combo_preferences {
+            timeout-ms = <40>;
+            key-positions = <0 1>;
+            bindings = <&kp LG(CMMA)>;
+            layers = <0>;
+        };
+
 	combo_esc {
             timeout-ms = <40>;
             key-positions = <16 17>;
@@ -85,10 +92,10 @@
             layers = <0>;
         };
 
-	combo_control_space {
+	combo_command_find {
             timeout-ms = <40>;
             key-positions = <1 2>;
-            bindings = <&kp LC(SPACE)>;
+            bindings = <&kp LG(F)>;
             layers = <0>;
         };
 
