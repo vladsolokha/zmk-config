@@ -106,6 +106,13 @@
             layers = <0>;
         };
 
+     	combo_win_app_switcher {
+            timeout-ms = <40>;
+            key-positions = <21 23>;
+            bindings = <&kp LA(TAB)>;
+            layers = <0>;
+        };
+
         combo_switch_win {
             timeout-ms = <40>;
             key-positions = <10 11>;
@@ -224,14 +231,14 @@
         
         combo_inspect {
             timeout-ms = <40>;
-            key-positions = <20 21>;
+            key-positions = <21 22>;
             bindings = <&kp LG(LA(I))>;
             layers = <0>;
         };
         
         combo_select_element {
             timeout-ms = <40>;
-            key-positions = <21 22>;
+            key-positions = <20 21>;
             bindings = <&kp LG(LS(C))>;
             layers = <0>;
         };
@@ -282,10 +289,10 @@
             layers = <0>;
         };
         
-        combo_close_panel {
+        combo_tmux_prefix {
             timeout-ms = <40>;
-            key-positions = <1 10>;
-            bindings = <&kp LG(B)>;
+            key-positions = <18 19>;
+            bindings = <&kp LC(B)>;
             layers = <0>;
         };
 
