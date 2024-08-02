@@ -120,10 +120,10 @@
             layers = <0>;
         };
 
-        combo_key_repeat {
+        combo_ctrl_b {
             timeout-ms = <40>;
             key-positions = <11 12>;
-            bindings = <&key_repeat>;
+            bindings = <&kp LC(B)>;
             layers = <0>;
         };
 
@@ -289,10 +289,10 @@
             layers = <0>;
         };
         
-        combo_tmux_prefix {
+        combo_key_repeat {
             timeout-ms = <40>;
             key-positions = <18 19>;
-            bindings = <&kp LC(B)>;
+            bindings = <&key_repeat>;
             layers = <0>;
         };
 
