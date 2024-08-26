@@ -350,7 +350,7 @@
     adjust_layer {
             bindings = <
                 &none &none &kp LC(LS(MINUS)) &kp LC(LS(PLUS)) &none &bt BT_CLR &ext_power EP_TOG &rgb_ug RGB_EFF &rgb_ug RGB_TOG &none
-                &none &kp LC(LS(RET)) &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+                &none &kp LC(LS(RET)) &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
                 &next_prev &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &none &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none &none
                 &trans &trans &trans &trans
 
