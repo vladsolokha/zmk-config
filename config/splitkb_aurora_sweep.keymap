@@ -45,7 +45,7 @@
 
 	combo_preferences {
             timeout-ms = <40>;
-            key-positions = <0 1>;
+            key-positions = <28 29>;
             bindings = <&kp LG(CMMA)>;
             layers = <0>;
         };
@@ -236,30 +236,9 @@
             layers = <0>;
         };
         
-        combo_select_element {
-            timeout-ms = <40>;
-            key-positions = <20 21>;
-            bindings = <&kp LG(LS(C))>;
-            layers = <0>;
-        };
-	
-	/*************************************
+     /*************************************
 	******  Code specific combos   *******
 	**************************************/ 
-
-	combo_duplicate_code_down {
-            timeout-ms = <50>;
-            key-positions = <26 27 28>;
-	    bindings = <&kp LA(LS(DOWN))>;
-            layers = <0>;
-        };
-
-        combo_duplicate_code_up {
-            timeout-ms = <50>;
-            key-positions = <6 7 8>;
-            bindings = <&kp LA(LS(UP))>;
-            layers = <0>;
-        };
 
         combo_focus_left {
             timeout-ms = <35>;
@@ -275,27 +254,20 @@
             layers = <0>;
         };
 	
-        combo_split_left {
+        combo_focus_up {
             timeout-ms = <40>;
             key-positions = <16 27>;
-            bindings = <&kp LC(LA((LEFT)))>;
+            bindings = <&kp LC(J)>;
             layers = <0>;
         };
 
-        combo_split_right {
+        combo_focus_down {
             timeout-ms = <40>;
             key-positions = <18 27>;
-            bindings = <&kp LC(LA((RIGHT)))>;
+            bindings = <&kp LC(K)>;
             layers = <0>;
         };
         
-        combo_key_repeat {
-            timeout-ms = <40>;
-            key-positions = <18 19>;
-            bindings = <&key_repeat>;
-            layers = <0>;
-        };
-
     };
 
     macros {
@@ -318,7 +290,7 @@
 
     behaviors {
 
-        td0: tap_dance_0 {
+        next_prev: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
@@ -337,53 +309,53 @@
 	
     };
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
                 
         default_layer {
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B 					&kp J &kp L &kp U &kp Y &kp SLASH  
+                &kp Q &kp W &kp F &kp P &kp B 					&kp J &kp L &kp U &kp Y &kp QUOT  
                 &kp A &kp R &kp S &kp T &kp G 			        	&kp M &kp N &kp E &kp I &kp O
-                &mt LC(LA(LSHIFT)) Z &mt LALT X &mt LCMD C &kp D &kp V    	&kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LSHIFT)) QUOT
+                &mt LC(LA(LSHIFT)) Z &mt LALT X &mt LCMD C &kp D &kp V    	&kp K &kp H &mt LCMD CMMA &mt LALT DOT &mt LC(LA(LSHIFT)) SLASH
                                 	&sk LSFT &mo_sl 1 1  	 		&mt RCTRL SPC &mo_sl 2 2
             >;
 		};
 
         extend_layer {
             bindings = <
-                &td0  	 	&mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LG(LC(SPC))		&kp LC(F2) 	&to 4	     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
-		&kp C_VOL_UP 	&mt LSFT RET      	 	&kp DEL            	&kp BSPC      		&to 3             	&kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
-                &kp C_VOL_DN 	&mt LALT C_PP 			&mt LCMD ESC 		&kp TAB      		&kp LG(LS((M)))        	&kp STAR &kp NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3  &trans 
+                &none  	 	&mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LC(F2) &kp LC(SPC) &kp LG(LC(SPC))		 		     		&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
+		&kp LG(LS(Z)) 	&mt LSFT RET      	 	&kp DEL            	&kp BSPC      		&none             	&kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
+                &kp LG(Z) 	&mt LALT LG(X)  			&mt LCMD ESC 		&kp TAB      		&none        	&kp STAR &kp NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3  &trans 
 	                                                               			&trans   		&trans  		&trans   &trans
             >;
 		};
 		
 	symbol_layer {
             bindings = <
-                &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH    			        &caps_word  &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
-                &kp AT   &mt LCTRL RET  &kp LPAR  &kp RPAR  &kp PERCENT 			&kp LEFT &kp DOWN  &kp UP  &kp RIGHT &kp SEMICOLON
-                &kp PLUS  &mt LALT UNDER &mt LCMD LBKT &kp RBKT   &kp PIPE    			&kp AMPERSAND &kp STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
+                &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH    			        &none  &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
+                &kp AT   &mt LCTRL AMPERSAND  &kp LPAR  &kp RPAR  &kp PERCENT 			&kp LEFT &kp DOWN  &kp UP  &kp RIGHT &kp SEMICOLON
+                &kp PLUS  &mt LALT UNDER &mt LCMD LBKT &kp RBKT   &kp PIPE    			&caps_word &kp STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
                                     			&trans &trans  				&trans &trans 
             >;
 		};	
-		
-	window_layer {
+
+    adjust_layer {
             bindings = <
-                &kp ESC       	&kp LC(LS(PLUS))   &kp LC(LS(LEFT))     &kp LC(LS(DOWN))        &none 				&none  	&none  	 	 &kp UP        &none		&none
-		&kp LC(LS(RET))  &kp LC(LS(MINUS))  &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &kp C_BRIGHTNESS_INC  		&none  	&kp LEFT   	&kp DOWN      &kp RIGHT       &none 
-                &kp LC(LS(BSPC)) &kp LC(LA(LS(UP)))    &kp LC(LS(UP))        &kp LC(LS(RIGHT))     &kp C_BRIGHTNESS_DEC            &none  	&none  		&none  		&none		&none  
-                                                                               &trans       	&to 0          			&trans    &to 0
-            >;  
-		};
+                &none &none &kp LC(LS(MINUS)) &kp LC(LS(PLUS)) &none &bt BT_CLR &ext_power EP_TOG &rgb_ug RGB_EFF &rgb_ug RGB_TOG &none
+                &none &kp LC(LS(RET)) &kp LC(LA(LS(LEFT)))  &kp LC(LA(LS(RIGHT))) &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+                &next_prev &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &none &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none &none
+                &trans &trans &trans &trans
+
+        >;
+        };
 		
-	control_layer {
-            bindings = <
-                &bt BT_CLR 	&ext_power EP_TOG   	&rgb_ug RGB_EFF     	&rgb_ug RGB_TOG  	&out OUT_BLE 		&none &none &none &none &none
-		&bt BT_NXT  	&rgb_ug RGB_SAI  	&rgb_ug RGB_SPI 	&rgb_ug RGB_HUI 	&rgb_ug RGB_BRI  	&none &none &none &none &none 
-                &bt BT_PRV 	&rgb_ug RGB_SAD    	&rgb_ug RGB_SPD        	&rgb_ug RGB_HUD		&rgb_ug RGB_BRD         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    
-                                                                        	&trans 			&to 0     		&trans &to 0
-            >;  
-		};	
-        
 	};
 };
