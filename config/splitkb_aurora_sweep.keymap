@@ -319,7 +319,7 @@
 
 	sk_sk: hold_preferred_shift_meh {
 		compatible = "zmk,behavior-hold-tap";
-		label = "HOLD_PREFERRED_SHIFT_MEH"
+		label = "HOLD_PREFERRED_SHIFT_MEH";
         	#binding-cells = <2>;
             	flavor = "hold-preferred";
             	tapping-term-ms = <600>;
