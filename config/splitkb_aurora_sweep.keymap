@@ -21,19 +21,18 @@
 };
 
 &sl {
-    release-after-ms = <1000>;
+    release-after-ms = <600>;
     quick-release;
 };
 
 &sk {
-    release-after-ms = <1000>;
+    release-after-ms = <600>;
     quick-release;
 };
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
 };
-
 
 / { 
     combos {
@@ -270,22 +269,20 @@
 
 	combo_to_3 {
             timeout-ms = <50>;
-            key-positions = <10 11 12 13>;
+            key-positions = <11 12 13>;
             bindings = <&to 3>;
             layers = <0>;
         };
 	
 	combo_to_0_from_3 {
             timeout-ms = <50>;
-            key-positions = <10 11 12 13>;
+            key-positions = <11 12 13>;
             bindings = <&to 0>;
             layers = <3>;
         };
-
     };
 
-    macros {
-    
+    macros { 
         paste_new_incog_win: paste_new_incog_win {
             label = "paste_new_incog_win";
             compatible = "zmk,behavior-macro";
@@ -298,8 +295,7 @@
                 , <&macro_tap &kp V>
                 , <&macro_release &kp LCMD>
                 ;
-        }; 
-		
+        }; 		
     };
 
     behaviors {
@@ -308,7 +304,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
             bindings = <&kp C_PP>, <&kp C_NEXT>;
         };
 				
@@ -317,10 +313,18 @@
 		label = "MOMENTARY_STICKY_LAYER";
 	  	#binding-cells = <2>;
 		flavor = "hold-preferred";
-		tapping-term-ms = <210>;
+		tapping-term-ms = <200>;
 	  	bindings = <&mo>, <&sl>;
 		};
-	
+
+	sk_sk: hold_preferred_shift_meh {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOLD_PREFERRED_SHIFT_MEH"
+        	#binding-cells = <2>;
+            	flavor = "hold-preferred";
+            	tapping-term-ms = <600>;
+            	bindings = <&sk>, <&sk>;
+	};	
     };
 
     keymap {
@@ -328,35 +332,35 @@
                 
         default_layer {
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B 					&kp J &kp L &kp U &kp Y &kp QUOT  
-                &kp A &kp R &kp S &kp T &kp G 			        	&kp M &kp N &kp E &kp I &kp O
-                &kp Z &mt LALT X &mt LCMD C &mt LCTRL D &kp V    	&kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                        &mt LSFT LC(LA(LSHIFT)) &mo_sl 1 1  	 		&mt RCTRL SPC &mo_sl 2 2
+                &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp QUOT  
+                &kp A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &kp O
+                &kp Z &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
+                &sk_sk LSFT LC(LA(LSHIFT)) &mo_sl 1 1 &mt RCTRL SPC &mo_sl 2 2
             >;
 		};
 
         extend_layer {
             bindings = <
-                &ppn 	 	&mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LC(F2) &kp LC(SPC) &kp LG(LC(SPC))		 		     	&kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
-		&kp LG(LS(Z)) 	&mt LSFT RET      	 	&kp DEL            	&kp BSPC      		&kp C_VOL_UP            &kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
-                &kp LG(Z) 	&mt LALT LG(X)  		&mt LCMD ESC 		&mt LCTRL TAB      	&kp C_VOL_DN        	&kp STAR &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3  &trans 
-	                                                               			&trans   		&trans  		&trans   &trans
+                &ppn &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LC(F2) &kp LC(SPC) &kp LG(LC(SPC)) &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
+		&kp LG(LS(Z)) &mt LSFT RET &kp DEL &kp BSPC &kp C_VOL_UP &kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
+                &kp LG(Z) &mt LALT LG(X)  &mt LCMD ESC &mt LCTRL TAB &kp C_VOL_DN &kp STAR &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
+	        &trans &trans &trans &trans
             >;
 		};
 		
 	symbol_layer {
             bindings = <
-                &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH    			        &none  &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
-                &kp AT   &kp AMPERSAND  &kp LPAR  &kp RPAR  &kp PERCENT 			&kp LEFT &kp DOWN  &kp UP  &kp RIGHT &kp SEMICOLON
-                &kp PLUS  &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT   &kp PIPE    		&caps_word &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
-                                    			&trans &trans  				&trans &trans 
+                &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH &none &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
+                &kp AT &kp AMPERSAND  &kp LPAR  &kp RPAR  &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
+                &kp PLUS &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT &kp PIPE &caps_word &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
+                &trans &trans &trans &trans 
             >;
 		};	
 
     adjust_layer {
             bindings = <
                 &bt BT_CLR &ext_power EP_TOG &rgb_ug RGB_EFF &rgb_ug RGB_TOG 	&none 	&none &none &none &none &none
-                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  		&none	&to 0 &none &none &none &none 
+                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  		&none	&none &none &none &none &none 
                 &bt BT_SEL 4 &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC 	&none   &none &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
 
