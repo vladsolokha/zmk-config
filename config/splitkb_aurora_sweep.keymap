@@ -269,16 +269,9 @@
 
 	combo_to_3 {
             timeout-ms = <50>;
-            key-positions = <11 12 13>;
+            key-positions = <1 2 3>;
             bindings = <&to 3>;
             layers = <0>;
-        };
-	
-	combo_to_0_from_3 {
-            timeout-ms = <50>;
-            key-positions = <11 12 13>;
-            bindings = <&to 0>;
-            layers = <3>;
         };
     };
 
@@ -315,16 +308,7 @@
 		flavor = "hold-preferred";
 		tapping-term-ms = <200>;
 	  	bindings = <&mo>, <&sl>;
-		};
-
-	sk_sk: hold_preferred_shift_meh {
-		compatible = "zmk,behavior-hold-tap";
-		label = "HOLD_PREFERRED_SHIFT_MEH";
-        	#binding-cells = <2>;
-            	flavor = "hold-preferred";
-            	tapping-term-ms = <600>;
-            	bindings = <&sk>, <&sk>;
-	};	
+		};	
     };
 
     keymap {
@@ -333,9 +317,9 @@
         default_layer {
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp QUOT  
-                &kp A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &kp O
-                &kp Z &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &sk_sk LSFT LC(LA(LSHIFT)) &mo_sl 1 1 &mt RCTRL SPC &mo_sl 2 2
+                &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
+                &kp Z &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &kp H &mt LCMD CMMA &mt LALT DOT &kp SLASH
+                &sk LSFT &mo_sl 1 1 &mt RCTRL SPC &mo_sl 2 2
             >;
 		};
 
@@ -343,7 +327,7 @@
             bindings = <
                 &ppn &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LC(F2) &kp LC(SPC) &kp LG(LC(SPC)) &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
 		&kp LG(LS(Z)) &mt LSFT RET &kp DEL &kp BSPC &kp C_VOL_UP &kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
-                &kp LG(Z) &mt LALT LG(X)  &mt LCMD ESC &mt LCTRL TAB &kp C_VOL_DN &kp STAR &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
+                &kp LG(Z) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &kp C_VOL_DN &kp STAR &kp NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
 	        &trans &trans &trans &trans
             >;
 		};
@@ -352,7 +336,7 @@
             bindings = <
                 &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH &none &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
                 &kp AT &kp AMPERSAND  &kp LPAR  &kp RPAR  &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
-                &kp PLUS &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT &kp PIPE &caps_word &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
+                &kp PLUS &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT &kp PIPE &caps_word &kp STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
                 &trans &trans &trans &trans 
             >;
 		};	
