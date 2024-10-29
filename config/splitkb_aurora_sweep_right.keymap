@@ -1,0 +1,371 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+&kscan0 {
+    col-gpios
+            = <&pro_micro 9 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 8  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 7  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 4  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+            , <&pro_micro 5  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+            ;
+};
+
+&right_encoder2 {
+    status = "okay";
+    a-gpios = <&pro_micro 20 GPIO_PULL_UP>;
+    b-gpios = <&pro_micro 6  GPIO_PULL_UP>;
+};
+
+&led_strip {
+    chain-length = <23>;
+};
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
+};
+
+&sl {
+    release-after-ms = <600>;
+    quick-release;
+};
+
+&sk {
+    release-after-ms = <600>;
+    quick-release;
+};
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
+/ { 
+    combos {
+        compatible = "zmk,combos";
+
+        /************************************
+	********** Global combos  ***********
+	*************************************/
+
+	combo_preferences {
+            timeout-ms = <40>;
+            key-positions = <28 29>;
+            bindings = <&kp LG(CMMA)>;
+            layers = <0>;
+        };
+
+	combo_esc {
+            timeout-ms = <40>;
+            key-positions = <16 17>;
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+        
+        combo_return {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp RETURN>;
+            layers = <0>;
+        };
+        
+        combo_save {
+            timeout-ms = <40>;
+            key-positions = <12 13>;
+            bindings = <&kp LC(S)>;
+            layers = <0>;
+        };
+	
+	combo_command_save {
+            timeout-ms = <40>;
+            key-positions = <2 3>;
+            bindings = <&kp LG(S)>;
+            layers = <0>;
+        }; 
+        
+        combo_copy {
+            timeout-ms = <40>;
+            key-positions = <13 22>;
+            bindings = <&kp LG(C)>;
+            layers = <0>;
+        };
+        
+        combo_paste {
+            timeout-ms = <40>;
+            key-positions = <12 23>;
+            bindings = <&kp LG(V)>;
+            layers = <0>;
+        };
+
+	combo_command_find {
+            timeout-ms = <40>;
+            key-positions = <1 2>;
+            bindings = <&kp LG(F)>;
+            layers = <0>;
+        };
+
+     	combo_app_switcher {
+            timeout-ms = <40>;
+            key-positions = <22 23>;
+            bindings = <&kp LG(TAB)>;
+            layers = <0>;
+        };
+
+     	combo_win_app_switcher {
+            timeout-ms = <40>;
+            key-positions = <21 23>;
+            bindings = <&kp LA(TAB)>;
+            layers = <0>;
+        };
+
+        combo_switch_win {
+            timeout-ms = <40>;
+            key-positions = <10 11>;
+            bindings = <&kp LG(GRAVE)>;
+            layers = <0>;
+        };
+
+        combo_ctrl_b {
+            timeout-ms = <40>;
+            key-positions = <11 12>;
+            bindings = <&kp LC(B)>;
+            layers = <0>;
+        };
+
+        combo_bol {
+            timeout-ms = <40>;
+            key-positions = <6 7>;
+            bindings = <&kp LG(LEFT)>;
+            layers = <0>;
+        };
+        
+        combo_eol {
+            timeout-ms = <40>;
+            key-positions = <7 8>;
+            bindings = <&kp LG(RIGHT)>;
+            layers = <0>;
+        };
+
+        combo_word_back {
+            timeout-ms = <40>;
+            key-positions = <7 16>;
+            bindings = <&kp LA(LEFT)>;
+            layers = <0>;
+        };
+
+        combo_word_forward {
+            timeout-ms = <40>;
+            key-positions = <7 18>;
+            bindings = <&kp LA(RIGHT)>;
+            layers = <0>;
+        };
+
+        combo_home {
+            timeout-ms = <40>;
+            key-positions = <6 17>;
+            bindings = <&kp HOME>;
+            layers = <0>;
+        };
+
+        combo_end {
+            timeout-ms = <40>;
+            key-positions = <8 17>;
+            bindings = <&kp END>;
+            layers = <0>;
+        };
+
+        combo_page_down {
+            timeout-ms = <40>;
+            key-positions = <26 27>;
+            bindings = <&kp PAGE_DOWN>;
+            layers = <0>;
+        };
+
+        combo_page_up {
+            timeout-ms = <40>;
+            key-positions = <27 28>;
+            bindings = <&kp PAGE_UP>;
+            layers = <0>;
+        };
+
+	/*************************************
+	******  Browser combos (Chrome)  *****
+	*************************************/
+
+        combo_tab_next {
+            timeout-ms = <40>;
+            key-positions = <2 13>;
+            bindings = <&kp LC(TAB)>;
+            layers = <0>;
+        };
+
+        combo_tab_previous {
+            timeout-ms = <40>;
+            key-positions = <2 11>;
+            bindings = <&kp LC(LS(TAB))>;
+            layers = <0>;
+        };
+
+        combo_tab_swap_left {
+            timeout-ms = <40>;
+            key-positions = <1 12>;
+            bindings = <&kp LC(LS(PAGE_UP))>;
+            layers = <0>;
+        };
+
+        combo_tab_swap_right {
+            timeout-ms = <40>;
+            key-positions = <3 12>;
+            bindings = <&kp LC(LS(PAGE_DOWN))>;
+            layers = <0>;
+        };
+ 
+        combo_www_back {
+            timeout-ms = <40>;
+            key-positions = <1 13>;
+            bindings = <&kp LG(LEFT_BRACKET)>;
+            layers = <0>;
+        };
+        
+        combo_www_forward {
+            timeout-ms = <40>;
+            key-positions = <13 21>;
+            bindings = <&kp LG(RIGHT_BRACKET)>;
+            layers = <0>;
+        };
+        
+        combo_inspect {
+            timeout-ms = <40>;
+            key-positions = <21 22>;
+            bindings = <&kp LG(LA(I))>;
+            layers = <0>;
+        };
+        
+     /*************************************
+	******  Code specific combos   *******
+	**************************************/ 
+
+        combo_focus_left {
+            timeout-ms = <35>;
+            key-positions = <17 26>;
+            bindings = <&kp LC(H)>;
+            layers = <0>;
+        };
+
+        combo_focus_right {
+            timeout-ms = <50>;
+            key-positions = <17 28>;
+            bindings = <&kp LC(L)>;
+            layers = <0>;
+        };
+	
+        combo_focus_up {
+            timeout-ms = <40>;
+            key-positions = <16 27>;
+            bindings = <&kp LC(J)>;
+            layers = <0>;
+        };
+
+        combo_focus_down {
+            timeout-ms = <40>;
+            key-positions = <18 27>;
+            bindings = <&kp LC(K)>;
+            layers = <0>;
+        };
+
+	combo_to_3 {
+            timeout-ms = <50>;
+            key-positions = <1 2 3>;
+            bindings = <&to 3>;
+            layers = <0>;
+        };
+    };
+
+    macros { 
+        paste_new_incog_win: paste_new_incog_win {
+            label = "paste_new_incog_win";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LG(LSFT)>
+                , <&macro_tap &kp N>
+                , <&macro_release &kp LG(LSFT)>
+                , <&macro_press &kp LCMD>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCMD>
+                ;
+        }; 		
+    };
+
+    behaviors {
+
+        ppn: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp C_PP>, <&kp C_NEXT>;
+        };
+				
+	mo_sl: momentary_sticky_layer {
+	  	compatible = "zmk,behavior-hold-tap";
+		label = "MOMENTARY_STICKY_LAYER";
+	  	#binding-cells = <2>;
+		flavor = "hold-preferred";
+		tapping-term-ms = <200>;
+	  	bindings = <&mo>, <&sl>;
+		};	
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+                
+        default_layer {
+            bindings = <
+                &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp QUOT  
+                &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
+                &kp Z &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
+                &sk LSFT &mo_sl 1 1 &mt RCTRL SPC &mo_sl 2 2
+            >;
+		};
+
+        extend_layer {
+            bindings = <
+                &ppn &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LC(F2) &kp LC(SPC) &kp LG(LC(SPC)) &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
+		&kp LG(LS(Z)) &mt LSFT RET &kp DEL &kp BSPC &kp C_VOL_UP &kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
+                &kp LG(Z) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &kp C_VOL_DN &kp STAR &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
+	        &trans &trans &trans &trans
+            >;
+		};
+		
+	symbol_layer {
+            bindings = <
+                &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH &none &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
+                &kp AT &kp AMPERSAND  &kp LPAR  &kp RPAR  &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
+                &kp PLUS &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT &kp PIPE &caps_word &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
+                &trans &trans &trans &trans 
+            >;
+		};	
+
+    adjust_layer {
+            bindings = <
+                &bt BT_CLR &ext_power EP_TOG &rgb_ug RGB_EFF &rgb_ug RGB_TOG 	&none 	&none &none &none &none &none
+                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  		&none	&none &none &none &none &none 
+                &bt BT_SEL 4 &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC 	&none   &none &none &none &none &none
+                &to 0 &to 0 &to 0 &to 0
+
+        >;
+        };
+		
+	};
+};
