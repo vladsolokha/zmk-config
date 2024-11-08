@@ -325,30 +325,29 @@
 
         extend_layer {
             bindings = <
-                &ppn &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LC(F2) &kp LC(SPC) &kp LG(LC(SPC)) &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
-		&kp LG(LS(Z)) &mt LSFT RET &kp DEL &kp BSPC &kp C_VOL_UP &kp MINUS &kp NUM_4  &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
-                &kp LG(Z) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &kp C_VOL_DN &kp STAR &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
-	        &trans &trans &trans &trans
+                &ppn &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LC(F2) &to 3 &kp C_VOL_UP &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &trans
+		        &kp LG(LS(Z)) &mt LSFT RET &kp DEL &kp BSPC &kp C_VOL_DN &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
+                &kp LG(Z) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &key_repeat &kp STAR &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
+	            &trans &trans &trans &trans
             >;
 		};
 		
-	symbol_layer {
+	    symbol_layer {
             bindings = <
-                &kp TILDE &kp EXCL &kp LBRC  &kp RBRC  &kp BSLH &none &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
-                &kp AT &kp AMPERSAND  &kp LPAR  &kp RPAR  &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
+                &kp TILDE &kp EXCL &kp LBRC  &kp RBRC &kp BSLH &none &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
+                &kp AT &kp AMPERSAND &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
                 &kp PLUS &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT &kp PIPE &caps_word &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
                 &trans &trans &trans &trans 
             >;
 		};	
 
-    adjust_layer {
+    	adjust_layer {
             bindings = <
-                &bt BT_CLR &ext_power EP_TOG &rgb_ug RGB_EFF &rgb_ug RGB_TOG 	&none 	&none &none &none &none &none
-                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  		&none	&none &none &none &none &none 
-                &bt BT_SEL 4 &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC 	&none   &none &none &none &none &none
+                &bt BT_CLR &ext_power EP_TOG &rgb_ug RGB_EFF &rgb_ug RGB_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &none &kp UP &none &none
+                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &rgb_ug RGB_SAD &rgb_ug RGB_SAI &kp LEFT &kp DOWN &kp RIGHT &none 
+                &bt BT_SEL 4 &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
-
-        >;
+            >;
         };
 		
 	};
