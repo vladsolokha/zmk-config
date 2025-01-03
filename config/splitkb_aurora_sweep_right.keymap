@@ -251,6 +251,13 @@
             layers = <0>;
         };
         
+        combo_select_element {
+            timeout-ms = <40>;
+            key-positions = <20 21>;
+            bindings = <&kp LG(LS(C))>;
+            layers = <0>;
+        };
+
      /*************************************
 	******  Code specific combos   *******
 	**************************************/ 
@@ -283,10 +290,24 @@
             layers = <0>;
         };
 
-	    combo_to_3 {
+	combo_to_bt_0 {
             timeout-ms = <50>;
             key-positions = <1 2 3>;
-            bindings = <&to 3>;
+            bindings = <&bt BT_SEL 0>;
+            layers = <0>;
+        };
+
+	combo_to_bt_1 {
+            timeout-ms = <50>;
+            key-positions = <2 3 4>;
+            bindings = <&bt BT_SEL 1>;
+            layers = <0>;
+        };
+
+	combo_to_bt_2 {
+            timeout-ms = <50>;
+            key-positions = <6 7 8>;
+            bindings = <&bt BT_SEL 2>;
             layers = <0>;
         };
     };
