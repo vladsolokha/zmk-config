@@ -10,6 +10,8 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
 #include <dt-bindings/zmk/pointing.h>
 
 &led_strip {
@@ -376,40 +378,30 @@
         /* 4 */
         mouse_layer {
             bindings = <
-                &none &none &none &none &none                       &none &none &mmv MOVE_UP &none &none
-                &none &mo_tog 7 7 &mo_sl 6 6 &mo_sl 5 5 &none       &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo_sl 7 7 
-                &none &none &none &none &none                       &none &none &mkp MCLK &none &none
-                &trans &to 0                                        &mkp LCLK &mkp RCLK
+                &none &none &none &none &none &none &none &none &none &none
+                &none &none &mo_tog 6 6 &mo_sl 5 5 &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mo_sl 6 6 
+                &none &none &none &none &none &none &none &mkp MCLK &none &none
+                &trans &to 0 &mkp LCLK &mkp RCLK
             >;
         };
 
         /* 5 */
-        mouse_layer_fast {
+        mouse_layer_slow {
             bindings = <
-                &none &none &none &none &none                       &none &none &mmv MOVE_Y(-1000) &none &none                            
-                &none &trans &trans &trans &none                    &none &mmv MOVE_X(-1000) &mmv MOVE_Y(1000) &mmv MOVE_X(1000) &trans
-                &none &none &none &none &none                       &none &none &trans &none &none                               
-                &trans &trans                                       &trans &trans                                             
+                &none &none &none &none &none &none &none &none &none &none                            
+                &none &none &trans &trans &none &mmv MOVE_X(-1200) &mmv MOVE_Y(1200) &mmv MOVE_Y(-1200) &mmv MOVE_X(1200) &trans
+                &none &none &none &none &none &none &none &trans &none &none                               
+                &trans &trans &trans &trans                                             
             >;
         };
 
         /* 6 */
-        mouse_layer_slow {
-            bindings = <
-               &none &none &none &none &none                       &none &none &mmv MOVE_Y(-300) &none &none                             
-               &none &trans &trans &trans &none                    &none &mmv MOVE_X(-300) &mmv MOVE_Y(300) &mmv MOVE_X(300) &trans    
-               &none &none &none &none &none                       &none &none &trans &none &none                                         
-               &trans &trans                                       &trans &trans                                                          
-            >;
-        };
-
-        /* 7 */
         mouse_layer_scroll {
             bindings = <
-               &none &none &none &none &none                       &none &none &msc SCRL_UP &none &none                               
-               &none &trans &trans &trans &none                    &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &trans        
-               &none &none &none &none &none                       &none &none &trans &none &none                                          
-               &trans &trans                                       &trans &trans                                                           
+               &none &none &none &none &none &none &none &none &none &none                               
+               &none &none &trans &trans &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans        
+               &none &none &none &none &none &none &none &trans &none &none                                          
+               &trans &trans &trans &trans                                                           
             >;
         };
 
