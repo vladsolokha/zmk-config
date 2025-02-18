@@ -394,8 +394,8 @@
         /* 4 */
         mouse_layer {
             bindings = <
-                &none &none &none &none &none &none &none &none &none &none
-                &none &none &mo_tog 6 6 &mo_sl 5 5 &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mo_sl 6 6 
+                &none &none &none &none &none &none &none &mmv MOVE_UP &none &none
+                &none &none &mo_tog 6 6 &mo_sl 5 5 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo_sl 6 6 
                 &none &none &none &none &none &none &none &mkp MCLK &none &none
                 &trans &to 0 &mkp LCLK &mkp RCLK
             >;
@@ -404,9 +404,9 @@
         /* 5 */
         mouse_layer_slow {
             bindings = <
-                &none &none &none &none &none &none &none &none &none &none                            
-                &none &none &trans &trans &none &mmv MOVE_X(-1200) &mmv MOVE_Y(1200) &mmv MOVE_Y(-1200) &mmv MOVE_X(1200) &trans
-                &none &none &none &none &none &none &none &trans &none &none                               
+                &trans &trans &trans &trans &trans &trans &trans &mmv MOVE_Y(-1000) &trans &trans                            
+                &trans &trans &trans &trans &trans &trans &mmv MOVE_X(-1000) &mmv MOVE_Y(1000) &mmv MOVE_X(1000) &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans                               
                 &trans &trans &trans &trans                                             
             >;
         };
@@ -414,9 +414,9 @@
         /* 6 */
         mouse_layer_scroll {
             bindings = <
-               &none &none &none &none &none &none &none &none &none &none                               
-               &none &none &trans &trans &none &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans        
-               &none &none &none &none &none &none &none &trans &none &none                                          
+               &trans &trans &trans &trans &trans &trans &trans &msc SCRL_UP &trans &trans                               
+               &trans &trans &trans &trans &trans &trans &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &trans        
+               &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                &trans &trans &trans &trans                                                           
             >;
         };
