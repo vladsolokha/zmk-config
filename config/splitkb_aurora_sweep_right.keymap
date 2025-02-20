@@ -61,14 +61,7 @@
 	********** Global combos  ***********
 	*************************************/
 
-	    combo_preferences {
-            timeout-ms = <40>;
-            key-positions = <28 29>;
-            bindings = <&kp LG(CMMA)>;
-            layers = <0>;
-        };
-
-	    combo_esc {
+    	combo_esc {
             timeout-ms = <40>;
             key-positions = <16 17>;
             bindings = <&kp ESC>;
@@ -279,40 +272,6 @@
             layers = <0>;
         };
 	
-        combo_focus_up {
-            timeout-ms = <40>;
-            key-positions = <16 27>;
-            bindings = <&kp LC(J)>;
-            layers = <0>;
-        };
-
-        combo_focus_down {
-            timeout-ms = <40>;
-            key-positions = <18 27>;
-            bindings = <&kp LC(K)>;
-            layers = <0>;
-        };
-
-	combo_to_bt_0 {
-            timeout-ms = <50>;
-            key-positions = <1 2 3>;
-            bindings = <&bt BT_SEL 0>;
-            layers = <0>;
-        };
-
-	combo_to_bt_1 {
-            timeout-ms = <50>;
-            key-positions = <2 3 4>;
-            bindings = <&bt BT_SEL 1>;
-            layers = <0>;
-        };
-
-	combo_to_bt_2 {
-            timeout-ms = <50>;
-            key-positions = <6 7 8>;
-            bindings = <&bt BT_SEL 2>;
-            layers = <0>;
-        };
     };
 
     behaviors {
@@ -327,8 +286,15 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&caps_word>, <&kp CAPS>;
+            bindings = <&caps_word>, <&kp LCAPS>;
         };
+
+        bt_clcla: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&bt BT_CLR>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
+        }
 				
         mo_sl: momentary_sticky_layer {
             compatible = "zmk,behavior-hold-tap";
@@ -354,19 +320,19 @@
         /* 0 */
         default_layer {
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp QUOT  
+                &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
-                &kp Z &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &sk LSFT &mo_sl 1 1 &mt RCTRL SPC &mo_sl 2 2
+                &kp B &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
+                &sk LSFT &mo_sl 1 1 &mt RCTRL SPC &mo_tog 2 2
             >;
 		};
 
         /* 1 */
         extend_layer {
             bindings = <
-                &to 3 &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp LG(F) &ppn &kp C_VOL_UP &kp PLUS &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp STAR
-		        &to 4 &mt LSFT RET &kp DEL &kp BSPC &kp C_VOL_DN &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
-                &kp K_APP &cwcl &mt LCMD ESC &mt LCTRL TAB &kp INS &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
+                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &none &none &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
+		        &to 4 &mt LSFT RET &kp DEL &kp BSPC &kp K_APP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
+                &to 3 &cwcl &mt LCMD ESC &mt LCTRL TAB &kp INS &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
 	            &trans &trans &trans &trans
             >;
 		};
@@ -374,9 +340,9 @@
         /* 2 */
 	    symbol_layer {
             bindings = <
-                &kp TILDE &kp EXCL &kp LBRC  &kp RBRC &kp BSLH &none &kp CARET &kp DOLLAR &kp EQUAL &kp GRAVE 
-                &kp AT &kp AMPERSAND &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
-                &kp PLUS &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT &kp PIPE &none &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
+                &none &kp Q &kp GRAVE &none &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
+                &kp AT &mt LSFT AMPERSAND &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
+                &kp Z &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &kp BSLH &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp QUOT
                 &trans &trans &trans &trans 
             >;
 		};	
@@ -384,9 +350,9 @@
         /* 3 */
     	settings_layer {
             bindings = <
-                &bt BT_CLR &bt BT_DISC 2 &none &none &none &none &none &kp UP &none &none
-                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none &none &kp LEFT &kp DOWN &kp RIGHT &none 
-                &bt BT_SEL 4 &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &none &none &none &none &none &none
+                &none &bt BT_DISC 2 &none &ppn &none &none &none &kp UP &none &none
+                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_VOL_UP &none &kp LEFT &kp DOWN &kp RIGHT &none 
+                &bt_clcla &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &kp C_VOL_DN &none &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
             >;
         };
@@ -394,9 +360,9 @@
         /* 4 */
         mouse_layer {
             bindings = <
-                &none &none &none &none &none &none &none &mmv MOVE_UP &none &none
-                &none &none &mo_tog 6 6 &mo_sl 5 5 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo_sl 6 6 
-                &none &none &none &none &none &none &none &mkp MCLK &none &none
+                &none &none &none &kp LG(V) &none &none &none &mmv MOVE_UP &kp LG(C) &none
+                &none &kp RET &mo_tog 6 6 &mo_tog 5 5 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
+                &none &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &none &none &trans &mkp MCLK &trans &none
                 &trans &to 0 &mkp LCLK &mkp RCLK
             >;
         };
@@ -404,8 +370,8 @@
         /* 5 */
         mouse_layer_slow {
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &mmv MOVE_Y(-1000) &trans &trans                            
-                &trans &trans &trans &trans &trans &trans &mmv MOVE_X(-1000) &mmv MOVE_Y(1000) &mmv MOVE_X(1000) &trans
+                &trans &trans &trans &trans &trans &trans &trans &mmv MOVE_Y(-800) &trans &trans                            
+                &trans &trans &trans &trans &trans &trans &mmv MOVE_X(-800) &mmv MOVE_Y(800) &mmv MOVE_X(800) &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans                               
                 &trans &trans &trans &trans                                             
             >;
