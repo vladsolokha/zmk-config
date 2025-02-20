@@ -269,7 +269,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&caps_word>, <&kp LCAPS>;
+            bindings = <&caps_word>, <&kp CAPSLOCK>;
         };
 
         bt_clcla: tap_dance_2 {
@@ -303,7 +303,7 @@
         /* 0 */
         default_layer {
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &none  
+                &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp B &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
                 &sk LSFT &mo_sl 1 1 &mt RCTRL SPC &mo_tog 2 2
