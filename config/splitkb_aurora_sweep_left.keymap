@@ -255,7 +255,6 @@
             bindings = <&kp LC(L)>;
             layers = <0>;
         };
-	
     };
 
     behaviors {
@@ -278,7 +277,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&bt BT_CLR>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
-        }
+        };
 				
         mo_sl: momentary_sticky_layer {
             compatible = "zmk,behavior-hold-tap";
@@ -324,7 +323,7 @@
         /* 2 */
 	    symbol_layer {
             bindings = <
-                &none &kp Q &kp GRAVE &none &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
+                &none &kp Q &kp GRAVE &key_repeat &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
                 &kp AT &mt LSFT AMPERSAND &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
                 &kp Z &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &kp BSLH &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp QUOT
                 &trans &trans &trans &trans 
