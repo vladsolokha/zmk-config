@@ -321,7 +321,7 @@
             bindings = <
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
-                &kp B &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
+                &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
                 &sk LSFT &mo_sl 1 1 &mt RCTRL SPC &mo_tog 2 2
             >;
 		};
@@ -339,9 +339,9 @@
         /* 2 */
 	    symbol_layer {
             bindings = <
-                &none &kp Q &kp GRAVE &key_repeat &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
+                &none &kp Q &kp GRAVE &kp BSLH &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
                 &kp AT &mt LSFT AMPERSAND &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
-                &kp Z &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &kp BSLH &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp QUOT
+                &kp Z &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &kp B &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
                 &trans &trans &trans &trans 
             >;
 		};	
