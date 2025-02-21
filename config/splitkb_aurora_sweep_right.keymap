@@ -284,7 +284,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <125>;
+            tapping-term-ms = <200>;
             bindings = <&mo>, <&sl>;
         };
 
@@ -295,13 +295,6 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
-        };
-
-        tog_off: toggle_layer_off_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer Off";
-            toggle-mode = "off";
         };
 
         ppn: tap_dance_media_play_pause_next {
@@ -324,17 +317,6 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 				
-        td_ext_1: tap_dance_layer_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&mo_sl 1 1>, <&tog 1>;
-        };
-				
-        td_sym_2: tap_dance_layer_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&mo_sl 2 2>, <&tog 2>;
-        };
     };
 
     keymap {
@@ -346,7 +328,7 @@
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &ssh_cw &td_ext_1 &mt RCTRL SPC &td_sym_2
+                &ssh_cw &mo_tog 1 1 &mt RCTRL SPC &mo_tog 2 2 
             >;
 		};
 
@@ -356,7 +338,7 @@
                 &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &ppn &none &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
 		        &kp LG(Z) &mt LSFT RET &kp DEL &kp BSPC &kp K_APP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
                 &kp LG(LS(Z)) &kp CAPSLOCK &mt LCMD ESC &mt LCTRL TAB &kp INS &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
-	            &trans &tog_off 1 &trans &to 4
+	            &trans &trans &trans &to 4
             >;
 		};
 		
@@ -366,7 +348,7 @@
                 &none &kp Q &kp GRAVE &kp BSLH &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
                 &kp AT &mt LSFT AMPERSAND &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
                 &kp Z &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &kp B &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
-                &trans &to 3 &trans &tog_off 2 
+                &trans &to 3 &trans &trans
             >;
 		};	
 
