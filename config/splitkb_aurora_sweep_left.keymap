@@ -303,10 +303,10 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 
-        amp_excl: amp_excl {
+        amps_excl: amps_excl {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp AMP>, <&kp EXCL>;
+            bindings = <&kp AMPS>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 				
@@ -339,7 +339,7 @@
 	    symbol_layer {
             bindings = <
                 &none &kp Q &kp GRAVE &kp BSLH &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
-                &kp AT &amp_excl &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
+                &kp AT &amps_excl &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
                 &kp Z &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT &kp B &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
                 &trans &trans &trans &trans
             >;
