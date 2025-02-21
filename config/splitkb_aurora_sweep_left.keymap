@@ -7,16 +7,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/ext_power.h>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
 #include <dt-bindings/zmk/pointing.h>
-
-&led_strip {
-    chain-length = <23>;
-};
 
 &mt {
     flavor = "tap-preferred";
