@@ -267,27 +267,6 @@
     };
 
     behaviors {
-        ppn: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp C_PP>, <&kp C_NEXT>;
-        };
-
-        cwcl: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&caps_word>, <&kp CAPSLOCK>;
-        };
-
-        bt_clcla: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&bt BT_CLR>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
-        };
-				
         mo_sl: momentary_sticky_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "MOMENTARY_STICKY_LAYER";
@@ -304,6 +283,48 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
+
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
+        };
+
+        ppn: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp C_PP>, <&kp C_NEXT>;
+        };
+
+        ssh_cw: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&sk LSFT>, <&caps_word>;
+        };
+
+        bt_clcla: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
+        };
+				
+        td_ext_1: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&mo_sl 1 1>, <&tog 1>;
+        };
+				
+        td_sym_2: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&mo_sl 2 2>, <&tog 2>;
+        };
     };
 
     keymap {
@@ -315,17 +336,17 @@
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &sk LSFT &mo_sl 1 1 &mt RCTRL SPC &mo_tog 2 2
+                &ssh_cw &td_ext_1 &mt RCTRL SPC &td_sym_2
             >;
 		};
 
         /* 1 */
         extend_layer {
             bindings = <
-                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &none &none &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
-		        &to 4 &mt LSFT RET &kp DEL &kp BSPC &kp K_APP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
-                &to 3 &cwcl &mt LCMD ESC &mt LCTRL TAB &kp INS &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
-	            &trans &trans &trans &trans
+                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &ppn &none &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
+		        &kp LG(Z) &mt LSFT RET &kp DEL &kp BSPC &kp K_APP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
+                &kp LG(LS(Z)) &kp CAPSLOCK &mt LCMD ESC &mt LCTRL TAB &kp INS &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
+	            &trans &tog_off 1 &trans &to 4
             >;
 		};
 		
@@ -335,16 +356,16 @@
                 &none &kp Q &kp GRAVE &kp BSLH &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
                 &kp AT &mt LSFT AMPERSAND &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
                 &kp Z &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &kp B &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
-                &trans &trans &trans &trans 
+                &trans &to 3 &trans &tog_off 2 
             >;
 		};	
 
         /* 3 */
     	settings_layer {
             bindings = <
-                &none &bt BT_DISC 2 &none &ppn &none &none &none &kp UP &none &none
-                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_VOL_UP &none &kp LEFT &kp DOWN &kp RIGHT &none 
-                &bt_clcla &none &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &kp C_VOL_DN &none &none &none &none &none
+                &none &bt_clcla &bt BT_DISC 2 &ppn &none &none &none &kp UP &none &none
+                &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &kp C_VOL_DN  &kp C_VOL_UP &none &none &kp LEFT &kp DOWN &kp RIGHT &none 
+                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none &none &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
             >;
         };
@@ -353,8 +374,8 @@
         mouse_layer {
             bindings = <
                 &none &none &none &kp LG(V) &none &none &none &mmv MOVE_UP &kp LG(C) &none
-                &none &kp RET &mo_tog 6 6 &mo_tog 5 5 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
-                &none &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &none &none &trans &mkp MCLK &trans &none
+                &kp LG(Z) &kp RET &mo_tog 6 6 &mo_tog 5 5 &kp K_APP &kp HOME &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp END
+                &kp LG(LS(Z)) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &none &none &mt LCTRL PAGE_DOWN &mt LCMD PAGE_UP &mkp MCLK &none
                 &trans &to 0 &mkp LCLK &mkp RCLK
             >;
         };
