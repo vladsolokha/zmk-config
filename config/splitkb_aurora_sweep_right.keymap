@@ -53,7 +53,20 @@
         /************************************
 	********** Global combos  ***********
 	*************************************/
-
+    	combo_to_settings {
+            timeout-ms = <40>;
+            key-positions = <11 12 13>;
+            bindings = <&to 3>;
+            layers = <0>;
+        };
+        
+    	combo_to_mouse {
+            timeout-ms = <40>;
+            key-positions = <16 17 18>;
+            bindings = <&to 4>;
+            layers = <0>;
+        };
+ 
     	combo_esc {
             timeout-ms = <40>;
             key-positions = <16 17>;
@@ -301,28 +314,26 @@
         ssh_cw: tap_dance_sk_shift_caps_word {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
             bindings = <&sk LSFT>, <&caps_word>;
         };
 
         bt_clcla: tap_dance_bt_control {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 				
         td_ext_1: tap_dance_layer_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <150>;
             bindings = <&mo_sl 1 1>, <&tog 1>;
         };
 				
         td_sym_2: tap_dance_layer_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <150>;
             bindings = <&mo_sl 2 2>, <&tog 2>;
         };
     };
