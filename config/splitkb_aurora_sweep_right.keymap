@@ -291,35 +291,35 @@
             toggle-mode = "off";
         };
 
-        ppn: tap_dance_0 {
+        ppn: tap_dance_media_play_pause_next {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp C_PP>, <&kp C_NEXT>;
         };
 
-        ssh_cw: tap_dance_3 {
+        ssh_cw: tap_dance_sk_shift_caps_word {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&sk LSFT>, <&caps_word>;
         };
 
-        bt_clcla: tap_dance_2 {
+        bt_clcla: tap_dance_bt_control {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 				
-        td_ext_1: tap_dance_3 {
+        td_ext_1: tap_dance_layer_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&mo_sl 1 1>, <&tog 1>;
         };
 				
-        td_sym_2: tap_dance_3 {
+        td_sym_2: tap_dance_layer_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
