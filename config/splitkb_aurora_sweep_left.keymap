@@ -269,18 +269,18 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "hold-preferred";
-            tapping-term-ms = <125>;
+            tapping-term-ms = <100>;
 						quick-tap-ms = <250>;
-            bindings = <&lt 1>, <&kp BSPC>;
+            bindings = <&lt 1 &kp BSPC>;
         };
 
 				lthsym: layer_tap_hold_sym {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "hold-preferred";
-            tapping-term-ms = <125>;
+            tapping-term-ms = <100>;
 						quick-tap-ms = <250>;
-            bindings = <&lt 2>, <&key_repeat>;
+            bindings = <&lt 2 &key_repeat>;
         };
 
         /*used in mouse layer to toggle scroll and slow mode*/
