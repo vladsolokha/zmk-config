@@ -270,7 +270,7 @@
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <125>;
-						quick-tap-ms;
+						quick-tap-ms = <250>;
             bindings = <&lt 1>, <&kp BSPC>;
         };
 
@@ -279,7 +279,7 @@
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <125>;
-						quick-tap-ms;
+						quick-tap-ms = <250>;
             bindings = <&lt 2>, <&key_repeat>;
         };
 
