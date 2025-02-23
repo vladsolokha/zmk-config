@@ -29,16 +29,16 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <200>;
+    tapping-term-ms = <125>;
 };
 
-&sl {
-    release-after-ms = <600>;
-    quick-release;
+&lt {
+    flavor = "hold-preferred";
+    tapping-term-ms = <125>;
 };
 
 &sk {
-    release-after-ms = <600>;
+    release-after-ms = <400>;
     quick-release;
 };
 
@@ -51,8 +51,9 @@
         compatible = "zmk,combos";
 
         /************************************
-	********** Global combos  ***********
-	*************************************/
+        ********** Global Combos  ***********
+        *************************************/
+
     	combo_to_settings {
             timeout-ms = <40>;
             key-positions = <11 12 13>;
@@ -66,7 +67,7 @@
             bindings = <&to 4>;
             layers = <0>;
         };
- 
+        
     	combo_esc {
             timeout-ms = <40>;
             key-positions = <16 17>;
@@ -200,9 +201,9 @@
             layers = <0>;
         };
 
-	/*************************************
-	******  Browser combos (Chrome)  *****
-	*************************************/
+        /****************************
+        ******  Browser Combos  *****
+        *****************************/
 
         combo_tab_next {
             timeout-ms = <40>;
@@ -260,9 +261,9 @@
             layers = <0>;
         };
 
-     /*************************************
-	******  Code specific combos   *******
-	**************************************/ 
+        /****************************
+        ******    Code Combos   *****
+        *****************************/
 
         combo_focus_left {
             timeout-ms = <35>;
@@ -280,12 +281,12 @@
     };
 
     behaviors {
-        mo_sl: momentary_sticky_layer {
+	lthsym: layer_tap_hold_sym {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&sl>;
+            tapping-term-ms = <125>;
+            bindings = <&lt>, <&key_repeat>;
         };
 
         /*used in mouse layer to toggle scroll and slow mode*/
@@ -293,7 +294,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <125>;
             bindings = <&mo>, <&tog>;
         };
 
@@ -307,6 +308,7 @@
         ssh_cw: tap_dance_sk_shift_caps_word {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <300>;
             bindings = <&sk LSFT>, <&caps_word>;
         };
 
@@ -315,6 +317,13 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
+        };
+
+        amps_excl: amps_excl {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp AMPS>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 				
     };
@@ -328,7 +337,7 @@
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &ssh_cw &mo_tog 1 1 &mt RCTRL SPC &mo_tog 2 2 
+                &ssh_cw &lt 1 BSPC &mt RCTRL SPC &lthsym 2 0
             >;
 		};
 
@@ -338,7 +347,7 @@
                 &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &ppn &none &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
 		        &kp LG(Z) &mt LSFT RET &kp DEL &kp BSPC &kp K_APP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
                 &kp LG(LS(Z)) &kp CAPSLOCK &mt LCMD ESC &mt LCTRL TAB &kp INS &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
-	            &trans &trans &trans &to 4
+	            &trans &trans &trans &trans
             >;
 		};
 		
@@ -346,9 +355,9 @@
 	    symbol_layer {
             bindings = <
                 &none &kp Q &kp GRAVE &kp BSLH &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
-                &kp AT &mt LSFT AMPERSAND &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
-                &kp Z &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &kp B &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
-                &trans &to 3 &trans &trans
+                &kp AT &amps_excl &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
+                &kp Z &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT &kp B &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
+                &trans &trans &trans &trans
             >;
 		};	
 
