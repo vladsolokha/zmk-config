@@ -16,11 +16,6 @@
     tapping-term-ms = <200>;
 };
 
-&lt {
-    flavor = "hold-preferred";
-    tapping-term-ms = <150>;
-};
-
 &sk {
     release-after-ms = <400>;
     quick-release;
@@ -273,6 +268,14 @@
             bindings = <&mo>, <&key_repeat>;
         };
 
+	mo_kp: momentary_hold_key_press_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&mo>, <&kp>;
+        };
+
         /*used in mouse layer to toggle scroll and slow mode*/
         mo_tog: behavior_mo_tog {
             compatible = "zmk,behavior-hold-tap";
@@ -321,7 +324,7 @@
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &ssh_cw &lt 1 BSPC &mt RCTRL SPC &mo_kr 2 0
+                &ssh_cw &mo_kp 1 BSPC &mt RCTRL SPC &mo_kr 2 0
             >;
 		};
 
