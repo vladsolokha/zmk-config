@@ -321,7 +321,7 @@
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &ssh_cw &lt 1 BSPC &mt RCTRL SPC &lthsym 2 0
+                &ssh_cw &lt 1 BSPC &mt RCTRL SPC &lt 2 DOWN
             >;
 		};
 
