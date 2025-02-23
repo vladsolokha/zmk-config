@@ -13,16 +13,16 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <150>;
+    tapping-term-ms = <125>;
 };
 
-&sl {
-    release-after-ms = <500>;
-    quick-release;
+&lt {
+    flavor = "hold-preferred";
+    tapping-term-ms = <125>;
 };
 
 &sk {
-    release-after-ms = <500>;
+    release-after-ms = <400>;
     quick-release;
 };
 
@@ -265,22 +265,12 @@
     };
 
     behaviors {
-        lth: layer_tap_hold {
+	lthsym: layer_tap_hold_sym {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <100>;
-						quick-tap-ms = <250>;
-            bindings = <&lt 1 &kp BSPC>;
-        };
-
-				lthsym: layer_tap_hold_sym {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <100>;
-						quick-tap-ms = <250>;
-            bindings = <&lt 2 &key_repeat>;
+            tapping-term-ms = <125>;
+            bindings = <&lt>, <&key_repeat>;
         };
 
         /*used in mouse layer to toggle scroll and slow mode*/
@@ -288,7 +278,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <125>;
             bindings = <&mo>, <&tog>;
         };
 
@@ -331,7 +321,7 @@
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &ssh_cw &lth &mt RCTRL SPC &lthsym 
+                &ssh_cw &lt 1 BSPC &mt RCTRL SPC &lthsym 2 0
             >;
 		};
 
