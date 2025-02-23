@@ -13,12 +13,12 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping-term-ms = <125>;
+    tapping-term-ms = <200>;
 };
 
 &lt {
     flavor = "hold-preferred";
-    tapping-term-ms = <125>;
+    tapping-term-ms = <150>;
 };
 
 &sk {
@@ -269,7 +269,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <125>;
+            tapping-term-ms = <150>;
             bindings = <&lt>, <&key_repeat>;
         };
 
@@ -278,7 +278,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <125>;
+            tapping-term-ms = <150>;
             bindings = <&mo>, <&tog>;
         };
 
