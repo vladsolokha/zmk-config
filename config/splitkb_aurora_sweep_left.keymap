@@ -313,6 +313,20 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 				
+        caret_star: caret_star {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp CARET>, <&kp STAR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dollar_hash: dollar_hash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOLLAR>, <&kp HASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+				
     };
 
     keymap {
@@ -331,9 +345,9 @@
         /* 1 */
         extend_layer {
             bindings = <
-                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &ppn &none &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
-		        &kp LG(Z) &mt LSFT RET &kp DEL &kp BSPC &kp K_APP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
-                &kp LG(LS(Z)) &kp CAPSLOCK &mt LCMD ESC &mt LCTRL TAB &none &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
+                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp K_APP &ppn &none &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
+		        &kp LG(Z) &mt LSFT RET &kp DEL &kp BSPC &kp C_VOL_UP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
+                &kp LG(LS(Z)) &kp CAPSLOCK &mt LCMD ESC &mt LCTRL TAB &kp C_VOL_DN &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
 	            &trans &trans &trans &trans
             >;
 		};
@@ -341,9 +355,9 @@
         /* 2 */
 	    symbol_layer {
             bindings = <
-                &none &kp Q &kp GRAVE &kp BSLH &none &none &kp CARET &kp DOLLAR &kp EQUAL &none 
-                &kp AT &amps_excl &kp LPAR &kp RPAR &kp PERCENT &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
-                &kp Z &mt LALT UNDER &mt LCMD LBKT &mt LCTRL RBKT &kp B &kp J &mt LCTRL STAR &mt LCMD HASH &mt LALT MINUS &kp COLON
+                &none &kp Q &kp LBKT &kp RBKT &none &none &kp J &kp PERCENT &kp EQUAL &none 
+                &kp AT &amps_excl &kp LPAR &kp RPAR &kp BSLH &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
+                &kp Z &mt LALT UNDER &mt LCMD GRAVE &mt LCTRL B &none &none &caret_star &dollar_hash &mt LALT MINUS &kp COLON
                 &trans &trans &trans &trans
             >;
 		};	
@@ -351,9 +365,9 @@
         /* 3 */
     	settings_layer {
             bindings = <
-                &none &bt_clcla &bt BT_DISC 2 &ppn &none &none &none &kp UP &none &none
-                &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &kp C_VOL_DN &kp C_VOL_UP &none &none &kp LEFT &kp DOWN &kp RIGHT &none 
-                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none &none &none &none &none &none
+                &none &bt_clcla &none &none &none &none &none &kp UP &none &none
+                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_BRIGHTNESS_INC &none &kp LEFT &kp DOWN &kp RIGHT &none 
+                &bt BT_DISC 3 &bt BT_DISC 2 &none &none &kp C_BRIGHTNESS_DEC &none &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
             >;
         };
@@ -361,7 +375,7 @@
         /* 4 */
         mouse_layer {
             bindings = <
-                &none &none &none &kp LG(V) &none &none &kp HOME &mmv MOVE_UP &kp LG(C) &none
+                &none &none &kp K_APP &kp LG(V) &none &none &kp HOME &mmv MOVE_UP &kp LG(C) &none
                 &kp LG(Z) &kp RET &mo_tog 6 6 &mo_tog 5 5 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo 6
                 &kp LG(LS(Z)) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &none &none &mt LCTRL PAGE_DOWN &mt LCMD PAGE_UP &kp END &mkp MCLK
                 &trans &to 0 &mkp LCLK &mkp RCLK
