@@ -112,7 +112,7 @@
 
         combo_switch_win {
             timeout-ms = <40>;
-            key-positions = <10 11>;
+            key-positions = <11 22>;
             bindings = <&kp LG(GRAVE)>;
             layers = <0>;
         };
@@ -235,7 +235,7 @@
         
         combo_select_element {
             timeout-ms = <40>;
-            key-positions = <20 21>;
+            key-positions = <12 21>;
             bindings = <&kp LG(LS(C))>;
             layers = <0>;
         };
@@ -333,7 +333,7 @@
             bindings = <
                 &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &ppn &none &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
 		        &kp LG(Z) &mt LSFT RET &kp DEL &kp BSPC &kp K_APP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
-                &kp LG(LS(Z)) &kp CAPSLOCK &mt LCMD ESC &mt LCTRL TAB &kp INS &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
+                &kp LG(LS(Z)) &kp CAPSLOCK &mt LCMD ESC &mt LCTRL TAB &none &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
 	            &trans &trans &trans &trans
             >;
 		};
@@ -352,7 +352,7 @@
     	settings_layer {
             bindings = <
                 &none &bt_clcla &bt BT_DISC 2 &ppn &none &none &none &kp UP &none &none
-                &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &kp C_VOL_DN  &kp C_VOL_UP &none &none &kp LEFT &kp DOWN &kp RIGHT &none 
+                &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &kp C_VOL_DN &kp C_VOL_UP &none &none &kp LEFT &kp DOWN &kp RIGHT &none 
                 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &none &none &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
             >;
@@ -361,9 +361,9 @@
         /* 4 */
         mouse_layer {
             bindings = <
-                &none &none &none &kp LG(V) &none &none &none &mmv MOVE_UP &kp LG(C) &none
-                &kp LG(Z) &kp RET &mo_tog 6 6 &mo_tog 5 5 &kp K_APP &kp HOME &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp END
-                &kp LG(LS(Z)) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &none &none &mt LCTRL PAGE_DOWN &mt LCMD PAGE_UP &mkp MCLK &none
+                &none &none &none &kp LG(V) &none &none &kp HOME &mmv MOVE_UP &kp LG(C) &none
+                &kp LG(Z) &kp RET &mo_tog 6 6 &mo_tog 5 5 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo 6
+                &kp LG(LS(Z)) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &none &none &mt LCTRL PAGE_DOWN &mt LCMD PAGE_UP &kp END &mkp MCLK
                 &trans &to 0 &mkp LCLK &mkp RCLK
             >;
         };
