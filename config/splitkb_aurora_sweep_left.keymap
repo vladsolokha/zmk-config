@@ -13,7 +13,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <225>;
 };
 
 &sk {
@@ -365,9 +365,9 @@
         /* 3 */
     	settings_layer {
             bindings = <
-                &none &bt_clcla &none &none &none &none &none &kp UP &none &none
-                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_BRIGHTNESS_INC &none &kp LEFT &kp DOWN &kp RIGHT &none 
-                &bt BT_DISC 3 &bt BT_DISC 2 &none &none &kp C_BRIGHTNESS_DEC &none &none &none &none &none
+                &none &bt_clcla &none &ppn &none &none &none &kp UP &none &none
+                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRIGHTNESS_INC &kp LEFT &kp DOWN &kp RIGHT &none 
+                &bt BT_DISC 3 &bt BT_DISC 2 &none &none &kp C_VOL_DN &kp C_BRIGHTNESS_DEC &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
             >;
         };
@@ -375,7 +375,7 @@
         /* 4 */
         mouse_layer {
             bindings = <
-                &none &none &kp K_APP &kp LG(V) &none &none &kp HOME &mmv MOVE_UP &kp LG(C) &none
+                &none &none &none &kp LG(V) &none &none &kp HOME &mmv MOVE_UP &kp LG(C) &none
                 &kp LG(Z) &kp RET &mo_tog 6 6 &mo_tog 5 5 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo 6
                 &kp LG(LS(Z)) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &none &none &mt LCTRL PAGE_DOWN &mt LCMD PAGE_UP &kp END &mkp MCLK
                 &trans &to 0 &mkp LCLK &mkp RCLK
