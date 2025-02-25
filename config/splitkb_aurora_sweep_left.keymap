@@ -232,7 +232,6 @@
         nav_word: nav_word {
             compatible = "zmk,behavior-auto-layer";
             #binding-cells = <0>;
-            layers = <2>;
             continue-list = <LEFT DOWN UP RIGHT PAGE_DOWN PAGE_UP LA(LEFT) LA(RIGHT)>;
             ignore-modifiers;
         };
@@ -240,7 +239,6 @@
         num_word: num_word {
             compatible = "zmk,behavior-auto-layer";
             #binding-cells = <0>;
-            layers = <1>;
             continue-list = <BSPC DEL DOT MINUS SLASH>;
             ignore-numbers;
         };
