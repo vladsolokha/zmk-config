@@ -29,46 +29,52 @@
     combos {
         compatible = "zmk,combos";
 
-        /************************************
-        ********** Global Combos  ***********
-        *************************************/
+        /****************************************
+        ********** Left Hand Combos  ***********
+        ****************************************/
 
-    	combo_to_settings {
+	    combo_command_find {
             timeout-ms = <40>;
-            key-positions = <11 12 13>;
-            bindings = <&to 3>;
+            key-positions = <1 2>;
+            bindings = <&kp LG(F)>;
         };
-        
-    	combo_to_mouse {
+
+        combo_ctrl_b {
             timeout-ms = <40>;
-            key-positions = <16 17 18>;
-            bindings = <&to 4>;
+            key-positions = <11 12>;
+            bindings = <&kp LC(B)>;
         };
-        
-    	combo_esc {
+
+        combo_cut {
             timeout-ms = <40>;
-            key-positions = <16 17>;
-            bindings = <&kp ESC>;
+            key-positions = <21 22>;
+            bindings = <&kp LC(B)>;
         };
-        
-        combo_return {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RETURN>;
-        };
-        
-        combo_save {
-            timeout-ms = <40>;
-            key-positions = <12 13>;
-            bindings = <&kp LC(S)>;
-        };
-	
+
 	    combo_command_save {
             timeout-ms = <40>;
             key-positions = <2 3>;
             bindings = <&kp LG(S)>;
         }; 
         
+        combo_save {
+            timeout-ms = <40>;
+            key-positions = <12 13>;
+            bindings = <&kp LC(S)>;
+        };
+
+        combo_app_switcher {
+            timeout-ms = <40>;
+            key-positions = <22 23>;
+            bindings = <&kp LG(TAB)>;
+        };
+
+     	combo_win_app_switcher {
+            timeout-ms = <40>;
+            key-positions = <21 23>;
+            bindings = <&kp LA(TAB)>;
+        };
+
         combo_copy {
             timeout-ms = <40>;
             key-positions = <13 22>;
@@ -81,40 +87,32 @@
             bindings = <&kp LG(V)>;
         };
 
-	    combo_command_find {
+    	combo_to_settings {
             timeout-ms = <40>;
-            key-positions = <1 2>;
-            bindings = <&kp LG(F)>;
+            key-positions = <11 12 13>;
+            bindings = <&to 4>;
         };
-
-     	combo_app_switcher {
-            timeout-ms = <40>;
-            key-positions = <22 23>;
-            bindings = <&kp LG(TAB)>;
-        };
-
-     	combo_win_app_switcher {
-            timeout-ms = <40>;
-            key-positions = <21 23>;
-            bindings = <&kp LA(TAB)>;
-        };
-
-        combo_switch_win {
-            timeout-ms = <40>;
-            key-positions = <11 22>;
-            bindings = <&kp LG(GRAVE)>;
-        };
-
-        combo_ctrl_b {
-            timeout-ms = <40>;
-            key-positions = <11 12>;
-            bindings = <&kp LC(B)>;
-        };
+        
+        /****************************************
+        ********** Right Hand Combos  ***********
+        ****************************************/
 
         combo_bol {
             timeout-ms = <40>;
             key-positions = <6 7>;
             bindings = <&kp LG(LEFT)>;
+        };
+        
+    	combo_esc {
+            timeout-ms = <40>;
+            key-positions = <16 17>;
+            bindings = <&kp ESC>;
+        };
+        
+    	combo_cmd_down {
+            timeout-ms = <40>;
+            key-positions = <26 27>;
+            bindings = <&kp LG(DOWN)>;
         };
         
         combo_eol {
@@ -123,96 +121,27 @@
             bindings = <&kp LG(RIGHT)>;
         };
 
-        combo_word_back {
-            timeout-ms = <40>;
-            key-positions = <7 16>;
-            bindings = <&kp LA(LEFT)>;
+        combo_return {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp RETURN>;
         };
 
-        combo_word_forward {
-            timeout-ms = <40>;
-            key-positions = <7 18>;
-            bindings = <&kp LA(RIGHT)>;
-        };
-
-        combo_home {
-            timeout-ms = <40>;
-            key-positions = <6 17>;
-            bindings = <&kp HOME>;
-        };
-
-        combo_end {
-            timeout-ms = <40>;
-            key-positions = <8 17>;
-            bindings = <&kp END>;
-        };
-
-        combo_page_down {
-            timeout-ms = <40>;
-            key-positions = <26 27>;
-            bindings = <&kp PAGE_DOWN>;
-        };
-
-        combo_page_up {
+    	combo_cmd_up {
             timeout-ms = <40>;
             key-positions = <27 28>;
-            bindings = <&kp PAGE_UP>;
-        };
-
-        /****************************
-        ******  Browser Combos  *****
-        *****************************/
-
-        combo_tab_next {
-            timeout-ms = <40>;
-            key-positions = <2 13>;
-            bindings = <&kp LC(TAB)>;
-        };
-
-        combo_tab_previous {
-            timeout-ms = <40>;
-            key-positions = <2 11>;
-            bindings = <&kp LC(LS(TAB))>;
-        };
-
-        combo_tab_swap_left {
-            timeout-ms = <40>;
-            key-positions = <1 12>;
-            bindings = <&kp LC(LS(PAGE_UP))>;
-        };
-
-        combo_tab_swap_right {
-            timeout-ms = <40>;
-            key-positions = <3 12>;
-            bindings = <&kp LC(LS(PAGE_DOWN))>;
-        };
- 
-        combo_www_back {
-            timeout-ms = <40>;
-            key-positions = <1 13>;
-            bindings = <&kp LG(LEFT_BRACKET)>;
+            bindings = <&kp LG(UP)>;
         };
         
-        combo_www_forward {
+    	combo_to_mouse {
             timeout-ms = <40>;
-            key-positions = <13 21>;
-            bindings = <&kp LG(RIGHT_BRACKET)>;
+            key-positions = <16 17 18>;
+            bindings = <&to 5>;
         };
         
-        combo_inspect {
-            timeout-ms = <40>;
-            key-positions = <21 22>;
-            bindings = <&kp LG(LA(I))>;
-        };
-        
-        combo_select_element {
-            timeout-ms = <40>;
-            key-positions = <12 21>;
-            bindings = <&kp LG(LS(C))>;
-        };
-
         /****************************
         ******    Code Combos   *****
+        ******  Right Hand Vim  *****
         *****************************/
 
         combo_focus_left {
@@ -226,29 +155,29 @@
             key-positions = <17 28>;
             bindings = <&kp LC(L)>;
         };
+
+        combo_focus_down {
+            timeout-ms = <35>;
+            key-positions = <16 27>;
+            bindings = <&kp LC(J)>;
+        };
+
+        combo_focus_up {
+            timeout-ms = <50>;
+            key-positions = <18 27>;
+            bindings = <&kp LC(K)>;
+        };
+
     };
 
     behaviors {
-        nav_word: nav_word {
-            compatible = "zmk,behavior-auto-layer";
-            #binding-cells = <0>;
-            continue-list = <LEFT DOWN UP RIGHT PAGE_DOWN PAGE_UP LA(LEFT) LA(RIGHT)>;
-            ignore-modifiers;
-        };
-
-        num_word: num_word {
-            compatible = "zmk,behavior-auto-layer";
-            #binding-cells = <0>;
-            continue-list = <BSPC DEL DOT MINUS SLASH>;
-            ignore-numbers;
-        };
 
         mo_kr: momentary_hold_key_repeat_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
-            bindings = <&nav_word>, <&key_repeat>;
+            bindings = <&mo>, <&key_repeat>;
         };
 
         mo_kp: momentary_hold_key_press_tap {
@@ -256,7 +185,7 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
-            bindings = <&num_word>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
 
         /*used in mouse layer to toggle scroll and slow mode*/
@@ -290,27 +219,6 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 
-        amps_excl: amps_excl {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp AMPS>, <&kp EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-				
-        caret_star: caret_star {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp CARET>, <&kp STAR>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        dollar_hash: dollar_hash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOLLAR>, <&kp HASH>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-				
     };
 
     keymap {
@@ -322,7 +230,7 @@
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &ssh_cw &mo_kp 1 BSPC &mt LCTRL SPC &mo_kr 2 0
+                &ssh_cw &mo_kp 1 BSPC &mo_kp 2 SPC &mo_kr 3 0
             >;
 		};
 
@@ -330,8 +238,8 @@
         extend_layer {
             bindings = <
                 &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &kp K_APP &ppn &none &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
-		        &kp LG(Z) &mt LSFT RET &kp DEL &kp BSPC &kp C_VOL_UP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
-                &kp LG(LS(Z)) &kp CAPSLOCK &mt LCMD ESC &mt LCTRL TAB &kp C_VOL_DN &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
+		        &kp LG(Z) &mt LSFT RET &kp ESC &kp DEL &kp C_VOL_UP &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0  
+                &kp LG(LS(Z)) &mt LALT LG(X) &mt LCMD CAPS &mt LCTRL TAB &kp C_VOL_DN &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans 
 	            &trans &trans &trans &trans
             >;
 		};
@@ -339,14 +247,24 @@
         /* 2 */
 	    symbol_layer {
             bindings = <
-                &none &kp Q &kp LBKT &kp RBKT &none &none &kp J &kp PERCENT &kp EQUAL &none 
-                &kp AT &amps_excl &kp LPAR &kp RPAR &kp BSLH &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMICOLON
-                &kp Z &mt LALT UNDER &mt LCMD GRAVE &mt LCTRL B &none &none &caret_star &dollar_hash &mt LALT MINUS &kp COLON
+                &none &kp EXCL &kp LBRC &kp RBRC &none &none &kp BSLH &kp PLUS &kp EQUAL &none 
+                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp TILDE &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp SEMICOLON
+                &kp GRAVE &mt LALT PIPE &mt LCMD LBKT &mt LCTRL RBKT &none &none &mt LCTRL PERCENT &mt LCMD UNDER &mt LALT MINUS &kp COLON
                 &trans &trans &trans &trans
             >;
 		};	
 
         /* 3 */
+	    navigate_layer {
+            bindings = <
+                &none &kp Q &kp LG(LBKT) &kp LG(RBKT) &none &none &kp J &kp HOME &kp END &none 
+                &kp LG(LA(I)) &kp LG(LS(C)) &kp LC(LS(TAB)) &kp LC(TAB) &kp LC(LS(PAGE_UP)) &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp PAGE_UP
+                &kp Z &mt LALT LC(LS(E)) &mt LCMD LG(GRAVE) &mt LCTRL B &kp LC(LS(PAGE_DOWN)) &none &mt LCTRL LA(LEFT) &mt LCMD LA(RIGHT) &sk LALT &kp PAGE_DOWN
+                &trans &trans &trans &trans
+            >;
+		};	
+
+        /* 4 */
     	settings_layer {
             bindings = <
                 &none &bt_clcla &none &ppn &none &none &none &kp UP &none &none
@@ -356,17 +274,17 @@
             >;
         };
 
-        /* 4 */
+        /* 5 */
         mouse_layer {
             bindings = <
                 &none &none &none &kp LG(V) &none &none &kp HOME &mmv MOVE_UP &kp LG(C) &none
-                &kp LG(Z) &kp RET &mo_tog 6 6 &mo_tog 5 5 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo 6
+                &kp LG(Z) &kp RET &mo_tog 7 7 &mo_tog 6 6 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo 7
                 &kp LG(LS(Z)) &mt LALT LG(X) &mt LCMD ESC &mt LCTRL TAB &none &none &mt LCTRL PAGE_DOWN &mt LCMD PAGE_UP &kp END &mkp MCLK
                 &trans &to 0 &mkp LCLK &mkp RCLK
             >;
         };
 
-        /* 5 */
+        /* 6 */
         mouse_layer_slow {
             bindings = <
                 &trans &trans &trans &trans &trans &trans &trans &mmv MOVE_Y(-800) &trans &trans                            
@@ -376,7 +294,7 @@
             >;
         };
 
-        /* 6 */
+        /* 7 */
         mouse_layer_scroll {
             bindings = <
                &trans &trans &trans &trans &trans &trans &trans &msc SCRL_UP &trans &trans                               
