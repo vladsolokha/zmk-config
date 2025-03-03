@@ -196,6 +196,14 @@
             bindings = <&mo>, <&kp>;
         };
 
+        mo_kp_hold: momentary_hold_key_press_tap_prefer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <225>;
+            bindings = <&mo>, <&kp>;
+        };
+
         ppn: tap_dance_media_play_pause_next {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -227,7 +235,7 @@
         default {
             bindings = <
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
-                &mt LC(LA(LSHIFT)) A &kp R &kp S &mo_kp 1 T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
+                &mt LC(LA(LSHIFT)) A &kp R &kp S &mo_kp_hold 1 T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
                 &ssh_cw &mo_kp 2 BSPC &mt LCTRL SPC &mo_kr 3 0
             >;
