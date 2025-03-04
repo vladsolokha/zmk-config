@@ -188,6 +188,14 @@
             bindings = <&mo>, <&key_repeat>;
         };
 
+        hl_kr: hold_key_repeat_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&key_repeat>;
+        };
+
         mo_kp: momentary_hold_key_press_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -237,7 +245,7 @@
                 &none &kp W &kp F &kp P &none &none &kp L &kp U &kp Y &none  
                 &mt LC(LA(LSHIFT)) A &kp R &kp S &mo_kp_hold 1 T &kp G &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
-                &ssh_cw &mo_kp 2 BSPC &mt LCTRL SPC &mo_kr 3 0
+                &ssh_cw &mo_kp 3 BSPC &mt LCTRL SPC &mo_kr 2 0
             >;
 		};
 
@@ -257,7 +265,7 @@
                 &none &kp EXCL &kp LBRC &kp RBRC &none &none &kp BSLH &kp PLUS &kp EQUAL &none 
                 &kp AT &kp AMPS &kp LPAR &kp RPAR &kp TILDE &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp SEMICOLON
                 &kp GRAVE &mt LALT PIPE &mt LCMD LBKT &mt LCTRL RBKT &none &none &mt LCTRL PERCENT &mt LCMD UNDER &mt LALT MINUS &kp COLON
-                &trans &trans &trans &trans
+                &trans &mt LCTRL BSPC &trans &trans
             >;
 		};	
 
@@ -266,8 +274,8 @@
             bindings = <
                 &none &kp Q &none &none &none &none &kp J &none &none &none 
                 &none &none &kp DEL &kp TAB &kp LC(LS(PAGE_UP)) &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp PAGE_UP
-                &kp Z &sk LALT &sk LCMD &mt LCTRL B &kp LC(LS(PAGE_DOWN)) &none &mt LCTRL LA(LEFT) &mt LCMD LA(RIGHT) &sk LALT &kp PAGE_DOWN
-                &trans &trans &trans &trans
+                &kp Z &sk LALT &sk LCMD &mt LCTRL B &kp LC(LS(PAGE_DOWN)) &none &sk LCTRL &mt LCMD LA(LEFT) &mt LALT LA(RIGHT) &kp PAGE_DOWN
+                &trans &trans &trans &hl_kr LSHIFT 0
             >;
 		};	
 
