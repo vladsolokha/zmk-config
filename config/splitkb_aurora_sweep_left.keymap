@@ -272,9 +272,9 @@
         /* 3 */
 	    navigation {
             bindings = <
-                &none &kp Q &none &none &none &none &kp J &none &none &none 
-                &none &none &kp DEL &kp TAB &kp LC(LS(PAGE_UP)) &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp PAGE_UP
-                &kp Z &sk LALT &sk LCMD &mt LCTRL B &kp LC(LS(PAGE_DOWN)) &none &sk LCTRL &mt LCMD LA(LEFT) &mt LALT LA(RIGHT) &kp PAGE_DOWN
+                &none &kp Q &kp LG(LBKT) &kp LG(RBKT) &none &none &kp J &none &none &none 
+                &none &kp LC(LS(TAB)) &kp DEL &kp TAB &kp LC(LS(PAGE_UP)) &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
+                &kp Z &mt LALT LC(TAB) &mt LCMD LG(GRAVE) &mt LCTRL B &kp LC(LS(PAGE_DOWN)) &none &sk LCTRL &mt LCMD LA(LEFT) &mt LALT LA(RIGHT) &none
                 &trans &trans &trans &hl_kr LSHIFT 0
             >;
 		};	
