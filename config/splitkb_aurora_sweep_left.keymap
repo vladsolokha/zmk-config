@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
 #include <dt-bindings/zmk/pointing.h>
@@ -45,10 +46,10 @@
             bindings = <&kp LC(B)>;
         };
 
-        combo_ctrl_tab {
+        combo_tab {
             timeout-ms = <40>;
             key-positions = <21 22>;
-            bindings = <&kp LC(TAB)>;
+            bindings = <&kp TAB>;
         };
 
         combo_cut {
@@ -265,16 +266,16 @@
                 &none &kp EXCL &kp LBRC &kp RBRC &none &none &kp BSLH &kp PLUS &kp EQUAL &none 
                 &kp AT &kp AMPS &kp LPAR &kp RPAR &kp TILDE &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp SEMICOLON
                 &kp GRAVE &mt LALT PIPE &mt LCMD LBKT &mt LCTRL RBKT &none &none &mt LCTRL PERCENT &mt LCMD UNDER &mt LALT MINUS &kp COLON
-                &trans &mt LCTRL BSPC &trans &trans
+                &trans &trans &trans &trans
             >;
 		};	
 
         /* 3 */
 	    navigation {
             bindings = <
-                &none &kp Q &kp LG(LBKT) &kp LG(RBKT) &none &none &kp J &none &none &none 
-                &none &kp LC(LS(TAB)) &kp DEL &kp TAB &kp LC(LS(PAGE_UP)) &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
-                &kp Z &mt LALT LC(TAB) &mt LCMD LG(GRAVE) &mt LCTRL B &kp LC(LS(PAGE_DOWN)) &none &sk LCTRL &mt LCMD LA(LEFT) &mt LALT LA(RIGHT) &none
+                &none &kp Q &kp LG(LBKT) &kp LG(RBKT) &none &none &kp J &kp LG(Z) &none &none 
+                &sk LSHIFT &kp LC(LS(TAB)) &kp DEL &kp TAB &kp LC(LS(PAGE_UP)) &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
+                &kp Z &mt LALT LC(TAB) &sk LCMD &mt LCTRL B &kp LC(LS(PAGE_DOWN)) &none &mt LCTRL LG(LS(LEFT)) &mt LCMD LA(LS(LEFT)) &mt LALT LA(LS(RIGHT)) &kp LG(LS(RIGHT))
                 &trans &trans &trans &hl_kr LSHIFT 0
             >;
 		};	
@@ -282,7 +283,7 @@
         /* 4 */
     	settings {
             bindings = <
-                &none &bt_clcla &none &ppn &none &none &none &kp UP &none &none
+                &none &bt_clcla &out OUT_TOG &ppn &none &none &none &kp UP &none &none
                 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRIGHTNESS_INC &kp LEFT &kp DOWN &kp RIGHT &none 
                 &bt BT_DISC 3 &bt BT_DISC 2 &none &none &kp C_VOL_DN &kp C_BRIGHTNESS_DEC &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
@@ -292,10 +293,10 @@
         /* 5 */
         mouse {
             bindings = <
-                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &none &none &none &kp HOME &mmv MOVE_UP &none &none
-                &kp LG(LS(Z)) &kp RET &kp DEL &kp TAB &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo 7
+                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &kp INSERT &none &none &kp HOME &mmv MOVE_UP &none &none
+                &none &kp RET &kp DEL &mo 6 &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mo 7
                 &kp LG(Z) &sk LALT &mt LCMD ESC &sk LCTRL &none &none &mt LCTRL PAGE_DOWN &mt LCMD PAGE_UP &kp END &mkp MCLK
-                &mo 6 &to 0 &mkp LCLK &mkp RCLK
+                &trans &to 0 &mkp LCLK &mkp RCLK
             >;
         };
 
