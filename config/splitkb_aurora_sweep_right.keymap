@@ -43,7 +43,7 @@
     continue-list = <UNDERSCORE MINUS BSPC>;
 };
 
-/ {
+/{
     combos {
         compatible = "zmk,combos";
 
@@ -273,7 +273,7 @@
 	    symbol {
             bindings = <
                 &none &kp EXCL &kp LBRC &kp RBRC &none &none &kp BSLH &kp PLUS &kp EQUAL &none
-                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp TILDE &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp SEMICOLON
+                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp TILDE &kp SEMICOLON &kp CARET &kp STAR &kp HASH &kp DOLLAR
                 &kp GRAVE &mt LALT PIPE &mt LCMD LBKT &mt LCTRL RBKT &none &none &mt LCTRL PERCENT &mt LCMD UNDER &mt LALT MINUS &kp COLON
                 &trans &trans &trans &trans
             >;
