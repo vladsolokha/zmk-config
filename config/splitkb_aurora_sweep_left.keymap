@@ -7,6 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
 #include <dt-bindings/zmk/pointing.h>
@@ -282,9 +284,9 @@
         /* 4 */
     	settings {
             bindings = <
-                &none &bt_clcla &none &ppn &none &none &none &kp UP &none &none
+                &none &bt_clcla &out OUT_TOG &ppn &none &none &none &kp UP &none &none
                 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRIGHTNESS_INC &kp LEFT &kp DOWN &kp RIGHT &none
-                &bt BT_DISC 3 &bt BT_DISC 2 &none &none &kp C_VOL_DN &kp C_BRIGHTNESS_DEC &none &none &none &none
+                &bt BT_DISC 3 &bt BT_DISC 2 &none &ext_power EP_OFF &kp C_VOL_DN &kp C_BRIGHTNESS_DEC &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
             >;
         };
