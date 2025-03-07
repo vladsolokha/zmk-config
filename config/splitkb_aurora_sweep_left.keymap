@@ -25,7 +25,7 @@
     continue-list = <UNDERSCORE MINUS BSPC>;
 };
 
-/{
+/ {
     combos {
         compatible = "zmk,combos";
 
@@ -196,6 +196,14 @@
             bindings = <&mo>, <&kp>;
         };
 
+        hl_kr: hold_key_repeat_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&key_repeat>;
+        };
+
         mo_kp_hold: momentary_hold_key_press_tap_prefer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -264,7 +272,7 @@
         /* 3 */
 	    navigation {
             bindings = <
-                &none &kp Q &kp LG(LBKT) &kp LG(RBKT) &none &none &kp J &none &none &none 
+                &none &kp Q &kp LG(LBKT) &kp LG(RBKT) &none &none &kp J &none &none &none
                 &none &kp LC(LS(TAB)) &kp DEL &kp TAB &kp LC(LS(PAGE_UP)) &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
                 &kp Z &mt LALT LC(TAB) &mt LCMD LG(GRAVE) &mt LCTRL B &kp LC(LS(PAGE_DOWN)) &none &sk LCTRL &mt LCMD LA(LEFT) &mt LALT LA(RIGHT) &none
                 &trans &trans &trans &hl_kr LSHIFT 0
@@ -275,7 +283,7 @@
     	settings {
             bindings = <
                 &none &bt_clcla &none &ppn &none &none &none &kp UP &none &none
-                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRIGHTNESS_INC &kp LEFT &kp DOWN &kp RIGHT &none 
+                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_VOL_UP &kp C_BRIGHTNESS_INC &kp LEFT &kp DOWN &kp RIGHT &none
                 &bt BT_DISC 3 &bt BT_DISC 2 &none &none &kp C_VOL_DN &kp C_BRIGHTNESS_DEC &none &none &none &none
                 &to 0 &to 0 &to 0 &to 0
             >;
