@@ -223,7 +223,7 @@
                 &none &kp W &kp F &kp P &none
                 &none &kp L &kp U &kp Y &none
 
-                &mt LC(LA(LSHIFT)) A &kp R &kp S &mo_kp_hold 1 T &kp G
+                &mt LC(LA(LSHIFT)) A &kp R &mo_kp_hold 8 S &mo_kp_hold 1 T &kp G
                 &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
 
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V
@@ -239,11 +239,11 @@
                 &none &none &none &none &none
                 &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
 
-		        &none &none &none &trans &none
-                &kp MINUS &kp NUM_4 &kp NUM_5 &mt LSFT NUM_6 &kp NUM_0
+		        &none &none &sk LCTRL &trans &none
+                &kp MINUS &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp NUM_0
 
-                &none &sk LALT &sk LCMD &sk LCTRL &none
-                &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans
+                &none &sk LALT &sk LCMD &none &none
+                &kp DOT &kp NUM_1 &kp NUM_2 &kp NUM_3 &trans
 
 	            &trans &trans &trans &trans
             >;
@@ -253,31 +253,31 @@
 	    symbol {
             bindings = <
                 &none &kp EXCL &kp LBRC &kp RBRC &none
-                &none &kp BSLH &kp PLUS &kp EQUAL &none
+                &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
                 &kp AT &kp AMPS &kp LPAR &kp RPAR &kp TILDE
-                &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp SEMICOLON
+                &kp BSLH &kp STAR &kp HASH &kp MINUS &kp UNDER
 
                 &kp GRAVE &mt LALT PIPE &mt LCMD LBKT &mt LCTRL RBKT &none
-                &none &mt LCTRL PERCENT &mt LCMD UNDER &mt LALT MINUS &kp COLON
+                &none &mt LCTRL CARET &mt LCMD SEMICOLON &mt LALT COLON &kp DOLLAR
 
-                &trans &mt LCTRL BSPC &trans &trans
+                &trans &trans &trans &trans
             >;
 		};
 
         /* 3 */
 	    navigation {
             bindings = <
-                &none &kp Q &kp LG(LBKT) &kp LG(RBKT) &none
-                &none &kp J &none &none &none
+                &none &none &none &none &none
+                &none &none &none &none &none
 
-                &none &kp LC(LS(TAB)) &kp DEL &mt LSHIFT TAB &kp LC(LS(PAGE_UP))
+                &kp Z &kp Q &mt LSHIFT J &mt LSHIFT B &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
-                &kp Z &sk LALT &sk LCMD &mt LCTRL B &kp LC(LS(PAGE_DOWN))
-                &none &mt LCTRL LG(LEFT) &mt LCMD LA(LS(LEFT)) &mt LALT LA(LS(RIGHT)) &kp LG(RIGHT)
+                &none &sk LALT &sk LCMD &sk LCTRL &none
+                &none &mt LCTRL LG(LEFT) &mt LCMD LA(LEFT) &mt LALT LA(RIGHT) &kp LG(RIGHT)
 
-                &trans &trans &trans &hl_kr LSHIFT 0
+                &trans &trans &trans &trans
             >;
 		};
 
@@ -342,6 +342,22 @@
                &trans &trans &trans &trans
             >;
         };
+
+        /* 8 */
+        browser_nav {
+            bindings = <
+                &none &none &none &none &none
+                &none &none &kp LC(LS(PAGE_UP)) &kp LG(LA(L)) &none
+
+		        &none &none &trans &none &none
+                &none &kp LC(TAB) &kp LC(LS(TAB)) &mt LSFT NUM_6 &kp NUM_0
+
+                &none &sk LALT &sk LCMD &sk LCTRL &none
+                &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans
+
+	            &trans &trans &trans &trans
+            >;
+		};
 
 	};
 };
