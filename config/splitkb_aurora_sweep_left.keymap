@@ -99,7 +99,7 @@
             key-positions = <17 18>;
             bindings = <&kp RETURN>;
             layers = <0 1 2 3>;
-        }
+        };
 
     	combo_tab {
             timeout-ms = <40>;
