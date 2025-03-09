@@ -19,7 +19,7 @@
 };
 
 &sk {
-    release-after-ms = <500>;
+    release-after-ms = <800>;
     quick-release;
 };
 
@@ -41,40 +41,16 @@
             bindings = <&kp LC(B)>;
         };
 
-        combo_ctrl_tab {
-            timeout-ms = <40>;
-            key-positions = <21 22>;
-            bindings = <&kp LC(TAB)>;
-        };
-
-        combo_copy_yank {
-            timeout-ms = <40>;
-            key-positions = <13 22>;
-            bindings = <&kp LG(C)>;
-        };
-
-	    combo_paste {
-            timeout-ms = <40>;
-            key-positions = <12 23>;
-            bindings = <&kp LG(V)>;
-        };
-
         combo_save {
             timeout-ms = <40>;
             key-positions = <12 13>;
             bindings = <&kp LC(S)>;
         };
 
-        combo_app_switcher {
+        combo_del {
             timeout-ms = <40>;
-            key-positions = <22 23>;
-            bindings = <&kp LG(TAB)>;
-        };
-
-     	combo_win_app_switcher {
-            timeout-ms = <40>;
-            key-positions = <21 23>;
-            bindings = <&kp LA(TAB)>;
+            key-positions = <11 13>;
+            bindings = <&kp DEL>;
         };
 
     	combo_to_settings {
@@ -89,6 +65,24 @@
             bindings = <&kp LG(Z)>;
         };
 
+        combo_copy_yank {
+            timeout-ms = <40>;
+            key-positions = <21 22>;
+            bindings = <&kp LG(C)>;
+        };
+
+	    combo_paste {
+            timeout-ms = <40>;
+            key-positions = <22 23>;
+            bindings = <&kp LG(V)>;
+        };
+
+        combo_app_switcher {
+            timeout-ms = <40>;
+            key-positions = <21 22 23>;
+            bindings = <&kp LG(TAB)>;
+        };
+
         /****************************************
         ********** Right Hand Combos  ***********
         ****************************************/
@@ -100,17 +94,29 @@
             layers = <0 1 2 3>;
         };
 
-    	combo_bot {
-            timeout-ms = <40>;
-            key-positions = <26 27>;
-            bindings = <&kp LG(DOWN)>;
-        };
-
         combo_return {
             timeout-ms = <50>;
             key-positions = <17 18>;
             bindings = <&kp RETURN>;
             layers = <0 1 2 3>;
+        }
+
+    	combo_tab {
+            timeout-ms = <40>;
+            key-positions = <16 18>;
+            bindings = <&kp TAB>;
+        };
+
+    	combo_to_mouse {
+            timeout-ms = <40>;
+            key-positions = <16 17 18>;
+            bindings = <&to 5>;
+        };
+
+    	combo_bot {
+            timeout-ms = <40>;
+            key-positions = <26 27>;
+            bindings = <&kp LG(DOWN)>;
         };
 
     	combo_top {
@@ -119,10 +125,10 @@
             bindings = <&kp LG(UP)>;
         };
 
-    	combo_to_mouse {
+     	combo_win_app_switcher {
             timeout-ms = <40>;
-            key-positions = <16 17 18>;
-            bindings = <&to 5>;
+            key-positions = <26 27 28>;
+            bindings = <&kp LA(TAB)>;
         };
 
         /****************************
@@ -193,7 +199,6 @@
         ppn: tap_dance_media_play_pause_next {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
             bindings = <&kp C_PP>, <&kp C_NEXT>;
         };
 
@@ -239,7 +244,7 @@
                 &none &none &none &none &none
                 &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
 
-		        &none &none &sk LCTRL &trans &none
+		        &none &none &none &trans &none
                 &kp MINUS &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp NUM_0
 
                 &none &sk LALT &sk LCMD &none &none
@@ -300,14 +305,14 @@
         /* 5 */
         mouse {
             bindings = <
-                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none &kp INS &none
+                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &mkp MCLK &kp INS &none
                 &none &none &mmv MOVE_UP &none &none
 
-                &mkp MCLK &kp RET &kp DEL &mo 6 &none
+                &none &kp RET &mo 7 &mo 6 &none
                 &none &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &none
 
-                &none &sk LALT &mt LCMD ESC &mo 7 &none
-                &none &mt LCTRL HOME &mt LCMD PAGE_DOWN &mt LALT PAGE_UP &kp END
+                &none &sk LALT &mt LCMD ESC &sk LCTRL &none
+                &none &mt END PAGE_DOWN &mt HOME PAGE_UP &none &none
 
                 &trans &to 0 &mkp LCLK &mkp RCLK
             >;
@@ -350,10 +355,10 @@
                 &none &none &kp LC(LS(PAGE_UP)) &kp LG(LA(L)) &none
 
 		        &none &none &trans &none &none
-                &none &kp LC(TAB) &kp LC(LS(TAB)) &mt LSFT NUM_6 &kp NUM_0
+                &none &kp LC(TAB) &kp LC(LS(TAB)) &kp LG(LA(I)) &kp LG(LA(E))
 
-                &none &sk LALT &sk LCMD &sk LCTRL &none
-                &kp DOT &mt LCTRL NUM_1 &mt LCMD NUM_2 &mt LALT NUM_3 &trans
+                &none &none &none &none &none
+                &none &kp LC(LS(PAGE_DOWN)) &kp LG(LBKT) &kp LG(RBKT) &none
 
 	            &trans &trans &trans &trans
             >;
