@@ -231,8 +231,8 @@
                 &mt LC(LA(LSHIFT)) A &kp R &mo_kp_hold 8 S &mo_kp_hold 1 T &kp G
                 &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
 
-                &kp QUOT &mt LALT X &mt LCMD C &mt LCTRL D &kp V
-                &kp K &mt LCTRL H &mt LCMD CMMA &mt LALT DOT &kp SLASH
+                &kp QUOT &mt LALT X &mt LCMD C &mt LCMD D &kp V
+                &kp K &mt LCMD H &mt LCMD CMMA &mt LALT DOT &kp SLASH
 
                 &ssh_cw &mo_kp 3 BSPC &mt LCTRL SPC &mo_kr 2 0
             >;
@@ -279,8 +279,8 @@
                 &kp Z &kp Q &mt LSHIFT J &mt LSHIFT B &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
-                &none &sk LALT &sk LCMD &sk LCTRL &none
-                &none &mt LCTRL LG(LEFT) &mt LCMD LA(LEFT) &mt LALT LA(RIGHT) &kp LG(RIGHT)
+                &none &sk LALT &sk LCMD &sk LCMD &none
+                &none &mt LCMD LG(LEFT) &mt LCMD LA(LEFT) &mt LALT LA(RIGHT) &kp LG(RIGHT)
 
                 &trans &trans &trans &trans
             >;
