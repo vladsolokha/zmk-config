@@ -116,19 +116,13 @@
     	combo_bot {
             timeout-ms = <40>;
             key-positions = <26 27>;
-            bindings = <&kp LG(DOWN)>;
+            bindings = <&kp DEL>;
         };
 
     	combo_top {
             timeout-ms = <40>;
             key-positions = <27 28>;
-            bindings = <&kp LG(UP)>;
-        };
-
-     	combo_win_app_switcher {
-            timeout-ms = <40>;
-            key-positions = <26 27 28>;
-            bindings = <&kp LA(TAB)>;
+            bindings = <&kp TAB>;
         };
 
         /****************************
@@ -295,7 +289,7 @@
                 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_VOL_UP
                 &kp C_BRIGHTNESS_INC &kp LEFT &kp DOWN &kp RIGHT &none
 
-                &bt BT_DISC 3 &bt BT_DISC 2 &none &ext_power EP_OFF &kp C_VOL_DN
+                &bt BT_DISC 3 &bt BT_DISC 2 &bt BT_DISC 1 &ext_power EP_OFF &kp C_VOL_DN
                 &kp C_BRIGHTNESS_DEC &none &none &none &none
 
                 &to 0 &to 0 &to 0 &to 0
