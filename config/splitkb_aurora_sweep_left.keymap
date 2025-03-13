@@ -248,7 +248,7 @@
 	    navigation {
             bindings = <
                 &none &none &none &none &none
-                &none &none &none &none &none
+                &none &mt END PAGE_DOWN &mt HOME PAGE_UP &none &none
 
                 &kp Z &kp Q &mt LSHIFT J &mt LSHIFT B &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
