@@ -47,12 +47,6 @@
             bindings = <&kp LC(S)>;
         };
 
-        combo_del {
-            timeout-ms = <40>;
-            key-positions = <11 13>;
-            bindings = <&kp DEL>;
-        };
-
     	combo_to_settings {
             timeout-ms = <40>;
             key-positions = <11 12 13>;
@@ -101,25 +95,19 @@
             layers = <0 1 2 3>;
         };
 
-    	combo_tab {
-            timeout-ms = <40>;
-            key-positions = <16 18>;
-            bindings = <&kp TAB>;
-        };
-
     	combo_to_mouse {
             timeout-ms = <40>;
             key-positions = <16 17 18>;
             bindings = <&to 5>;
         };
 
-    	combo_bot {
+    	combo_del {
             timeout-ms = <40>;
             key-positions = <26 27>;
             bindings = <&kp DEL>;
         };
 
-    	combo_top {
+    	combo_tab {
             timeout-ms = <40>;
             key-positions = <27 28>;
             bindings = <&kp TAB>;
@@ -172,14 +160,6 @@
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&mo>, <&kp>;
-        };
-
-        hl_kr: hold_key_repeat_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            bindings = <&kp>, <&key_repeat>;
         };
 
         mo_kp_hold: momentary_hold_key_press_tap_prefer {
