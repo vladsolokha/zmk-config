@@ -47,12 +47,6 @@
             bindings = <&kp LC(S)>;
         };
 
-    	combo_to_settings {
-            timeout-ms = <40>;
-            key-positions = <11 12 13>;
-            bindings = <&to 4>;
-        };
-
     	combo_undo {
             timeout-ms = <40>;
             key-positions = <20 21>;
@@ -93,12 +87,6 @@
             key-positions = <17 18>;
             bindings = <&kp RETURN>;
             layers = <0 1 2 3>;
-        };
-
-    	combo_to_mouse {
-            timeout-ms = <40>;
-            key-positions = <16 17 18>;
-            bindings = <&to 5>;
         };
 
     	combo_del {
@@ -162,6 +150,14 @@
             bindings = <&mo>, <&kp>;
         };
 
+        ht: hold_tap_hold_prefer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
+
         mo_kp_hold: momentary_hold_key_press_tap_prefer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -202,8 +198,8 @@
                 &none &kp W &kp F &kp P &none
                 &none &kp L &kp U &kp Y &none
 
-                &mt LC(LA(LSHIFT)) A &kp R &mo_kp_hold 8 S &mo_kp_hold 1 T &kp G
-                &kp M &kp N &kp E &kp I &mt LC(LA(LSHIFT)) O
+                &mt LC(LA(LSHIFT)) A &mo_kp_hold 5 R &mo_kp_hold 8 S &mo_kp_hold 1 T &kp G
+                &kp M &kp N &kp E &mo_kp_hold 4 I &mt LC(LA(LSHIFT)) O
 
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCMD D &kp V
                 &kp K &mt LCMD H &mt LCMD CMMA &mt LALT DOT &kp SLASH
@@ -250,7 +246,7 @@
                 &none &none &none &none &none
                 &none &mt END PAGE_DOWN &mt HOME PAGE_UP &none &none
 
-                &kp Z &kp Q &mt LSHIFT J &mt LSHIFT B &none
+                &kp Z &kp Q &ht LSHIFT J &ht LSHIFT B &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
                 &none &sk LALT &sk LCMD &sk LCMD &none
@@ -263,32 +259,32 @@
         /* 4 */
     	settings {
             bindings = <
-                &none &bt_clcla &out OUT_TOG &ppn &none
-                &none &none &kp UP &none &none
+                &none &bt_clcla &ext_power EP_OFF &out OUT_TOG &none
+                &none &none &none &none &none
 
-                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp C_VOL_UP
-                &kp C_BRIGHTNESS_INC &kp LEFT &kp DOWN &kp RIGHT &none
+                &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &bt BT_SEL 4
+                &none &kp C_BRIGHTNESS_INC &kp C_VOL_UP &trans &none
 
-                &bt BT_DISC 3 &bt BT_DISC 2 &bt BT_DISC 1 &ext_power EP_OFF &kp C_VOL_DN
-                &kp C_BRIGHTNESS_DEC &none &none &none &none
+                &bt BT_DISC 3 &bt BT_DISC 2 &none &none &none
+                &none &kp C_BRIGHTNESS_DEC &kp C_VOL_DN &none &none
 
-                &to 0 &to 0 &to 0 &to 0
+                &none &none &kp C_PP &kp C_NEXT
             >;
         };
 
         /* 5 */
         mouse {
             bindings = <
-                &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &mkp MCLK &kp INS &none
+                &none &none &mkp MCLK &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none
                 &none &none &mmv MOVE_UP &none &none
 
-                &none &kp RET &mo 7 &mo 6 &none
+                &none &trans &mo 7 &mo 6 &none
                 &none &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &none
 
-                &none &sk LALT &mt LCMD ESC &sk LCTRL &none
-                &none &mt END PAGE_DOWN &mt HOME PAGE_UP &none &none
+                &none &none &none &kp INS &none
+                &none &sk LCTRL &sk LCMD &sk LALT &none
 
-                &trans &to 0 &mkp LCLK &mkp RCLK
+                &trans &none &mkp LCLK &mkp RCLK
             >;
         };
 
@@ -328,7 +324,7 @@
                 &none &none &none &none &none
                 &none &none &kp LC(LS(PAGE_UP)) &kp LG(LA(L)) &none
 
-		        &none &none &trans &none &none
+		        &none &none &trans &kp LC(W) &none
                 &none &kp LC(TAB) &kp LC(LS(TAB)) &kp LG(LA(I)) &kp LG(LA(E))
 
                 &none &none &none &none &none
