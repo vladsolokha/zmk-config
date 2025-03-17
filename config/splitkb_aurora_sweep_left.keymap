@@ -244,7 +244,7 @@
 	    navigation {
             bindings = <
                 &none &none &none &none &none
-                &none &kp LG(DOWN) &kp LG(UP) &none
+                &none &kp LG(DOWN) &kp LG(UP) &none &none
 
                 &kp Z &kp Q &ht LSHIFT J &ht LSHIFT B &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
