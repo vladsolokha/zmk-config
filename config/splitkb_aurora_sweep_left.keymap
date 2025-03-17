@@ -244,13 +244,13 @@
 	    navigation {
             bindings = <
                 &none &none &none &none &none
-                &none &mt END PAGE_DOWN &mt HOME PAGE_UP &none &none
+                &none &kp LG(DOWN) &kp LG(UP) &none
 
                 &kp Z &kp Q &ht LSHIFT J &ht LSHIFT B &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
                 &none &sk LALT &sk LCMD &sk LCMD &none
-                &none &mt LCMD LG(LEFT) &mt LCMD LA(LEFT) &mt LALT LA(RIGHT) &kp LG(RIGHT)
+                &none &kp LG(LEFT) &kp LA(LEFT) &kp LA(RIGHT) &kp LG(RIGHT)
 
                 &trans &trans &trans &trans
             >;
@@ -281,8 +281,8 @@
                 &none &trans &mo 7 &mo 6 &none
                 &none &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &none
 
-                &none &none &none &kp INS &none
-                &none &sk LCTRL &sk LCMD &sk LALT &none
+                &none &none &sk LCMD &mt LCTRL INS &none
+                &none &mt END PAGE_DOWN &mt HOME PAGE_UP &sk LALT &none
 
                 &trans &none &mkp LCLK &mkp RCLK
             >;
