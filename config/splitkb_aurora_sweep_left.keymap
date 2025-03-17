@@ -227,14 +227,14 @@
         /* 2 */
 	    symbol {
             bindings = <
-                &none &kp EXCL &kp LBRC &kp RBRC &none
+                &none &kp TILDE  &kp LBRC &kp RBRC &none
                 &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
-                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp TILDE
-                &kp BSLH &kp STAR &kp HASH &kp MINUS &kp UNDER
+                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp PIPE
+                &kp BSLH &kp UNDER &kp MINUS &kp COLON &kp SEMICOLON 
 
-                &kp GRAVE &mt LALT PIPE &mt LCMD LBKT &mt LCTRL RBKT &none
-                &none &mt LCTRL CARET &mt LCMD SEMICOLON &mt LALT COLON &kp DOLLAR
+                &kp GRAVE &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &none
+                &none &mt LCTRL CARET &mt LCMD HASH &mt LALT STAR &kp DOLLAR
 
                 &trans &trans &trans &trans
             >;
