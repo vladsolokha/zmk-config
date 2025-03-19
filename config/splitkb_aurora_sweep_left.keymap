@@ -204,7 +204,7 @@
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCMD D &kp V
                 &kp K &mt LCMD H &mt LCMD CMMA &mt LALT DOT &kp SLASH
 
-                &ssh_cw &mo_kp 3 BSPC &mt LCTRL SPC &mo_kr 2 0
+                &ssh_cw &mo_kp 2 BSPC &mt LCTRL SPC &mo_kr 3 0
             >;
 		};
 
@@ -246,7 +246,7 @@
                 &none &none &kp LG(LBKT) &kp LG(RBKT) &none
                 &none &kp LG(DOWN) &kp LG(UP) &none &none
 
-                &kp Z &kp Q &ht LSHIFT J &ht LSHIFT B &kp LC(LS(PAGE_UP))
+                &kp Z &kp Q &kp J &kp B &kp LC(LS(PAGE_UP))
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
                 &none &mt LALT LC(W) &mt LCMD LC(LS(TAB)) &mt LCMD LC(TAB) &kp LC(LS(PAGE_DOWN))
