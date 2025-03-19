@@ -233,8 +233,8 @@
                 &kp AT &kp AMPS &kp LPAR &kp RPAR &kp PIPE
                 &kp BSLH &kp UNDER &kp MINUS &kp COLON &kp SEMICOLON
 
-                &kp GRAVE &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &none
-                &none &mt LCTRL CARET &mt LCMD HASH &mt LALT STAR &kp DOLLAR
+                &kp GRAVE &mt LALT EXCL &mt LCMD LBKT &mt LCMD RBKT &none
+                &none &mt LCMD CARET &mt LCMD HASH &mt LALT STAR &kp DOLLAR
 
                 &trans &trans &trans &trans
             >;
@@ -249,7 +249,7 @@
                 &kp Z &kp Q &kp J &kp B &kp LC(LS(PAGE_UP))
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
-                &none &mt LALT LC(W) &mt LCMD LC(LS(TAB)) &mt LCMD LC(TAB) &kp LC(LS(PAGE_DOWN))
+                &none &mt LALT LC(W) &mt LCMD LC(LS(TAB)) &mt LCTRL LC(TAB) &kp LC(LS(PAGE_DOWN))
                 &none &kp LG(LEFT) &kp LA(LEFT) &kp LA(RIGHT) &kp LG(RIGHT)
 
                 &trans &trans &trans &trans
