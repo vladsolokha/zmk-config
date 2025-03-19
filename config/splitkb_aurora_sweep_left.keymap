@@ -198,7 +198,7 @@
                 &none &kp W &kp F &kp P &none
                 &none &kp L &kp U &kp Y &none
 
-                &mt LC(LA(LSHIFT)) A &mo_kp_hold 5 R &mo_kp_hold 8 S &mo_kp_hold 1 T &kp G
+                &mt LC(LA(LSHIFT)) A &mo_kp_hold 5 R &kp S &mo_kp_hold 1 T &kp G
                 &kp M &kp N &kp E &mo_kp_hold 4 I &mt LC(LA(LSHIFT)) O
 
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCMD D &kp V
@@ -231,7 +231,7 @@
                 &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
                 &kp AT &kp AMPS &kp LPAR &kp RPAR &kp PIPE
-                &kp BSLH &kp UNDER &kp MINUS &kp COLON &kp SEMICOLON 
+                &kp BSLH &kp UNDER &kp MINUS &kp COLON &kp SEMICOLON
 
                 &kp GRAVE &mt LALT EXCL &mt LCMD LBKT &mt LCTRL RBKT &none
                 &none &mt LCTRL CARET &mt LCMD HASH &mt LALT STAR &kp DOLLAR
@@ -243,13 +243,13 @@
         /* 3 */
 	    navigation {
             bindings = <
-                &none &none &none &none &none
+                &none &none &kp LG(LBKT) &kp LG(RBKT) &none
                 &none &kp LG(DOWN) &kp LG(UP) &none &none
 
-                &kp Z &kp Q &ht LSHIFT J &ht LSHIFT B &none
+                &kp Z &kp Q &ht LSHIFT J &ht LSHIFT B &kp LC(LS(PAGE_UP))
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
-                &none &sk LALT &sk LCMD &sk LCMD &none
+                &none &mt LALT LC(W) &mt LCMD LC(LS(TAB)) &mt LCMD LC(TAB) &kp LC(LS(PAGE_DOWN))
                 &none &kp LG(LEFT) &kp LA(LEFT) &kp LA(RIGHT) &kp LG(RIGHT)
 
                 &trans &trans &trans &trans
@@ -318,21 +318,6 @@
             >;
         };
 
-        /* 8 */
-        browser_nav {
-            bindings = <
-                &none &none &none &none &none
-                &none &none &kp LC(LS(PAGE_UP)) &kp LG(LA(L)) &none
-
-		        &none &none &trans &kp LC(W) &none
-                &none &kp LC(TAB) &kp LC(LS(TAB)) &kp LG(LA(I)) &kp LG(LA(E))
-
-                &none &none &none &none &none
-                &none &kp LC(LS(PAGE_DOWN)) &kp LG(LBKT) &kp LG(RBKT) &none
-
-	            &trans &trans &trans &trans
-            >;
-		};
 
 	};
 };
