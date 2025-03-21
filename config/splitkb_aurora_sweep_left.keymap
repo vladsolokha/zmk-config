@@ -47,12 +47,6 @@
             bindings = <&kp LC(S)>;
         };
 
-    	combo_undo {
-            timeout-ms = <40>;
-            key-positions = <20 21>;
-            bindings = <&kp LG(Z)>;
-        };
-
         combo_copy_yank {
             timeout-ms = <40>;
             key-positions = <21 22>;
@@ -71,9 +65,28 @@
             bindings = <&kp LG(TAB)>;
         };
 
+        combo_q {
+            timeout-ms = <40>;
+            key-positions = <1 2>;
+            bindings = <&kp Q>;
+        };
+
+        combo_z {
+            timeout-ms = <40>;
+            key-positions = <2 3>;
+            bindings = <&kp Z>;
+        };
+
         /****************************************
         ********** Right Hand Combos  ***********
         ****************************************/
+
+    	combo_ctrl_tab {
+            timeout-ms = <40>;
+            key-positions = <7 8>;
+            bindings = <&kp LC(TAB)>;
+            layers = <0 1 2 3>;
+        };
 
     	combo_esc {
             timeout-ms = <40>;
@@ -130,17 +143,19 @@
             bindings = <&kp LC(K)>;
         };
 
+        /****************************************
+        ********** Both Hand Combos  ***********
+        ****************************************/
+
+        combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = <13 16>;
+            bindings = <&caps_word>;
+        };
+
     };
 
     behaviors {
-
-        mo_kr: momentary_hold_key_repeat_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            bindings = <&mo>, <&key_repeat>;
-        };
 
         mo_kp: momentary_hold_key_press_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -150,34 +165,12 @@
             bindings = <&mo>, <&kp>;
         };
 
-        ht: hold_tap_hold_prefer {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
-            bindings = <&kp>, <&kp>;
-        };
-
         mo_kp_hold: momentary_hold_key_press_tap_prefer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <225>;
             bindings = <&mo>, <&kp>;
-        };
-
-        ppn: tap_dance_media_play_pause_next {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp C_PP>, <&kp C_NEXT>;
-        };
-
-        ssh_cw: shift_caps_word {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&sk LSFT>, <&caps_word>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-
         };
 
         bt_clcla: tap_dance_bt_control {
@@ -195,16 +188,16 @@
         /* 0 */
         default {
             bindings = <
-                &none &kp W &kp F &kp P &none
-                &none &kp L &kp U &kp Y &none
+                &none &kp W &kp F &kp P &kp B
+                &kp J &kp L &kp U &kp Y &none
 
-                &mt LC(LA(LSHIFT)) A &mo_kp_hold 5 R &kp S &mo_kp_hold 1 T &kp G
+                &mt LC(LA(LSHIFT)) A &mo_kp_hold 5 R &mo_kp_hold 3 S &mo_kp_hold 1 T &kp G
                 &kp M &kp N &kp E &mo_kp_hold 4 I &mt LC(LA(LSHIFT)) O
 
                 &kp QUOT &mt LALT X &mt LCMD C &mt LCMD D &kp V
                 &kp K &mt LCMD H &mt LCMD CMMA &mt LALT DOT &kp SLASH
 
-                &ssh_cw &mo_kp 2 BSPC &mt LCTRL SPC &mo_kr 3 0
+                &sk LSFT &mo_kp 2 BSPC &mt LCTRL SPC &key_repeat
             >;
 		};
 
@@ -227,13 +220,13 @@
         /* 2 */
 	    symbol {
             bindings = <
-                &none &kp TILDE  &kp LBRC &kp RBRC &none
+                &none &kp EXCL &kp LBRC &kp RBRC &none
                 &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
                 &kp AT &kp AMPS &kp LPAR &kp RPAR &kp PIPE
-                &kp BSLH &kp UNDER &kp MINUS &kp COLON &kp SEMICOLON
+                &kp BSLH &kp MINUS &kp UNDER &kp COLON &kp SEMICOLON
 
-                &kp GRAVE &mt LALT EXCL &mt LCMD LBKT &mt LCMD RBKT &none
+                &kp GRAVE &mt LALT TILDE &mt LCMD LBKT &mt LCMD RBKT &none
                 &none &mt LCMD CARET &mt LCMD HASH &mt LALT STAR &kp DOLLAR
 
                 &trans &trans &trans &trans
@@ -243,14 +236,14 @@
         /* 3 */
 	    navigation {
             bindings = <
-                &none &none &kp LG(LBKT) &kp LG(RBKT) &none
-                &none &kp LG(DOWN) &kp LG(UP) &none &none
+                &none &none &none &none &none
+                &none &kp END &kp HOME &none &none
 
-                &kp Z &kp Q &kp J &kp B &kp LC(LS(PAGE_UP))
+                &none &sk LALT &trans &sk LCMD &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
-                &none &mt LALT LC(W) &mt LCMD LC(LS(TAB)) &mt LCTRL LC(TAB) &kp LC(LS(PAGE_DOWN))
-                &none &kp LG(LEFT) &kp LA(LEFT) &kp LA(RIGHT) &kp LG(RIGHT)
+                &none &none &none &none &none
+                &none &kp PAGE_DOWN &kp PAGE_UP &none &none
 
                 &trans &trans &trans &trans
             >;
@@ -275,14 +268,14 @@
         /* 5 */
         mouse {
             bindings = <
-                &none &none &mkp MCLK &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none
+                &none &none &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none
                 &none &none &mmv MOVE_UP &none &none
 
                 &none &trans &mo 7 &mo 6 &none
-                &none &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &none
+                &none &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &mkp MCLK
 
-                &none &none &sk LCMD &mt LCTRL INS &none
-                &none &mt END PAGE_DOWN &mt HOME PAGE_UP &sk LALT &none
+                &none &none &sk LCMD &sk LCTRL &none
+                &none &none &none &sk LALT &kp INS
 
                 &trans &none &mkp LCLK &mkp RCLK
             >;
@@ -292,13 +285,10 @@
         mouse_slow {
             bindings = <
                 &trans &trans &trans &trans &trans
-                &trans &trans &mmv MOVE_Y(-800) &trans &trans
-
+                &trans &trans &mmv MOVE_Y(-1000) &trans &trans
                 &trans &trans &trans &trans &trans
-                &trans &mmv MOVE_X(-800) &mmv MOVE_Y(800) &mmv MOVE_X(800) &trans
-
+                &trans &mmv MOVE_X(-1000) &mmv MOVE_Y(1000) &mmv MOVE_X(1000) &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-
                 &trans &trans &trans &trans
             >;
         };
@@ -308,12 +298,9 @@
             bindings = <
                &trans &trans &trans &trans &trans
                &trans &trans &msc SCRL_UP &trans &trans
-
                &trans &trans &trans &trans &trans
                &trans &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &trans
-
                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-
                &trans &trans &trans &trans
             >;
         };
