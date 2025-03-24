@@ -65,28 +65,45 @@
             bindings = <&kp LG(TAB)>;
         };
 
-        combo_q {
+    	combo_ctrl_tab {
             timeout-ms = <40>;
-            key-positions = <1 2>;
-            bindings = <&kp Q>;
+            key-positions = <2 13>;
+            bindings = <&kp LC(TAB)>;
         };
 
-        combo_z {
+    	combo_ctrl_tab_back {
+            timeout-ms = <40>;
+            key-positions = <2 11>;
+            bindings = <&kp LC(LS(TAB))>;
+        };
+
+    	combo_swap_tab_down {
+            timeout-ms = <40>;
+            key-positions = <12 3>;
+            bindings = <&kp LC(LS(PAGE_DOWN))>;
+        };
+
+    	combo_swap_tab_up {
+            timeout-ms = <40>;
+            key-positions = <1 12>;
+            bindings = <&kp LC(LS(PAGE_UP))>;
+        };
+
+    	combo_back_history {
+            timeout-ms = <40>;
+            key-positions = <1 2>;
+            bindings = <&kp LG(LBKT)>;
+        };
+
+    	combo_forward_history {
             timeout-ms = <40>;
             key-positions = <2 3>;
-            bindings = <&kp Z>;
+            bindings = <&kp LG(RBKT)>;
         };
 
         /****************************************
         ********** Right Hand Combos  ***********
         ****************************************/
-
-    	combo_ctrl_tab {
-            timeout-ms = <40>;
-            key-positions = <7 8>;
-            bindings = <&kp LC(TAB)>;
-            layers = <0 1 2 3>;
-        };
 
     	combo_esc {
             timeout-ms = <40>;
@@ -112,6 +129,32 @@
             timeout-ms = <40>;
             key-positions = <27 28>;
             bindings = <&kp TAB>;
+        };
+
+    	combo_bol {
+            timeout-ms = <40>;
+            key-positions = <6 7>;
+            bindings = <&kp LG(LEFT)>;
+        };
+
+    	combo_eol {
+            timeout-ms = <40>;
+            key-positions = <7 8>;
+            bindings = <&kp LG(RIGHT)>;
+        };
+
+    	combo_word_left {
+            timeout-ms = <40>;
+            key-positions = <7 16>;
+            bindings = <&kp LA(LEFT)>;
+            layers = <0 1 2 3>;
+        };
+
+    	combo_word_right {
+            timeout-ms = <40>;
+            key-positions = <7 18>;
+            bindings = <&kp LA(RIGHT)>;
+            layers = <0 1 2 3>;
         };
 
         /****************************
@@ -180,6 +223,43 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 
+        apos_excl: apos_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp APOS>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_cmma: period_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp CMMA>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_cmma_hold: mod_hold_key_press_tap_prefer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <225>;
+            bindings = <&kp>, <&dot_cmma>;
+        };
+
+        minus_quot: minus_quote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp QUOT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        minus_quot_hold: mod_hold_key_press_tap_prefer_two {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <225>;
+            bindings = <&kp>, <&minus_quot>;
+        };
+
     };
 
     keymap {
@@ -188,14 +268,14 @@
         /* 0 */
         default {
             bindings = <
-                &none &kp W &kp F &kp P &kp B
-                &kp J &kp L &kp U &kp Y &none
+                &kp Q &kp W &kp F &kp P &kp B
+                &apos_excl &kp L &kp U &kp Y &kp J
 
                 &mt LC(LA(LSHIFT)) A &mo_kp_hold 5 R &mo_kp_hold 3 S &mo_kp_hold 1 T &kp G
                 &kp M &kp N &kp E &mo_kp_hold 4 I &mt LC(LA(LSHIFT)) O
 
-                &kp QUOT &mt LALT X &mt LCMD C &mt LCMD D &kp V
-                &kp K &mt LCMD H &mt LCMD CMMA &mt LALT DOT &kp SLASH
+                &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
+                &kp K &mt LCMD H &dot_cmma_hold LCMD 0 &minus_quot_hold LALT 0 &kp SLASH
 
                 &sk LSFT &mo_kp 2 BSPC &mt LCTRL SPC &key_repeat
             >;
@@ -220,14 +300,14 @@
         /* 2 */
 	    symbol {
             bindings = <
-                &none &kp EXCL &kp LBRC &kp RBRC &none
+                &none &kp PIPE &kp LBRC &kp RBRC &none
                 &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
-                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp PIPE
-                &kp BSLH &kp MINUS &kp UNDER &kp COLON &kp SEMICOLON
+                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp BSLH
+                &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp COLON
 
                 &kp GRAVE &mt LALT TILDE &mt LCMD LBKT &mt LCMD RBKT &none
-                &none &mt LCMD CARET &mt LCMD HASH &mt LALT STAR &kp DOLLAR
+                &none &mt LCMD LT &mt LCMD GT &mt LALT UNDER &kp SEMICOLON
 
                 &trans &trans &trans &trans
             >;
