@@ -13,6 +13,16 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
 #include <dt-bindings/zmk/pointing.h>
 
+#define BASE        0
+#define GRAPHITE    1
+#define NUM         2
+#define SYM         3
+#define NAV         4
+#define SETTING     5
+#define MOUSE       6
+#define MOUSESLOW   7
+#define MOUSESCROLL 8
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <225>;
@@ -196,6 +206,12 @@
             bindings = <&caps_word>;
         };
 
+        combo_tog_graphite {
+            timeout-ms = <50>;
+            key-positions = <11 12 13>;
+            bindings = <&tog GRAPHITE>;
+        };
+
     };
 
     behaviors {
@@ -271,17 +287,33 @@
                 &kp Q &kp W &kp F &kp P &kp B
                 &apos_excl &kp L &kp U &kp Y &kp J
 
-                &mt LC(LA(LSHIFT)) A &mo_kp_hold 5 R &mo_kp_hold 3 S &mo_kp_hold 1 T &kp G
-                &kp M &kp N &kp E &mo_kp_hold 4 I &mt LC(LA(LSHIFT)) O
+                &mt LC(LA(LSHIFT)) A &mo_kp_hold MOUSE R &mo_kp_hold NAV S &mo_kp_hold NUM T &kp G
+                &kp M &kp N &kp E &mo_kp_hold SETTING I &mt LC(LA(LSHIFT)) O
 
                 &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
                 &kp K &mt LCMD H &dot_cmma_hold LCMD 0 &minus_quot_hold LALT 0 &kp SLASH
 
-                &sk LSFT &mo_kp 2 BSPC &mt LCTRL SPC &key_repeat
+                &sk LSFT &mo_kp SYM BSPC &mt LCTRL SPC &key_repeat
             >;
 		};
 
         /* 1 */
+        graphite {
+            bindings = <
+                &kp B &kp L &kp D &kp W &kp Z
+                &trans &kp F &kp O &kp U &kp J
+
+                &mt LC(LA(LSHIFT)) N &trans &mo_kp_hold NAV T &mo_kp_hold NUM S &trans
+                &kp Y &kp H &kp A &mo_kp_hold SETTING E &mt LC(LA(LSHIFT)) I
+
+                &kp Q &trans &mt LCMD M &mt LCMD C &trans
+                &trans &mt LCMD P &trans &trans &trans
+
+                &trans &trans &trans &trans
+            >;
+		};
+
+        /* 2 */
         numbers {
             bindings = <
                 &none &none &none &none &none
@@ -297,7 +329,7 @@
             >;
 		};
 
-        /* 2 */
+        /* 3 */
 	    symbol {
             bindings = <
                 &none &kp PIPE &kp LBRC &kp RBRC &none
@@ -313,7 +345,7 @@
             >;
 		};
 
-        /* 3 */
+        /* 4 */
 	    navigation {
             bindings = <
                 &none &none &none &none &none
@@ -329,7 +361,7 @@
             >;
 		};
 
-        /* 4 */
+        /* 5 */
     	settings {
             bindings = <
                 &none &bt_clcla &ext_power EP_OFF &out OUT_TOG &none
@@ -345,13 +377,13 @@
             >;
         };
 
-        /* 5 */
+        /* 6 */
         mouse {
             bindings = <
                 &none &none &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none
                 &none &none &mmv MOVE_UP &none &none
 
-                &none &trans &mo 7 &mo 6 &none
+                &none &trans &mo MOUSESCROLL &mo MOUSESLOW &none
                 &none &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &mkp MCLK
 
                 &none &none &sk LCMD &sk LCTRL &none
@@ -361,7 +393,7 @@
             >;
         };
 
-        /* 6 */
+        /* 7 */
         mouse_slow {
             bindings = <
                 &trans &trans &trans &trans &trans
@@ -373,7 +405,7 @@
             >;
         };
 
-        /* 7 */
+        /* 8 */
         mouse_scroll {
             bindings = <
                &trans &trans &trans &trans &trans
