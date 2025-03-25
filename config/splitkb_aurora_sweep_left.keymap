@@ -25,11 +25,13 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping-term-ms = <225>;
+    tapping-term-ms = <180>;
+    quick-tap-ms = <160>;
+    require-prior-idle-ms = <120>;
 };
 
 &sk {
-    release-after-ms = <800>;
+    release-after-ms = <600>;
     quick-release;
 };
 
@@ -220,16 +222,30 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <120>;
             bindings = <&mo>, <&kp>;
         };
 
-        mo_kp_hold: momentary_hold_key_press_tap_prefer {
+        mo_kp_tap: momentary_hold_key_press_tap_prefer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <225>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <120>;
             bindings = <&mo>, <&kp>;
+        };
+
+        sk_kp_tap: stiky_key_press_tap_prefer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <120>;
+            bindings = <&sk>, <&kp>;
         };
 
         bt_clcla: tap_dance_bt_control {
@@ -258,6 +274,8 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <225>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <120>;
             bindings = <&kp>, <&dot_cmma>;
         };
 
@@ -273,6 +291,8 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <225>;
+            quick-tap-ms = <160>;
+            require-prior-idle-ms = <120>;
             bindings = <&kp>, <&minus_quot>;
         };
 
@@ -287,13 +307,13 @@
                 &kp Q &kp W &kp F &kp P &kp B
                 &apos_excl &kp L &kp U &kp Y &kp J
 
-                &mt LC(LA(LSHIFT)) A &mo_kp_hold MOUSE R &mo_kp_hold NAV S &mo_kp_hold NUM T &kp G
-                &kp M &kp N &kp E &mo_kp_hold SETTING I &mt LC(LA(LSHIFT)) O
+                &mt LC(LA(LSHIFT)) A &mo_kp_tap MOUSE R &mo_kp_tap NAV S &mo_kp_tap NUM T &kp G
+                &kp M &kp N &kp E &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) O
 
                 &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
                 &kp K &mt LCMD H &dot_cmma_hold LCMD 0 &minus_quot_hold LALT 0 &kp SLASH
 
-                &sk LSFT &mo_kp SYM BSPC &mt LCTRL SPC &key_repeat
+                &sk LSFT &mo_kp_tap SYM BSPC &sk_kp_tap LCTRL SPC &key_repeat
             >;
 		};
 
@@ -303,8 +323,8 @@
                 &kp B &kp L &kp D &kp W &kp Z
                 &trans &kp F &kp O &kp U &kp J
 
-                &mt LC(LA(LSHIFT)) N &trans &mo_kp_hold NAV T &mo_kp_hold NUM S &trans
-                &kp Y &kp H &kp A &mo_kp_hold SETTING E &mt LC(LA(LSHIFT)) I
+                &mt LC(LA(LSHIFT)) N &trans &mo_kp_tap NAV T &mo_kp_tap NUM S &trans
+                &kp Y &kp H &kp A &mo_kp_tap SETTING E &mt LC(LA(LSHIFT)) I
 
                 &kp Q &trans &mt LCMD M &mt LCMD C &trans
                 &trans &mt LCMD P &trans &trans &trans
@@ -319,10 +339,10 @@
                 &none &none &none &none &none
                 &none &kp NUM_7 &kp NUM_8 &kp NUM_9 &none
 
-		        &none &none &none &trans &none
+		        &none &sk LALT &sk LCMD &trans &none
                 &kp MINUS &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp NUM_0
 
-                &none &sk LALT &sk LCMD &none &none
+                &none &none &none &none &none
                 &kp DOT &kp NUM_1 &kp NUM_2 &kp NUM_3 &trans
 
 	            &trans &trans &trans &trans
