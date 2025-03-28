@@ -25,13 +25,13 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping-term-ms = <180>;
-    quick-tap-ms = <160>;
-    require-prior-idle-ms = <120>;
+    tapping-term-ms = <220>;
+    quick-tap-ms = <180>;
+    require-prior-idle-ms = <100>;
 };
 
 &sk {
-    release-after-ms = <600>;
+    release-after-ms = <800>;
     quick-release;
 };
 
@@ -125,7 +125,7 @@
         };
 
         combo_return {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             key-positions = <17 18>;
             bindings = <&kp RETURN>;
             layers = <0 1 2 3>;
@@ -203,7 +203,7 @@
         ****************************************/
 
         combo_caps_word {
-            timeout-ms = <50>;
+            timeout-ms = <55>;
             key-positions = <13 16>;
             bindings = <&caps_word>;
         };
@@ -218,23 +218,13 @@
 
     behaviors {
 
-        mo_kp: momentary_hold_key_press_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <180>;
-            quick-tap-ms = <160>;
-            require-prior-idle-ms = <120>;
-            bindings = <&mo>, <&kp>;
-        };
-
         mo_kp_tap: momentary_hold_key_press_tap_prefer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <180>;
-            quick-tap-ms = <160>;
-            require-prior-idle-ms = <120>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
 
@@ -242,9 +232,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <180>;
-            quick-tap-ms = <160>;
-            require-prior-idle-ms = <120>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <100>;
             bindings = <&sk>, <&kp>;
         };
 
@@ -255,10 +245,10 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 
-        apos_excl: apos_exclamation {
+        apos_bslh: apos_backslash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp APOS>, <&kp EXCL>;
+            bindings = <&kp APOS>, <&kp BSLH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -273,27 +263,10 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <225>;
-            quick-tap-ms = <160>;
-            require-prior-idle-ms = <120>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <100>;
             bindings = <&kp>, <&dot_cmma>;
-        };
-
-        minus_quot: minus_quote {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp DQT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        minus_quot_hold: mod_hold_key_press_tap_prefer_two {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <225>;
-            quick-tap-ms = <160>;
-            require-prior-idle-ms = <120>;
-            bindings = <&kp>, <&minus_quot>;
         };
 
     };
@@ -305,13 +278,13 @@
         default {
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B
-                &apos_excl &kp L &kp U &kp Y &kp J
+                &apos_bslh &kp L &kp U &kp Y &kp J
 
                 &mt LC(LA(LSHIFT)) A &mo_kp_tap MOUSE R &mo_kp_tap NAV S &mo_kp_tap NUM T &kp G
                 &kp M &kp N &kp E &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) O
 
                 &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
-                &kp K &mt LCMD H &dot_cmma_hold LCMD 0 &minus_quot_hold LALT 0 &kp SLASH
+                &kp K &mt LCMD H &dot_cmma_hold LCMD 0 &mt LALT MINUS &kp SLASH
 
                 &sk LSFT &mo_kp_tap SYM BSPC &sk_kp_tap LCTRL SPC &key_repeat
             >;
@@ -352,14 +325,14 @@
         /* 3 */
 	    symbol {
             bindings = <
-                &none &kp PIPE &kp LBRC &kp RBRC &none
+                &none &kp EXCL &kp LBRC &kp RBRC &none
                 &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
-                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp BSLH
+                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp PIPE
                 &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp COLON
 
                 &kp GRAVE &mt LALT TILDE &mt LCMD LBKT &mt LCMD RBKT &none
-                &none &mt LCMD LT &mt LCMD GT &mt LALT UNDER &kp SEMICOLON
+                &none &mt LCMD LT &mt LCMD GT &mt LALT DQT &kp SEMICOLON
 
                 &trans &trans &trans &trans
             >;
@@ -417,9 +390,9 @@
         mouse_slow {
             bindings = <
                 &trans &trans &trans &trans &trans
-                &trans &trans &mmv MOVE_Y(-1000) &trans &trans
+                &trans &trans &mmv MOVE_Y(-900) &trans &trans
                 &trans &trans &trans &trans &trans
-                &trans &mmv MOVE_X(-1000) &mmv MOVE_Y(1000) &mmv MOVE_X(1000) &trans
+                &trans &mmv MOVE_X(-900) &mmv MOVE_Y(900) &mmv MOVE_X(900) &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans
             >;
@@ -429,9 +402,9 @@
         mouse_scroll {
             bindings = <
                &trans &trans &trans &trans &trans
-               &trans &trans &msc SCRL_UP &trans &trans
                &trans &trans &trans &trans &trans
-               &trans &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &trans
+               &trans &trans &trans &trans &trans
+               &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans
                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                &trans &trans &trans &trans
             >;
