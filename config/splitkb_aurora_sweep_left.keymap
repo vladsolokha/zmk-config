@@ -217,6 +217,14 @@
     };
 
     behaviors {
+	mo_kp: momentary_hold_key_press_hold {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;
+             flavor = "hold-preferred";
+             tapping-term-ms = <180>;
+             quick-tap-ms = <180>;
+             bindings = <&mo>, <&kp>;
+         };
 
         mo_kp_tap: momentary_hold_key_press_tap_prefer {
             compatible = "zmk,behavior-hold-tap";
@@ -245,10 +253,10 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 
-        apos_bslh: apos_backslash {
+        slash_apos: slash_apos {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp APOS>, <&kp BSLH>;
+            bindings = <&kp SLASH>, <&kp APOS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -259,7 +267,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_cmma_hold: mod_hold_key_press_tap_prefer {
+        dot_cmma_hold: dot_cmma_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -267,6 +275,23 @@
             quick-tap-ms = <180>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&dot_cmma>;
+        };
+
+	dqt_under: dqt_under {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DQT>, <&kp UNDER>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dqt_under_hold: dqt_under_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <100>;
+            bindings = <&kp>, <&dqt_under>;
         };
 
     };
@@ -278,15 +303,15 @@
         default {
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B
-                &apos_bslh &kp L &kp U &kp Y &kp J
+                &kp MINUS &kp L &kp U &kp Y &kp J
 
                 &mt LC(LA(LSHIFT)) A &mo_kp_tap MOUSE R &mo_kp_tap NAV S &mo_kp_tap NUM T &kp G
                 &kp M &kp N &kp E &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) O
 
                 &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
-                &kp K &mt LCMD H &dot_cmma_hold LCMD 0 &mt LALT MINUS &kp SLASH
+                &kp K &mt LCMD H &dot_cmma_hold LCMD 0 &dqt_under_hold LALT 0 &slash_apos
 
-                &sk LSFT &mo_kp_tap SYM BSPC &sk_kp_tap LCTRL SPC &key_repeat
+                &sk LSFT &mo_kp SYM BSPC &sk_kp_tap LCTRL SPC &key_repeat
             >;
 		};
 
@@ -332,7 +357,7 @@
                 &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp COLON
 
                 &kp GRAVE &mt LALT TILDE &mt LCMD LBKT &mt LCMD RBKT &none
-                &none &mt LCMD LT &mt LCMD GT &mt LALT DQT &kp SEMICOLON
+                &kp BACKSLASH &mt LCMD LT &mt LCMD GT &mt LALT QUESTION &kp SEMICOLON
 
                 &trans &trans &trans &trans
             >;
