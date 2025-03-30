@@ -113,6 +113,12 @@
             bindings = <&kp LG(RBKT)>;
         };
 
+    	combo_space {
+            timeout-ms = <40>;
+            key-positions = <11 13>;
+            bindings = <&kp SPACE>;
+        };
+
         /****************************************
         ********** Right Hand Combos  ***********
         ****************************************/
@@ -253,45 +259,45 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 
-        slash_apos: slash_apos {
+        dqt_apos: dqt_apos {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp SLASH>, <&kp APOS>;
+            bindings = <&kp DQT>, <&kp APOS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_cmma: period_comma {
+        dot_colon: period_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp CMMA>;
+            bindings = <&kp DOT>, <&kp COLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_cmma_hold: dot_cmma_hold {
+        dot_colon_hold: dot_colon_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
             quick-tap-ms = <180>;
             require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&dot_cmma>;
+            bindings = <&kp>, <&dot_colon>;
         };
 
-	dqt_under: dqt_under {
+	cmma_semi: cmma_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp DQT>, <&kp UNDER>;
+            bindings = <&kp CMMA>, <&kp SEMICOLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dqt_under_hold: dqt_under_hold {
+        cmma_semi_hold: cmma_semi_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
             quick-tap-ms = <180>;
             require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&dqt_under>;
+            bindings = <&kp>, <&cmma_semi>;
         };
 
     };
@@ -309,7 +315,7 @@
                 &kp M &kp N &kp E &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) O
 
                 &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
-                &kp K &mt LCMD H &dot_cmma_hold LCMD 0 &dqt_under_hold LALT 0 &slash_apos
+                &kp K &mt LCMD H &cmma_semi_hold LCMD 0 &dot_colon_hold LALT 0 &dqt_apos
 
                 &sk LSFT &mo_kp SYM BSPC &sk_kp_tap LCTRL SPC &key_repeat
             >;
@@ -341,7 +347,7 @@
                 &kp MINUS &kp NUM_4 &kp NUM_5 &kp NUM_6 &kp NUM_0
 
                 &none &none &none &none &none
-                &kp DOT &kp NUM_1 &kp NUM_2 &kp NUM_3 &trans
+                &kp DOT &kp NUM_1 &kp NUM_2 &kp NUM_3 &kp SLASH
 
 	            &trans &trans &trans &trans
             >;
@@ -354,10 +360,10 @@
                 &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
                 &kp AT &kp AMPS &kp LPAR &kp RPAR &kp PIPE
-                &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp COLON
+                &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp QUESTION
 
                 &kp GRAVE &mt LALT TILDE &mt LCMD LBKT &mt LCMD RBKT &none
-                &kp BACKSLASH &mt LCMD LT &mt LCMD GT &mt LALT QUESTION &kp SEMICOLON
+                &kp BACKSLASH &mt LCMD LT &mt LCMD GT &mt LALT UNDER &kp SLASH
 
                 &trans &trans &trans &trans
             >;
@@ -369,10 +375,10 @@
                 &none &none &none &none &none
                 &none &kp END &kp HOME &none &none
 
-                &none &sk LALT &trans &sk LCMD &none
+                &none &mt LALT RETURN &trans &kp LCMD TAB &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
-                &none &none &none &none &none
+                &none &kp ESC &none &kp DEL &none
                 &none &kp PAGE_DOWN &kp PAGE_UP &none &none
 
                 &trans &trans &trans &trans
