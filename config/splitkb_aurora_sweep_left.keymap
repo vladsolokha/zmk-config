@@ -259,7 +259,7 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 
-        dqt_apos: dqt_apos {
+        dqt_apos: dqt_apos_mod {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DQT>, <&kp APOS>;
@@ -273,7 +273,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_colon_hold: dot_colon_hold {
+        dot_colon_hold: dot_colon_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -286,11 +286,11 @@
 	cmma_semi: cmma_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp CMMA>, <&kp SEMICOLON>;
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        cmma_semi_hold: cmma_semi_hold {
+        cmma_semi_hold: cmma_semi_hold_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -317,7 +317,7 @@
                 &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
                 &kp K &mt LCMD H &cmma_semi_hold LCMD 0 &dot_colon_hold LALT 0 &dqt_apos
 
-                &sk LSFT &mo_kp SYM BSPC &sk_kp_tap LCTRL SPC &key_repeat
+                &sk LSFT &mo_kp SYM BSPC &sk_kp_tap LCTRL SPACE &key_repeat
             >;
 		};
 
@@ -375,7 +375,7 @@
                 &none &none &none &none &none
                 &none &kp END &kp HOME &none &none
 
-                &none &mt LALT RETURN &trans &kp LCMD TAB &none
+                &none &mt LALT RETURN &trans &mt LCMD TAB &none
                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 
                 &none &kp ESC &none &kp DEL &none
