@@ -324,16 +324,16 @@
         /* 1 */
         graphite {
             bindings = <
-                &kp B &kp L &kp D &kp W &kp Z
+                &kp B &kp W &kp D &kp L &kp APOS
                 &trans &kp F &kp O &kp U &kp J
 
-                &mt LC(LA(LSHIFT)) N &trans &mo_kp_tap NAV T &mo_kp_tap NUM S &trans
-                &kp Y &kp H &kp A &mo_kp_tap SETTING E &mt LC(LA(LSHIFT)) I
+                &mt LC(LA(LSHIFT)) C &mo_kp_tap MOUSE S &mo_kp_tap NAV T &mo_kp_tap NUM R &kp X
+                &kp Q &kp N &kp A &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) H
 
-                &kp Q &trans &mt LCMD M &mt LCMD C &trans
-                &trans &mt LCMD P &trans &trans &trans
+                &kp V &mt LALT Y &mt LCMD G &mt LCMD M &kp Z
+                &kp DQT &mt LCMD P &trans &trans &kp K
 
-                &trans &trans &trans &trans
+                &sk_kp_tap LSFT E &trans &trans &trans
             >;
 		};
 
