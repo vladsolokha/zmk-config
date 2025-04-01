@@ -14,14 +14,12 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE        0
-#define GRAPHITE    1
-#define NUM         2
-#define SYM         3
-#define NAV         4
-#define SETTING     5
-#define MOUSE       6
-#define MOUSESLOW   7
-#define MOUSESCROLL 8
+#define NUM         1
+#define SYM         2
+#define NAV         3
+#define SETTING     4
+#define MOUSE       5
+#define MOUSESLOW   6
 
 &mt {
     flavor = "tap-preferred";
@@ -322,22 +320,6 @@
 		};
 
         /* 1 */
-        graphite {
-            bindings = <
-                &kp B &kp W &kp D &kp L &kp APOS
-                &trans &kp F &kp O &kp U &kp J
-
-                &mt LC(LA(LSHIFT)) C &mo_kp_tap MOUSE S &mo_kp_tap NAV T &mo_kp_tap NUM R &kp X
-                &kp Q &kp N &kp A &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) H
-
-                &kp V &mt LALT Y &mt LCMD G &mt LCMD M &kp Z
-                &kp DQT &mt LCMD P &trans &trans &kp K
-
-                &sk_kp_tap LSFT E &trans &trans &trans
-            >;
-		};
-
-        /* 2 */
         numbers {
             bindings = <
                 &none &none &none &none &none
@@ -353,7 +335,7 @@
             >;
 		};
 
-        /* 3 */
+        /* 2 */
 	    symbol {
             bindings = <
                 &none &kp EXCL &kp LBRC &kp RBRC &none
@@ -369,10 +351,10 @@
             >;
 		};
 
-        /* 4 */
+        /* 3 */
 	    navigation {
             bindings = <
-                &none &none &none &none &none
+                &none &kp INSERT &none &none &none
                 &none &kp END &kp HOME &none &none
 
                 &none &mt LALT RETURN &trans &mt LCMD TAB &none
@@ -385,7 +367,7 @@
             >;
 		};
 
-        /* 5 */
+        /* 4 */
     	settings {
             bindings = <
                 &none &bt_clcla &ext_power EP_OFF &out OUT_TOG &none
@@ -401,23 +383,23 @@
             >;
         };
 
-        /* 6 */
+        /* 5 */
         mouse {
             bindings = <
                 &none &none &none &mt LG(LS(NUM_5)) LG(LS(NUM_4)) &none
                 &none &none &mmv MOVE_UP &none &none
 
-                &none &trans &mo MOUSESCROLL &mo MOUSESLOW &none
+                &sk LALT &trans &sk LCMD &sk LCTRL &none
                 &none &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &mkp MCLK
 
-                &none &none &sk LCMD &sk LCTRL &none
-                &none &none &none &sk LALT &kp INS
+                &none &none &none &none &none
+                &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
 
-                &trans &none &mkp LCLK &mkp RCLK
+                &trans &mo MOUSESLOW &mkp LCLK &mkp RCLK
             >;
         };
 
-        /* 7 */
+        /* 6 */
         mouse_slow {
             bindings = <
                 &trans &trans &trans &trans &trans
@@ -428,19 +410,6 @@
                 &trans &trans &trans &trans
             >;
         };
-
-        /* 8 */
-        mouse_scroll {
-            bindings = <
-               &trans &trans &trans &trans &trans
-               &trans &trans &trans &trans &trans
-               &trans &trans &trans &trans &trans
-               &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans
-               &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-               &trans &trans &trans &trans
-            >;
-        };
-
 
 	};
 };
