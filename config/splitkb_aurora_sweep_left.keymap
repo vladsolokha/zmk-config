@@ -212,12 +212,6 @@
             bindings = <&caps_word>;
         };
 
-        combo_tog_graphite {
-            timeout-ms = <50>;
-            key-positions = <11 12 13>;
-            bindings = <&tog GRAPHITE>;
-        };
-
     };
 
     behaviors {
