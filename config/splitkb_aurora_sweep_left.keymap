@@ -301,7 +301,7 @@
         default {
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B
-                &kp MINUS &kp L &kp U &kp Y &kp J
+                &kp J &kp L &kp U &kp Y &kp MINUS
 
                 &mt LC(LA(LSHIFT)) A &mo_kp_tap MOUSE R &mo_kp_tap NAV S &mo_kp_tap NUM T &kp G
                 &kp M &kp N &kp E &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) O
