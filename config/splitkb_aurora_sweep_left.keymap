@@ -214,6 +214,20 @@
 
     };
 
+    macros {
+        para_quote: parantheses_double_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LPAR &kp DQT>;
+        };
+
+        para_quote_close: close_papa_double_quote {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp DQT &kp RPAR>;
+        };
+    };
+
     behaviors {
 	mo_kp: momentary_hold_key_press_hold {
              compatible = "zmk,behavior-hold-tap";
@@ -251,28 +265,21 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 
-        dqt_apos: dqt_apos_mod {
+        dot: period_double_quote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp DQT>, <&kp APOS>;
+            bindings = <&kp DOT>, <&kp DQT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_colon: period_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        dot_colon_hold: dot_colon_hold_tap {
+        dot_hold: dot_dblqt_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
             quick-tap-ms = <180>;
             require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&dot_colon>;
+            bindings = <&kp>, <&dot>;
         };
 
 	cmma_semi: cmma_semi {
@@ -292,6 +299,26 @@
             bindings = <&kp>, <&cmma_semi>;
         };
 
+        pql: para_quote_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <100>;
+            bindings = <&para_quote>, <&kp>;
+        };
+
+        pqlc: para_quote_hold_close {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <100>;
+            bindings = <&para_quote_close>, <&kp>;
+        };
+
     };
 
     keymap {
@@ -301,13 +328,13 @@
         default {
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B
-                &kp J &kp L &kp U &kp Y &kp MINUS
+                &kp J &kp L &kp U &kp Y &kp APOS
 
                 &mt LC(LA(LSHIFT)) A &mo_kp_tap MOUSE R &mo_kp_tap NAV S &mo_kp_tap NUM T &kp G
                 &kp M &kp N &kp E &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) O
 
                 &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
-                &kp K &mt LCMD H &cmma_semi_hold LCMD 0 &dot_colon_hold LALT 0 &dqt_apos
+                &kp K &mt LCMD H &cmma_semi_hold LCMD 0 &dot_hold LALT 0 &kp SLASH
 
                 &sk LSFT &mo_kp SYM BSPC &sk_kp_tap LCTRL SPACE &key_repeat
             >;
@@ -335,11 +362,11 @@
                 &none &kp EXCL &kp LBRC &kp RBRC &none
                 &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
-                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp PIPE
-                &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp QUESTION
+                &kp AT &kp AMPS &pql 0 LPAR &pqlc 0 RPAR &kp TILDE
+                &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp SEMICOLON
 
-                &kp GRAVE &mt LALT TILDE &mt LCMD LBKT &mt LCMD RBKT &none
-                &kp BACKSLASH &mt LCMD LT &mt LCMD GT &mt LALT UNDER &kp SLASH
+                &kp GRAVE &mt LALT UNDER &mt LCMD LBKT &mt LCMD RBKT &kp PIPE
+                &kp BACKSLASH &mt LCMD LT &mt LCMD GT &mt LALT MINUS &kp COLON
 
                 &trans &trans &trans &trans
             >;
