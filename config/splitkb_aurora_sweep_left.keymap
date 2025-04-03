@@ -285,7 +285,7 @@
 	cmma_semi: cmma_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+            bindings = <&kp COMMA>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
