@@ -214,20 +214,6 @@
 
     };
 
-    macros {
-        para_quote: parantheses_double_quote {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp LPAR &kp DQT>;
-        };
-
-        para_quote_close: close_papa_double_quote {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp DQT &kp RPAR>;
-        };
-    };
-
     behaviors {
 	mo_kp: momentary_hold_key_press_hold {
              compatible = "zmk,behavior-hold-tap";
@@ -265,6 +251,13 @@
             bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
         };
 
+        apos_grave: aposgrave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp APOS>, <&kp GRAVE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         dot: period_double_quote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -299,26 +292,6 @@
             bindings = <&kp>, <&cmma_semi>;
         };
 
-        pql: para_quote_hold {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <180>;
-            require-prior-idle-ms = <100>;
-            bindings = <&para_quote>, <&kp>;
-        };
-
-        pqlc: para_quote_hold_close {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <180>;
-            require-prior-idle-ms = <100>;
-            bindings = <&para_quote_close>, <&kp>;
-        };
-
     };
 
     keymap {
@@ -328,7 +301,7 @@
         default {
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B
-                &kp J &kp L &kp U &kp Y &kp APOS
+                &kp J &kp L &kp U &kp Y &apos_grave
 
                 &mt LC(LA(LSHIFT)) A &mo_kp_tap MOUSE R &mo_kp_tap NAV S &mo_kp_tap NUM T &kp G
                 &kp M &kp N &kp E &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) O
@@ -362,11 +335,11 @@
                 &none &kp EXCL &kp LBRC &kp RBRC &none
                 &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
-                &kp AT &kp AMPS &pql 0 LPAR &pqlc 0 RPAR &kp TILDE
-                &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp SEMICOLON
+                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp TILDE
+                &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp MINUS
 
-                &kp GRAVE &mt LALT UNDER &mt LCMD LBKT &mt LCMD RBKT &kp PIPE
-                &kp BACKSLASH &mt LCMD LT &mt LCMD GT &mt LALT MINUS &kp COLON
+                &kp SEMICOLON &mt LALT UNDER &mt LCMD LBKT &mt LCMD RBKT &kp PIPE
+                &kp BACKSLASH &mt LCMD LT &mt LCMD GT &mt LALT DQT &kp COLON
 
                 &trans &trans &trans &trans
             >;
