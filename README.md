@@ -2,7 +2,7 @@
 
 ### keymap file
 [solo layout pdf version](solo-layout.pdf)
-[solo layout image](solo-layout-img.jpg)
+![solo layout image](solo-layout-img.jpg)
 
 ### intro
 Introducing the best and simplest 34-key keyboard layout, yet. It features Colemak-DH layout with some modifications. There are 5 layers: 4 home row layer holds; number, navigation, mouse keys, and system layers; 1 thumb layer symbol hold. Next, are bottom row mods with ctrl on right thumb hold. A dedicated repeat key, and dedicated sticky shift on thumbs. 2 bottom row gui (cmd) mods per side on index and middle fingers and 1 alt (option) bottom row mod per side on ring ringers. Home row pinky holds each sport the ever so popular ctrl-option-shift (meh) key for fast app switching and other OS customizable shortcuts.
