@@ -13,6 +13,14 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
 #include <dt-bindings/zmk/pointing.h>
 
+#define BASE        0
+#define NUM         1
+#define SYM         2
+#define NAV         3
+#define SETTING     4
+#define MOUSE       5
+#define MOUSESLOW   6
+
 &kscan {
     col-gpios
             = <&pro_micro 9 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
