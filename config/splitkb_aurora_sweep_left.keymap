@@ -215,7 +215,7 @@
     };
 
     behaviors {
-	mo_kp: momentary_hold_key_press_hold {
+        mo_kp: momentary_hold_key_press_hold {
              compatible = "zmk,behavior-hold-tap";
              #binding-cells = <2>;
              flavor = "hold-preferred";
@@ -258,14 +258,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot: period_double_quote {
+        dot: period_mod_tap {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp DQT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_hold: dot_dblqt_hold {
+        dot_hold: dot_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -275,21 +275,21 @@
             bindings = <&kp>, <&dot>;
         };
 
-	cmma_semi: cmma_semi {
+        cmma: cmma_mod_tap {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        cmma_semi_hold: cmma_semi_hold_mod {
+        cmma_hold: cmma_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
             quick-tap-ms = <180>;
             require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&cmma_semi>;
+            bindings = <&kp>, <&cmma>;
         };
 
     };
@@ -307,7 +307,7 @@
                 &kp M &kp N &kp E &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) O
 
                 &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
-                &kp K &mt LCMD H &cmma_semi_hold LCMD 0 &dot_hold LALT 0 &kp SLASH
+                &kp K &mt LCMD H &cmma_hold LCMD 0 &dot_hold LALT 0 &kp SLASH
 
                 &sk LSFT &mo_kp SYM BSPC &sk_kp_tap LCTRL SPACE &key_repeat
             >;
@@ -335,10 +335,10 @@
                 &none &kp EXCL &kp LBRC &kp RBRC &none
                 &none &kp PERCENT &kp PLUS &kp EQUAL &none
 
-                &kp AT &kp AMPS &kp LPAR &kp RPAR &kp TILDE
+                &kp UNDER &kp AMPS &kp LPAR &kp RPAR &kp TILDE
                 &kp CARET &kp STAR &kp HASH &kp DOLLAR &kp MINUS
 
-                &kp SEMICOLON &mt LALT UNDER &mt LCMD LBKT &mt LCMD RBKT &kp PIPE
+                &kp SEMICOLON &mt LALT AT &mt LCMD LBKT &mt LCMD RBKT &kp PIPE
                 &kp BACKSLASH &mt LCMD LT &mt LCMD GT &mt LALT DQT &kp COLON
 
                 &trans &trans &trans &trans
@@ -407,4 +407,3 @@
 
 	};
 };
-
