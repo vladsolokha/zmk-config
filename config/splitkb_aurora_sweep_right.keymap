@@ -3,10 +3,10 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
@@ -20,6 +20,12 @@
 #define SETTING     4
 #define MOUSE       5
 #define MOUSESLOW   6
+#define LIGHTS      7
+
+/* this is required here to make sure all leds get turned on per side */
+&led_strip {
+    chain-length = <23>;
+};
 
 &kscan {
     col-gpios
@@ -316,14 +322,14 @@
         /* 0 */
         default {
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B
-                &kp J &kp L &kp U &kp Y &apos_grave
+                &kp Q &kp W &kp E &kp R &mo_kp_tap LIGHTS T
+                &kp Y &kp U &kp I &kp O &kp P
 
-                &mt LC(LA(LSHIFT)) A &mo_kp_tap MOUSE R &mo_kp_tap NAV S &mo_kp_tap NUM T &kp G
-                &kp M &kp N &kp E &mo_kp_tap SETTING I &mt LC(LA(LSHIFT)) O
+                &mt LC(LA(LSHIFT)) A &mo_kp_tap MOUSE S &mo_kp_tap NAV D &mo_kp_tap NUM F &kp G
+                &kp H &kp J &kp K &mo_kp_tap SETTING L &apos_grave
 
-                &kp Z &mt LALT X &mt LCMD C &mt LCMD D &kp V
-                &kp K &mt LCMD H &cmma_hold LCMD 0 &dot_hold LALT 0 &kp SLASH
+                &kp Z &mt LALT X &mt LCMD C &mt LCMD V &kp B
+                &kp N &mt LCMD M &cmma_hold LCMD 0 &dot_hold LALT 0 &kp SLASH
 
                 &sk LSFT &mo_kp SYM BSPC &sk_kp_tap LCTRL SPACE &key_repeat
             >;
@@ -386,7 +392,7 @@
                 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &bt BT_SEL 4
                 &none &kp C_BRIGHTNESS_INC &kp C_VOL_UP &trans &none
 
-                &bt BT_DISC 3 &bt BT_DISC 2 &none &none &none
+                &bt BT_DISC 3 &bt BT_DISC 2 &bt BT_DISC 1 &bt BT_DISC 0 &bt BT_DISC 4
                 &none &kp C_BRIGHTNESS_DEC &kp C_VOL_DN &none &none
 
                 &none &none &kp C_PP &kp C_NEXT
@@ -421,5 +427,16 @@
             >;
         };
 
+        /* 7 */
+        lights {
+            bindings = <
+                &ext_power EP_TOG &rgb_ug RGB_TOG &rgb_ug RGB_EFF &none &trans
+                &none &none &none &none &none
+                &none &rgb_ug RGB_SAI &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_BRI
+                &none &rgb_ug RGB_SAD &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_BRD
+                &none &none &none &none &none
+                &none &none &none &none
+            >;
+        };
 	};
 };
