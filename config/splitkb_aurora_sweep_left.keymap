@@ -414,12 +414,13 @@
         /* 7 */
         lights {
             bindings = <
-                &ext_power EP_TOG &rgb_ug RGB_TOG &rgb_ug RGB_EFF &none &trans
+                &ext_power EP_TOG &none &none &none &trans
                 &none &none &none &none &none
-                &none &rgb_ug RGB_SAI &rgb_ug RGB_SPI &rgb_ug RGB_HUI &rgb_ug RGB_BRI
-                &none &rgb_ug RGB_SAD &rgb_ug RGB_SPD &rgb_ug RGB_HUD &rgb_ug RGB_BRD
+                &none &rgb_ug RGB_SPI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI
                 &none &none &none &none &none
-                &none &none &none &none
+                &none &rgb_ug RGB_SPD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD
+                &none &none &none &none &none
+                &rgb_ug RGB_TOG &rgb_ug RGB_EFF &none &none
             >;
         };
 	};
